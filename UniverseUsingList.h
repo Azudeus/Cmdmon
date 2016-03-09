@@ -1,3 +1,6 @@
+#ifndef UNIVERSELIST_H
+#define UNIVERSELIST_H
+
 #include "Universe.h"
 
 class UniverseUsingList : public Universe {
@@ -11,3 +14,5 @@ public:
 private:
 	List<Creature> CreatureList;
 };
+
+#ifndef
