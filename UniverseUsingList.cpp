@@ -7,8 +7,15 @@ UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 	//randomly create creatures
 }
 
-void UniverseUsingList::killCreature(Creature* C);
-void UniverseUsingList::addCreature(Creature* C);
+void UniverseUsingList::killCreature(Creature* C)
+{
+	//delete C from list
+}
+
+void UniverseUsingList::addCreature(Creature* C)
+{
+	//add C to list
+}
 
 void UniverseUsingList::print(ostream& output)
 {
