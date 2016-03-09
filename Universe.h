@@ -8,8 +8,15 @@ class Universe {
 public:
 	Universe(int,int);
 
-	virtual void killCreature(Creature* C);
-	virtual void addCreature(Creature* C);
+	int getAmountOfRows();
+	int getAmountOfColumns();
+
+	void setAmountOfRows(int);
+	void setAmountOfColumns(int);
+
+	virtual void killCreature(Creature*);
+	virtual void addCreature(Creature*);
+	virtual void addRandomCreature(int);
 	virtual void print(ostream&);
 
 private:

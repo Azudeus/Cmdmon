@@ -2,9 +2,12 @@
 
 UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 {
-	this->amountOfRows=amountOfRows;
-	this->amountOfColumns=amountOfColumns;
-	//randomly create creatures
+	this->setAmountOfRows(amountOfRows);
+	this->setAmountOfColumns(amountOfColumns);
+	for (int i=1;i<=n;i++)
+	{
+
+	}
 }
 
 void UniverseUsingList::killCreature(Creature* C)
@@ -15,6 +18,11 @@ void UniverseUsingList::killCreature(Creature* C)
 void UniverseUsingList::addCreature(Creature* C)
 {
 	//add C to list
+}
+
+void addRandomCreature(int amount)
+{
+	//randomly create creature
 }
 
 void UniverseUsingList::print(ostream& output)
@@ -28,10 +36,14 @@ void UniverseUsingList::print(ostream& output)
 		}
 	}
 
-	while ()
+	currentCreature=CreatureList;
+
+	do
 	{
-		board[getRow][getColumn]=draw();
+		currentCreature=*(currentCreature.Next());
+		board[currentCreature.getRowPosition()][currentCreature.getColumnPosition()]=currentCreature.draw();
 	}
+	while (currentCreature.Next()!=NULL)
 
 	for (int i=0;i<amountOfRows;i++)
 	{

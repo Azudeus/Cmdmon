@@ -1,37 +1,27 @@
-#include "UniverseUsingList.h"
+#include "Universe.h"
 
-UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
+Universe::Universe(int amountOfRows,int amountOfColumns)
 {
 	this->amountOfRows=amountOfRows;
 	this->amountOfColumns=amountOfColumns;
-	//randomly create creatures
 }
 
-void UniverseUsingList::killCreature(Creature* C);
-void UniverseUsingList::addCreature(Creature* C);
-
-void UniverseUsingList::print(ostream& output)
+int Universe::getAmountOfRows()
 {
-	char board[amountOfRows][amountOfColumns];
-	for (int i=0;i<amountOfRows;i++)
-	{
-		for (int j=0;j<amountOfColumns;j++)
-		{
-			board[i][j]='.';
-		}
-	}
+	return amountOfRows;
+}
 
-	while ()
-	{
-		board[getRow][getColumn]=draw();
-	}
+int Universe::getAmountOfColumns()
+{
+	return amountOfColumns;
+}
 
-	for (int i=0;i<amountOfRows;i++)
-	{
-		for (int j=0;j<amountOfColumns;j++)
-		{
-			output << board[i][j];
-		}
-		output << endl;
-	}
+void Universe::setAmountOfRows(int amountOfRows)
+{
+	this->amountOfRows=amountOfRows;
+}
+
+void Universe::setAmountOfColumns(int amountOfColumns)
+{
+	this->amountOfColumns=amountOfColumns;
 }
