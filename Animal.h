@@ -1,6 +1,7 @@
 #include "Creature.h"
 
-
+#ifndef Animal_H
+#define Animal_H
 struct moveDirection
 {
     int deltax;
@@ -17,3 +18,4 @@ public:
 private:
     moveDirection direction;
 };
+#endif

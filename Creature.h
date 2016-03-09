@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+#ifndef Creature_H
+#define Creature_H
 class Creature{
 	public :
 		Creature();
@@ -18,3 +20,4 @@ class Creature{
 		int rowPosition;
 		int columnPosition;
 };
+#endif
