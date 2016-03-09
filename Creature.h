@@ -1,8 +1,10 @@
+#ifndef Creature_H
+#define Creature_H
+
 #include <iostream>
 using namespace std;
 
-#ifndef Creature_H
-#define Creature_H
+
 class Creature{
 	public :
 		Creature();

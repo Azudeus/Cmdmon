@@ -1,7 +1,8 @@
-#include "Creature.h"
-
 #ifndef Animal_H
 #define Animal_H
+
+#include "Creature.h"
+
 struct moveDirection
 {
     int deltax;
