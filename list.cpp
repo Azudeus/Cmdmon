@@ -4,37 +4,23 @@ using namespace std;
 
 template <class Type>
 List<Type>::List(){
-	NextV = NULL;
-	PreviousV = NULL;
+	AddressList = NULL;
 }
 
 template <class Type>
 List<Type>::List(Type data){
-	Info = data;
-	NextV = NULL;
-	PreviousV = NULL;
+	AddressList = new ElementList<Type>(data);
 }
 
 template <class Type>
 List<Type>::List(const List& L){
-	List<Type>* P;
-	
-	P = L.NextV;
-	Info = L.Info;
-	PreviousV = NULL;
-	if (P == NULL){
-		NextV = NULL;
-	}
-	else{
-		NextV = (new List<Type>(*P));
-		(*NextV).PreviousV = this;
-	}
+	AddressList = new ElementList<Type>((*L.AddressList));
 }
 
 template <class Type>
 List<Type>::~List(){
-	List<Type>* P;
-	P = NextV;
+	ElementList<Type>* P;
+	P = AddressList;
 	
 	if (P != NULL){
 		delete P;
@@ -43,86 +29,53 @@ List<Type>::~List(){
 }
 
 template <class Type>
-Type List<Type>::Value(){
-	return Info;
+void List<Type>::SetAddressList(ElementList<Type>* L){
+	AddressList = L;
 }
 
 template <class Type>
-List<Type>* List<Type>::Next(){
-	return NextV;
-}
-
-template <class Type>
-List<Type>* List<Type>::Previous(){
-	return PreviousV;
-}
-
-template <class Type>
-void List<Type>::DeleteSingle(){
-	List<Type>* P;
-	P = NextV;
-
-/*
-	if (P != NULL){
-		while ((*P).NextV != NULL){
-			P = (*P).NextV;
-		}
-		(*((*P).Previous())).NextV = NULL;
-		(*P).PreviousV = (*this).PreviousV;
-		if ((*this).PreviousV != NULL){
-			(*((*this).PreviousV)).NextV = P;
-		}
-		(*P).NextV = (*this).NextV;	
-		if ((*this).NextV != NULL){
-			(*((*this).NextV)).PreviousV = P;
-		}
-	}
-	delete this; */
-	if (P != NULL){
-		while ((*P).NextV != NULL){
-			P = (*P).NextV;
-		}
-		Info = (*P).Info;
-		(*((*P).PreviousV)).NextV = NULL;
-		delete P;
-	}
-	else{
-		delete this;
-	}
-	cout << "KILL SINGLE" << endl;
+ElementList<Type>* List<Type>::GetAddressList(){
+	return AddressList;
 }
 
 template <class Type>
 void List<Type>::InsertLast(Type data){
-	List<Type> *P;
+	ElementList<Type>* P;
 	
-	P = NextV;
+	P = AddressList;
 	if (P != NULL){
 		while ((*P).Next() != NULL){
 			P = (*P).Next();
 		}
-		(*P).NextV = new List<Type>(data);
-		(*((*P).NextV)).PreviousV = P;
+		(*P).SetNext(new ElementList<Type>(data));
+		(*((*P).Next())).SetPrevious(P);
 	}
 	else{
-		NextV = new List<Type>(data);
-		(*NextV).PreviousV = this;
+		AddressList = new ElementList<Type>(data);
 	}
 }
 
 template <class Type>
-void List<Type>::SetValue(Type data){
-	Info = data;
+void List<Type>::Delete(Type data){
+//Asumsi: data pasti ada di dalam list.
+	ElementList<Type>* P;
+	
+	P = AddressList;
+	while ((*P).Value() != data){
+		P = (*P).Next();
+	}
+	if ((*P).Previous() != NULL){
+		(*P).DeleteSingle();
+	}
+	else{
+		AddressList = NULL;
+		delete P;
+	}
 }
 
 template <class Type>
-void List<Type>::SetNext(List<Type>* P){
-	NextV = P;
-}
-
-template <class Type>
-void List<Type>::SetPrevious(List* P){
-	PreviousV = P;
+bool List<Type>::isListEmpty(){
+	return (AddressList == NULL);
 }
 
 template class List<int>;
