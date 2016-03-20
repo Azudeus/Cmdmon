@@ -18,6 +18,12 @@ void Harpy::move(){
     setRowPosition(getRowPosition()+getDirection().deltax);
     setColumnPosition(getColumnPosition()+getDirection().deltay);
 }
+
+
+void Harpy::doAction(){
+	Harpy::move();
+}
+
 /**
 *draw the Harpy
 **/
