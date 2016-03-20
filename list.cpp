@@ -3,21 +3,21 @@
 using namespace std;
 
 template <class Type>
-List<Type>::List(){
+List<Type>::List(){ //Checked
 	AddressList = NULL;
 }
 
-template <class Type>
+template <class Type> //Checked
 List<Type>::List(Type data){
 	AddressList = new ElementList<Type>(data);
 }
 
-template <class Type>
+template <class Type> //Checked
 List<Type>::List(const List& L){
-	AddressList = new ElementList<Type>((*L.AddressList));
+	AddressList = new ElementList<Type>(*(L.AddressList));
 }
 
-template <class Type>
+template <class Type> //Checked
 List<Type>::~List(){
 	ElementList<Type>* P;
 	P = AddressList;
@@ -28,17 +28,17 @@ List<Type>::~List(){
 	cout << "KILL" << endl;
 }
 
-template <class Type>
+template <class Type> //Checked
 void List<Type>::SetAddressList(ElementList<Type>* L){
 	AddressList = L;
 }
 
-template <class Type>
+template <class Type> //Checked
 ElementList<Type>* List<Type>::GetAddressList(){
 	return AddressList;
 }
 
-template <class Type>
+template <class Type> //Checked
 void List<Type>::InsertLast(Type data){
 	ElementList<Type>* P;
 	
@@ -56,7 +56,7 @@ void List<Type>::InsertLast(Type data){
 }
 
 template <class Type>
-void List<Type>::Delete(Type data){
+void List<Type>::Delete(Type data){ //Checked
 //Asumsi: data pasti ada di dalam list.
 	ElementList<Type>* P;
 	
@@ -73,7 +73,7 @@ void List<Type>::Delete(Type data){
 	}
 }
 
-template <class Type>
+template <class Type> //Checked
 bool List<Type>::isListEmpty(){
 	return (AddressList == NULL);
 }

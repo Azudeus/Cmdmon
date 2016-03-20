@@ -2,20 +2,20 @@
 #include <iostream>
 using namespace std;
 
-template <class Type>
+template <class Type> //Checked
 ElementList<Type>::ElementList(){
 	NextV = NULL;
 	PreviousV = NULL;
 }
 
-template <class Type>
+template <class Type> //Checked
 ElementList<Type>::ElementList(Type data){
 	Info = data;
 	NextV = NULL;
 	PreviousV = NULL;
 }
 
-template <class Type>
+template <class Type> //Checked
 ElementList<Type>::ElementList(const ElementList& L){
 	ElementList<Type>* P;
 	
@@ -31,7 +31,7 @@ ElementList<Type>::ElementList(const ElementList& L){
 	}
 }
 
-template <class Type>
+template <class Type> //Checked
 ElementList<Type>::~ElementList(){
 	ElementList<Type>* P;
 	P = NextV;
@@ -42,22 +42,22 @@ ElementList<Type>::~ElementList(){
 	cout << "KILL ELMT" << endl;
 }
 
-template <class Type>
+template <class Type> //Checked
 Type ElementList<Type>::Value(){
 	return Info;
 }
 
-template <class Type>
+template <class Type> //Checked
 ElementList<Type>* ElementList<Type>::Next(){
 	return NextV;
 }
 
-template <class Type>
+template <class Type> //Checked
 ElementList<Type>* ElementList<Type>::Previous(){
 	return PreviousV;
 }
 
-template <class Type>
+template <class Type> //Checked, kecuali kasus tunggal dan kosong
 void ElementList<Type>::DeleteSingle(){
 	ElementList<Type>* P;
 	P = NextV;
@@ -111,18 +111,18 @@ void ElementList<Type>::InsertLast(Type data){
 	}
 } */
 
-template <class Type>
+template <class Type> //Checked
 void ElementList<Type>::SetValue(Type data){
 	Info = data;
 }
 
-template <class Type>
+template <class Type> //Checked, belom cek isi
 void ElementList<Type>::SetNext(ElementList<Type>* P){
 	NextV = P;
 }
 
-template <class Type>
-void ElementList<Type>::SetPrevious(ElementList* P){
+template <class Type> //Checked, belom cek isi
+void ElementList<Type>::SetPrevious(ElementList<Type>* P){
 	PreviousV = P;
 }
 
