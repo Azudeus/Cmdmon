@@ -48,7 +48,7 @@ ElementList<Type>::~ElementList(){
 	if (P != NULL){
 		delete P;
 	}
-	cout << "KILL ELMT" << endl;
+//	cout << "KILL ELMT" << endl;
 }
 
 /**

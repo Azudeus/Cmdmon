@@ -8,6 +8,10 @@ UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 	this->setAmountOfColumns(amountOfColumns);
 }
 
+List<Creature*>& UniverseUsingList::getCreatureList(){
+    return CreatureList;
+}
+
 void UniverseUsingList::killCreature(Creature* C)
 {
 	CreatureList.Delete(C);
@@ -69,15 +73,17 @@ void UniverseUsingList::print(ostream& output)
 			board[i][j]='.';
 		}
 	}
+    if(!CreatureList.isListEmpty()){
+        ElementList<Creature*>* currentCreature = (CreatureList.GetAddressList());
+        do
+        {
+            board[((*currentCreature).Value())->getRowPosition()][((*currentCreature).Value())->getColumnPosition()]=((*currentCreature).Value())->draw();
+            currentCreature= ((*currentCreature).Next());
 
-	ElementList<Creature*> currentCreature = *(CreatureList.GetAddressList());
+        }
+        while (currentCreature != NULL);
+    }
 
-	do
-	{
-		currentCreature=*(currentCreature.Next());
-		board[(currentCreature.Value())->getRowPosition()][(currentCreature.Value())->getColumnPosition()]=(currentCreature.Value())->draw();
-	}
-	while (currentCreature.Next()!=NULL);
 
 	for (int i=0;i<getAmountOfRows();i++)
 	{
