@@ -9,7 +9,7 @@ public:
 
 	void killCreature(Creature* C);
 	void addCreature(Creature* C);
-	void addRandomCreature();
+	void addRandomCreature(int);
 
 	void checkForCollisions();
 
