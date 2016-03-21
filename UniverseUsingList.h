@@ -23,8 +23,10 @@ public:
 
 	void print(ostream&);
 
+
 private:
 	List<Creature*> CreatureList;
+	void activateCreature(ElementList<Creature*>*,Creature*);
 };
 
 #endif

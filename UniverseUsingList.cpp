@@ -1,6 +1,8 @@
 #include "UniverseUsingList.h"
 #include <time.h>
 #include <stdlib.h>
+#include <thread>
+#include <chrono> 
 
 UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 {
@@ -150,3 +152,29 @@ void UniverseUsingList::print(ostream& output)
 		output << endl;
 	}
 }
+
+
+void UniverseUsingList::createThreadsForCreatures(){
+    ElementList<Creature*>* currentCreature1 = (CreatureList.GetAddressList());
+    int i=0;
+    int count=0;
+    while (((*currentCreature1).Value()) != NULL){
+        thread t[i] = activateCreature(currentCreature1,(*currentCreature1).Value());
+        currentCreature1 = ((*currentCreature1).Next());
+        i++;
+    }
+    count = i;
+    for(int i=0;i<count;i++){
+        t[i].join;
+    }
+
+}
+
+void UniverseUsingList::activateCreature(ElementList<Creature*>* ListC,Creature* C){
+    while (C != NULL){
+        if(!C->)C->doAction();
+        this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
+        *ListC->checkForCollisions();
+    }
+}
+
