@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['doaction',['doAction',['../class_centaur.html#a548d9ff34d62d1ba596a6dbdd3199216',1,'Centaur']]],
-  ['draw',['draw',['../class_harpy.html#aff50872bc2e137a69e4eacc45a739d95',1,'Harpy::draw()'],['../class_lamia.html#a5bff769396d0bc31d03306ba1c190c39',1,'Lamia::draw()'],['../class_plant.html#a6fb833eaf05ea95be02cef14412830cc',1,'Plant::draw()']]]
+  ['centaur',['Centaur',['../class_centaur.html#afc70d85a296f8bb7006525675ee4d92a',1,'Centaur']]],
+  ['creature',['Creature',['../class_creature.html#a597cc3b08ee17de46c3e7ec3cf0d9b58',1,'Creature']]]
 ];
