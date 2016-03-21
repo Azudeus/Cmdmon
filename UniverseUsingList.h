@@ -23,7 +23,7 @@ public:
 
 	void print(ostream&);
 
-	bool isWorldEmpty();
+	int isWorldEmpty();
 	
 private:
 	List<Creature*> CreatureList;

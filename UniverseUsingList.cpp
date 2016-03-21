@@ -196,6 +196,6 @@ void UniverseUsingList::activateCreature(Creature* C){
     }
 }
 
-bool UniverseUsingList::isWorldEmpty(){
+int UniverseUsingList::isWorldEmpty(){
 	return CreatureList.isListEmpty();
 }
