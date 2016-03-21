@@ -95,6 +95,34 @@ void UniverseUsingList::addRandomCreature(int amount)
 
 }
 
+void UniverseUsingList::checkForCollisions(){
+    ElementList<Creature*>* currentCreature1 = (CreatureList.GetAddressList());
+    ElementList<Creature*>* currentCreature2 = (CreatureList.GetAddressList());
+    bool Result;
+    while (((*currentCreature1).Value()) != NULL){
+        currentCreature2 = (CreatureList.GetAddressList());
+        while (((*currentCreature2).Value()) != NULL){
+            if ((((*currentCreature1).Value())->getRowPosition() == ((*currentCreature2).Value())->getRowPosition()) && (((*currentCreature1).Value())->getColumnPosition() == ((*currentCreature2).Value())->getColumnPosition())){
+                Result = ((*currentCreature1).Value())->compareStrength(*((*currentCreature2).Value()));
+                if (Result == 1){
+                    killCreature(((*currentCreature2).Value()));
+                }
+                else{
+                    killCreature(((*currentCreature1).Value()));
+                }
+            }
+            currentCreature2 = ((*currentCreature2).Next());
+        }
+        currentCreature1 = ((*currentCreature1).Next());
+    }
+    currentCreature1 = NULL;
+    currentCreature2 = NULL;
+}
+
+void UniverseUsingList::compareStrength(int row, int column){
+
+}
+
 void UniverseUsingList::print(ostream& output)
 {
 	char board[getAmountOfRows()][getAmountOfColumns()];

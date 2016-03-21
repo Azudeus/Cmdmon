@@ -22,8 +22,10 @@ public:
 	virtual void addCreature(Creature*)=0;
 	virtual void addRandomCreature(int)=0;
 
+	virtual void compareStrength(int row,int col)=0;
+
 	// virtual int isWorldEmpty();
-	// virtual void checkForCollisions()=0;
+	virtual void checkForCollisions()=0;
 
 	// virtual void createThreadsForCreatures()=0;
 	// virtual void moveAllCreaturesOnce()=0;

@@ -17,6 +17,8 @@ public:
 
 	void checkForCollisions();
 
+	void compareStrength(int row, int column);
+
 	void createThreadsForCreatures();
 
 	void moveAllCreaturesOnce();
