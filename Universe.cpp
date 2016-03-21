@@ -1,5 +1,10 @@
 #include "Universe.h"
 
+Universe::Universe(){
+    amountOfColumns = 0;
+    amountOfRows = 0;
+}
+
 Universe::Universe(int amountOfRows,int amountOfColumns)
 {
 	this->amountOfRows=amountOfRows;

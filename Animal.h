@@ -12,10 +12,12 @@ struct moveDirection
 class Animal:public Creature{
 public:
     Animal();
-    virtual void move()=0;
-    virtual char draw()=0;
+	virtual char draw()=0;
+    virtual void doAction()=0;
    	void setDirection(int,int);
    	moveDirection getDirection();
+protected:
+    virtual void move()=0;
 private:
     moveDirection direction;
 };

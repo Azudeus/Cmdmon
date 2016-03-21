@@ -6,4 +6,10 @@ int main(){
 	cout << "Row Position: " <<p1.getRowPosition() << endl;
 	cout << "Column Position: "<<p1.getColumnPosition() << endl;
 	cout << "Strength: " << p1.getStrength()<<endl;
+	p1.doAction();
+	cout << "Shape :" << p1.draw() << endl;
+	cout << "Row Position: " <<p1.getRowPosition() << endl;
+	cout << "Column Position: "<<p1.getColumnPosition() << endl;
+	cout << "Strength: " << p1.getStrength()<<endl;
+
 }

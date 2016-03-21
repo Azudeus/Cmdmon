@@ -17,3 +17,7 @@ char Plant::draw(){
 	return 'T';
 }
 
+
+void Plant::doAction(){
+	
+}

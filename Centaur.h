@@ -6,8 +6,10 @@
 class Centaur:public Animal{
 public:
     Centaur(int=0, int=0,int=0,int=0);
-    void move();
     char draw();
+    void doAction();
+protected:
+    void move();	
 private:
 };
 #endif

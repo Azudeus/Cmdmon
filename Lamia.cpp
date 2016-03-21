@@ -11,6 +11,11 @@ Lamia::Lamia(int r, int c, int x, int y){
     setDirection(x,y);
     setStrength(10);
 }
+
+void Lamia::doAction(){
+	Lamia::move();
+}
+
 /**
 *move the Lamia
 **/

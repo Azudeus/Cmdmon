@@ -1,11 +1,15 @@
 #ifndef UNIVERSE_H
 #define UNIVERSE_H
 
-#include "List.h"
-#include "Creature.h"
+#include "list.h"
+#include "Plant.h"
+#include "Lamia.h"
+#include "Centaur.h"
+#include "Harpy.h"
 
 class Universe {
 public:
+    Universe();
 	Universe(int,int);
 
 	int getAmountOfRows();
@@ -14,10 +18,10 @@ public:
 	void setAmountOfRows(int);
 	void setAmountOfColumns(int);
 
-	virtual void killCreature(Creature*);
-	virtual void addCreature(Creature*);
-	virtual void addRandomCreature(int);
-	virtual void print(ostream&);
+	virtual void killCreature(Creature*)=0;
+	virtual void addCreature(Creature*)=0;
+	virtual void addRandomCreature(int)=0;
+	virtual void print(ostream&)=0;
 
 private:
 	int amountOfRows;
