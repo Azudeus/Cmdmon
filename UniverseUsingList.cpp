@@ -119,10 +119,6 @@ void UniverseUsingList::checkForCollisions(){
     currentCreature2 = NULL;
 }
 
-void UniverseUsingList::compareStrength(int row, int column){
-
-}
-
 void UniverseUsingList::print(ostream& output)
 {
 	char board[getAmountOfRows()][getAmountOfColumns()];
