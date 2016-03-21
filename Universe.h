@@ -22,10 +22,10 @@ public:
 	virtual void addCreature(Creature*)=0;
 	virtual void addRandomCreature(int)=0;
 
-	virtual void checkForCollisions()=0;
+	// virtual void checkForCollisions()=0;
 
-	virtual void createThreadsForCreatures()=0;
-	virtual void moveAllCreaturesOnce()=0;
+	// virtual void createThreadsForCreatures()=0;
+	// virtual void moveAllCreaturesOnce()=0;
 
 	virtual void print(ostream&)=0;
 

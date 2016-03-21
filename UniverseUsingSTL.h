@@ -12,10 +12,10 @@ public:
 	void addCreature(Creature* C);
 	void addRandomCreature(int);
 
-	void checkForCollisions();
+	// void checkForCollisions();
 
-	void createThreadsForCreatures();
-	void moveAllCreaturesOnce();
+	// void createThreadsForCreatures();
+	// void moveAllCreaturesOnce();
 
 	void print(ostream&);
 
