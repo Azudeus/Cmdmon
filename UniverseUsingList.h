@@ -7,6 +7,7 @@ class UniverseUsingList : public Universe {
 public:
 	UniverseUsingList(int,int);
 
+    List<Creature*>& getCreatureList();
 	void killCreature(Creature* C);
 	void addCreature(Creature* C);
 	void addRandomCreature(int);
