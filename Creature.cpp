@@ -46,3 +46,8 @@ int Creature::getColumnPosition(){
 int Creature::getStrength(){
 	return strength;
 }
+
+int Creature::operator!=(Creature& c){
+    cout<<"overload"<<endl;
+    return !((strength==c.strength)&&(rowPosition==c.rowPosition)&&(columnPosition==c.columnPosition));
+}

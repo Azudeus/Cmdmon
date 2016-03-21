@@ -14,6 +14,10 @@ List<Type>::List(){ //Checked
 	AddressList = NULL;
 }
 
+/**
+*Ctor of a generic List, using data as parameter
+*@param data
+**/
 
 template <class Type> //Checked
 List<Type>::List(Type& data){
@@ -113,5 +117,7 @@ bool List<Type>::isListEmpty(){
 	return (AddressList == NULL);
 }
 
+<<<<<<< HEAD
 template class List<int*>;
 template class List<Creature*>;
+>>>>>>> cb7a9c132a9743dc7213173ce8c472f20f7a2dcb
