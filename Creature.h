@@ -16,6 +16,7 @@ class Creature{
 		int getRowPosition();
 		int getColumnPosition();
 		int getStrength();
+		bool compareStrength(Creature&);
         virtual int operator!=(Creature&);
 	protected:
 

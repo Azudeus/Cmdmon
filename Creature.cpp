@@ -53,8 +53,8 @@ int Creature::operator!=(Creature& c){
 }
 
 
-bool compareStrength(Creature C){
-	if (strength>getStrength(C)){
+bool Creature::compareStrength(Creature &C){
+	if (strength > C.getStrength()){
 		return true;
 	}else{
 		return false;
