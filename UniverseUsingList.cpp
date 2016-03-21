@@ -24,10 +24,12 @@ void UniverseUsingList::addCreature(Creature* C)
 
 void UniverseUsingList::addRandomCreature(int amount)
 {
+    ElementList<Creature*>* currentCreature;
 	Creature* temp;
 	srand(time(NULL));
 	//randomly create creature
 	for (int i = 0; i < amount; i++){
+        int j = 0;
 		int r;
 		int row;
 		int column;
@@ -44,6 +46,33 @@ void UniverseUsingList::addRandomCreature(int amount)
 		if (directionY == 0){
 			directionY = -1;
 		}
+
+        int Found = 1;
+        int counter = 0;
+
+        //cari apakah sudah ada
+        while((counter<(getAmountOfColumns()*getAmountOfRows()))&&(Found)){
+            currentCreature = (CreatureList.GetAddressList());
+            Found = 0;
+            counter = 0;
+            while((currentCreature!=NULL) && (!Found)&& (counter<(getAmountOfColumns()*getAmountOfRows())) ){
+                counter++;
+                if((((currentCreature)->Value())->getRowPosition() == row) && (((currentCreature)->Value())->getColumnPosition() == column))
+                    Found = 1;
+                currentCreature = (currentCreature)->Next();
+            }
+
+            if(Found)
+            {
+                column++;
+                if (column == getAmountOfColumns()){column = 0; row++;}
+                if (row == getAmountOfRows()){column = 0; row =0;}
+            }
+
+        }
+
+        currentCreature = NULL;
+
 		if (r == 0){
 			temp = new Plant(row, column);
 			addCreature((temp));
