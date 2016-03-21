@@ -12,6 +12,7 @@ public:
 	void addCreature(Creature* C);
 	void addRandomCreature(int);
 
+	// int isWorldEmpty();
 	// void checkForCollisions();
 
 	// void createThreadsForCreatures();
