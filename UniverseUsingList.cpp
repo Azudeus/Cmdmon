@@ -10,12 +10,12 @@ UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 
 void UniverseUsingList::killCreature(Creature* C)
 {
-	CreatureList.Delete(*C);
+	CreatureList.Delete(C);
 }
 
 void UniverseUsingList::addCreature(Creature* C)
 {
-    CreatureList.InsertLast(*C);
+    CreatureList.InsertLast(C);
 }
 
 void addRandomCreature(int amount)
