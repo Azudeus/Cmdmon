@@ -46,19 +46,19 @@ void UniverseUsingList::addRandomCreature(int amount)
 		}
 		if (r == 0){
 			temp = new Plant(row, column);
-			CreatureList.InsertLast((temp));
+			addCreature((temp));
 		}
 		else if (r == 1){
 			temp = new Lamia(row, column, directionX, directionY);
-			CreatureList.InsertLast((temp));
+			addCreature((temp));
 		}
 		else if (r == 2){
 			temp = new Centaur(row, column, directionX, directionY);
-			CreatureList.InsertLast((temp));
+			addCreature((temp));
 		}
 		else{
 			temp = new Harpy(row, column, directionX, directionY);
-			CreatureList.InsertLast((temp));
+			addCreature((temp));
 		}
 	}
 }
@@ -70,7 +70,7 @@ void UniverseUsingList::print(ostream& output)
 	{
 		for (int j=0;j<getAmountOfColumns();j++)
 		{
-			board[i][j]='.';
+			board[i][j] = '.';
 		}
 	}
     if(!CreatureList.isListEmpty()){
