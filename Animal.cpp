@@ -17,7 +17,7 @@ void Animal::setDirection(int x,int y){
 
 /**
 *Get the move direction of an Animal
-**//
+**/
 moveDirection Animal::getDirection(){
 	return direction;
 }

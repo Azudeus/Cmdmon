@@ -28,13 +28,13 @@ template <class Type>
 class List{
 public:
 	List();
-	List(Type data);
-	List(const List& L);
+	List(Type& data);
+//	List(const List& L);
 	~List();
 	void SetAddressList(ElementList<Type>* L);
 	ElementList<Type>* GetAddressList();
-	void InsertLast(Type data);
-	void Delete(Type data);
+	void InsertLast(Type& data);
+	void Delete(Type& data);
 	bool isListEmpty();
 private:
 	ElementList<Type>* AddressList;

@@ -1,7 +1,7 @@
 #ifndef UNIVERSE_H
 #define UNIVERSE_H
 
-#include "List.h"
+#include "list.h"
 #include "Creature.h"
 
 class Universe {

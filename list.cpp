@@ -1,5 +1,9 @@
-#include "list.h"
 #include <iostream>
+#include "list.h"
+#include "Creature.h"
+#include "Animal.h"
+#include "Lamia.h"
+#include "Plant.h"
 using namespace std;
 
 /**
@@ -12,17 +16,20 @@ List<Type>::List(){ //Checked
 
 
 template <class Type> //Checked
-List<Type>::List(Type data){
+List<Type>::List(Type& data){
 	AddressList = new ElementList<Type>(data);
 }
 
+//Omitted
 /**
 *Cctor of a generic List
 **/
+/*
 template <class Type> //Checked
 List<Type>::List(const List& L){
 	AddressList = new ElementList<Type>(*(L.AddressList));
 }
+*/
 
 /**
 *Dtor of a generic List
@@ -60,7 +67,7 @@ ElementList<Type>* List<Type>::GetAddressList(){
 *@param data
 **/
 template <class Type> //Checked
-void List<Type>::InsertLast(Type data){
+void List<Type>::InsertLast(Type& data){
 	ElementList<Type>* P;
 
 	P = AddressList;
@@ -81,7 +88,7 @@ void List<Type>::InsertLast(Type data){
 *@param data
 **/
 template <class Type>
-void List<Type>::Delete(Type data){ //Checked
+void List<Type>::Delete(Type& data){ //Checked
 //Asumsi: data pasti ada di dalam list.
 	ElementList<Type>* P;
 
@@ -106,4 +113,5 @@ bool List<Type>::isListEmpty(){
 	return (AddressList == NULL);
 }
 
-template class List<int>;
+template class List<int*>;
+template class List<Creature*>;

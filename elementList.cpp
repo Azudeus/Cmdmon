@@ -1,4 +1,8 @@
 #include "elementList.h"
+#include "Creature.h"
+#include "Animal.h"
+#include "Lamia.h"
+#include "Plant.h"
 #include <iostream>
 using namespace std;
 
@@ -9,16 +13,19 @@ ElementList<Type>::ElementList(){
 }
 
 template <class Type> //Checked
-ElementList<Type>::ElementList(Type data){
+ElementList<Type>::ElementList(Type& data){
 	Info = data;
 	NextV = NULL;
 	PreviousV = NULL;
 }
 
+//Omitted
+/*
 template <class Type> //Checked
 ElementList<Type>::ElementList(const ElementList& L){
 	ElementList<Type>* P;
 
+	Type  Creature*
 	P = L.NextV;
 	Info = L.Info;
 	PreviousV = NULL;
@@ -30,12 +37,14 @@ ElementList<Type>::ElementList(const ElementList& L){
 		(*NextV).PreviousV = this;
 	}
 }
+*/
 
 template <class Type> //Checked
 ElementList<Type>::~ElementList(){
 	ElementList<Type>* P;
 	P = NextV;
 
+	delete Info;
 	if (P != NULL){
 		delete P;
 	}
@@ -124,7 +133,7 @@ void ElementList<Type>::InsertLast(Type data){
 *Set the Value of this Element
 **/
 template <class Type> //Checked
-void ElementList<Type>::SetValue(Type data){
+void ElementList<Type>::SetValue(Type& data){
 	Info = data;
 }
 
@@ -146,4 +155,5 @@ void ElementList<Type>::SetPrevious(ElementList<Type>* P){
 	PreviousV = P;
 }
 
-template class ElementList<int>;
+template class ElementList<int*>;
+template class ElementList<Creature*>;
