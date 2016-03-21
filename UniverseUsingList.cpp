@@ -174,11 +174,13 @@ void UniverseUsingList::createThreadsForCreatures(){
     count = i;
     i=0;
     while (((*currentCreature1).Value()) != NULL){
-         Creature* C = (*(currentCreature1)).Value();
+        Creature* C = (*(currentCreature1)).Value();
+//		std::thread t(activateCreature,C);
 //         thread t[i](activateCreature,C);
 //         currentCreature1 = ((*currentCreature1).Next());
-         thread t[i](activateCreature,C);
-         i++;
+//         thread t[i](activateCreature,C);
+//        i++;
+		break;
     }
     for(int i=0;i<count;i++){
         // t[i].join();
@@ -192,4 +194,8 @@ void UniverseUsingList::activateCreature(Creature* C){
         // this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
         // *ListC->=checkForCollisions();
     }
+}
+
+bool UniverseUsingList::isWorldEmpty(){
+	return CreatureList.isListEmpty();
 }
