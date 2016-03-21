@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
     UniverseUsingList Dunia(10,10);
-    Dunia.addRandomCreature(50);
+    Dunia.addRandomCreature(100);
     Dunia.print(cout);
     return 0;
 }

@@ -72,24 +72,27 @@ void UniverseUsingList::addRandomCreature(int amount)
         }
 
         currentCreature = NULL;
+        if(counter<(getAmountOfColumns()*getAmountOfRows())){
+            if (r == 0){
+                temp = new Plant(row, column);
+                addCreature((temp));
+            }
+            else if (r == 1){
+                temp = new Lamia(row, column, directionX, directionY);
+                addCreature((temp));
+            }
+            else if (r == 2){
+                temp = new Centaur(row, column, directionX, directionY);
+                addCreature((temp));
+            }
+            else{
+                temp = new Harpy(row, column, directionX, directionY);
+                addCreature((temp));
+            }
+        }
 
-		if (r == 0){
-			temp = new Plant(row, column);
-			addCreature((temp));
-		}
-		else if (r == 1){
-			temp = new Lamia(row, column, directionX, directionY);
-			addCreature((temp));
-		}
-		else if (r == 2){
-			temp = new Centaur(row, column, directionX, directionY);
-			addCreature((temp));
-		}
-		else{
-			temp = new Harpy(row, column, directionX, directionY);
-			addCreature((temp));
-		}
-	}
+        }
+
 }
 
 void UniverseUsingList::print(ostream& output)
