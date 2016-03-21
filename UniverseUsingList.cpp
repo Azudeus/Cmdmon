@@ -10,15 +10,15 @@ UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 
 void UniverseUsingList::killCreature(Creature* C)
 {
-	CreatureList.Delete(*C);
+	CreatureList.Delete(C);
 }
 
 void UniverseUsingList::addCreature(Creature* C)
 {
-    CreatureList.InsertLast(*C);
+    CreatureList.InsertLast(C);
 }
 
-void addRandomCreature(int amount)
+void UniverseUsingList::addRandomCreature(int amount)
 {
 	Creature* temp;
 	srand(time(NULL));
@@ -30,8 +30,8 @@ void addRandomCreature(int amount)
 		int directionX;
 		int directionY;
 		r = (rand() % 3);
-		row = (rand() % amountOfColumns);
-		column = (rand() % amountOfRows);
+		row = (rand() % getAmountOfRows());
+		column = (rand() % getAmountOfColumns());
 		directionX = (rand() % 2);
 		if (directionX == 0){
 			directionX = -1;
@@ -42,46 +42,46 @@ void addRandomCreature(int amount)
 		}
 		if (r == 0){
 			temp = new Plant(row, column);
-			CreatureList.InsertLast((*temp));
+			CreatureList.InsertLast((temp));
 		}
 		else if (r == 1){
 			temp = new Lamia(row, column, directionX, directionY);
-			CreatureList.InsertLast((*temp));			
+			CreatureList.InsertLast((temp));
 		}
 		else if (r == 2){
 			temp = new Centaur(row, column, directionX, directionY);
-			CreatureList.InsertLast((*temp));
+			CreatureList.InsertLast((temp));
 		}
 		else{
 			temp = new Harpy(row, column, directionX, directionY);
-			CreatureList.InsertLast((*temp));
+			CreatureList.InsertLast((temp));
 		}
 	}
 }
 
 void UniverseUsingList::print(ostream& output)
 {
-	char board[amountOfRows][amountOfColumns];
-	for (int i=0;i<amountOfRows;i++)
+	char board[getAmountOfRows()][getAmountOfColumns()];
+	for (int i=0;i<getAmountOfRows();i++)
 	{
-		for (int j=0;j<amountOfColumns;j++)
+		for (int j=0;j<getAmountOfColumns();j++)
 		{
 			board[i][j]='.';
 		}
 	}
 
-	currentCreature=CreatureList;
+	ElementList<Creature*> currentCreature = *(CreatureList.GetAddressList());
 
 	do
 	{
 		currentCreature=*(currentCreature.Next());
-		board[currentCreature.getRowPosition()][currentCreature.getColumnPosition()]=currentCreature.draw();
+		board[(currentCreature.Value())->getRowPosition()][(currentCreature.Value())->getColumnPosition()]=(currentCreature.Value())->draw();
 	}
-	while (currentCreature.Next()!=NULL)
+	while (currentCreature.Next()!=NULL);
 
-	for (int i=0;i<amountOfRows;i++)
+	for (int i=0;i<getAmountOfRows();i++)
 	{
-		for (int j=0;j<amountOfColumns;j++)
+		for (int j=0;j<getAmountOfColumns();j++)
 		{
 			output << board[i][j];
 		}

@@ -11,7 +11,14 @@ else
 ifeq ($(VAR),Plant)
 	CMD = g++ -o plant driverPlant.cpp Plant.cpp Creature.cpp
 else
-
+ifeq ($(VAR),UniverseUsingList)
+	CMD = g++ -o universeusinglist driverUniverseUsingList.cpp UniverseUsingList.cpp Universe.cpp list.cpp elementList.cpp Plant.cpp Lamia.cpp Centaur.cpp Harpy.cpp Animal.cpp Creature.cpp
+else
+ifeq ($(VAR),Overloading)
+	CMD = g++ -o overload driverOperatorOverloading.cpp Lamia.cpp Animal.cpp Creature.cpp Plant.cpp
+	
+endif
+endif
 endif
 endif
 endif
