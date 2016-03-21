@@ -90,9 +90,7 @@ void UniverseUsingList::addRandomCreature(int amount)
                 addCreature((temp));
             }
         }
-
-        }
-
+    }
 }
 
 void UniverseUsingList::checkForCollisions(){
@@ -149,4 +147,13 @@ void UniverseUsingList::print(ostream& output)
 		}
 		output << endl;
 	}
+}
+
+void UniverseUsingList::moveAllCreaturesOnce(){
+    ElementList<Creature*>* currentCreature = (CreatureList.GetAddressList());
+    while (((*currentCreature).Value()) != NULL){
+        ((*currentCreature).Value())->doAction();
+        currentCreature = ((*currentCreature).Next());
+    }
+    currentCreature = NULL;
 }
