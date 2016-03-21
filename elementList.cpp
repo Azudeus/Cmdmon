@@ -18,7 +18,7 @@ ElementList<Type>::ElementList(Type data){
 template <class Type> //Checked
 ElementList<Type>::ElementList(const ElementList& L){
 	ElementList<Type>* P;
-	
+
 	P = L.NextV;
 	Info = L.Info;
 	PreviousV = NULL;
@@ -35,23 +35,32 @@ template <class Type> //Checked
 ElementList<Type>::~ElementList(){
 	ElementList<Type>* P;
 	P = NextV;
-	
+
 	if (P != NULL){
 		delete P;
 	}
 	cout << "KILL ELMT" << endl;
 }
 
+/**
+*Get the value of this elemnt
+**/
 template <class Type> //Checked
 Type ElementList<Type>::Value(){
 	return Info;
 }
 
+/**
+*Get the pointer of Next Elemnt
+**/
 template <class Type> //Checked
 ElementList<Type>* ElementList<Type>::Next(){
 	return NextV;
 }
 
+/**
+*Get the pointer of Previous Elemnt
+**/
 template <class Type> //Checked
 ElementList<Type>* ElementList<Type>::Previous(){
 	return PreviousV;
@@ -72,7 +81,7 @@ void ElementList<Type>::DeleteSingle(){
 		if ((*this).PreviousV != NULL){
 			(*((*this).PreviousV)).NextV = P;
 		}
-		(*P).NextV = (*this).NextV;	
+		(*P).NextV = (*this).NextV;
 		if ((*this).NextV != NULL){
 			(*((*this).NextV)).PreviousV = P;
 		}
@@ -87,7 +96,7 @@ void ElementList<Type>::DeleteSingle(){
 		delete P;
 	}
 	else{
-		(*PreviousV).SetNext(NULL); 
+		(*PreviousV).SetNext(NULL);
 		delete this;
 	}
 	cout << "KILL SINGLE" << endl;
@@ -96,7 +105,7 @@ void ElementList<Type>::DeleteSingle(){
 /* template <class Type>
 void ElementList<Type>::InsertLast(Type data){
 	ElementList<Type> *P;
-	
+
 	P = NextV;
 	if (P != NULL){
 		while ((*P).Next() != NULL){
@@ -111,16 +120,27 @@ void ElementList<Type>::InsertLast(Type data){
 	}
 } */
 
+/**
+*Set the Value of this Element
+**/
 template <class Type> //Checked
 void ElementList<Type>::SetValue(Type data){
 	Info = data;
 }
 
+/**
+*Set the pointer of Next Elemnt
+*@param P
+**/
 template <class Type> //Checked, belom cek isi
 void ElementList<Type>::SetNext(ElementList<Type>* P){
 	NextV = P;
 }
 
+/**
+*Set the pointer of Previous Elemnt
+*@param P
+**/
 template <class Type> //Checked, belom cek isi
 void ElementList<Type>::SetPrevious(ElementList<Type>* P){
 	PreviousV = P;
