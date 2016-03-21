@@ -1,10 +1,12 @@
 #include <stdio.h>
+#include <string>
 #include <iostream>
+#include <fstream>
 #include <time.h>
 #include <thread>
 #include <conio.h>
 #include <chrono> 
-//#include "UniverseUsingList.h"
+#include "UniverseUsingList.h"
 
 using namespace std;
 
@@ -13,11 +15,13 @@ char CC = 'a';
 int row = 25;
 int column = 25;
 
-void waiting(){
+void activateWorld(UniverseUsingList world){
 	int i=0;
-	while ((!stop)&&(i<15000)){
-		cout <<i<<endl;
-		i++;
+//	while ((!stop)&&(!world.isWorldEmpty())){
+	while ((!stop)){
+		// world.moveAllCreatureOnce();
+		cout << "Kyun" <<endl;
+		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 	stop=true;
 }
@@ -30,32 +34,54 @@ void initialize(){
 }
 
 int main(){
-//	UniverseUsingList world(row,column);
+	UniverseUsingList world(row,column);
 	while(CC != 'E'){
 		stop=false;
-		thread t1(waiting);
+		thread t1(activateWorld,world);
 		thread t2(keyListener);
 		while(!stop){}
 		t2.detach();
 		t1.join();
 		switch (CC){
-			case 'p' : 
-//				world.print(cout);
+			case 'p' 
+:			{ 
+				cout << "To P" << endl;
+				world.print(cout);
+				break;
+			}
 			case 'a' :
-//				int amount;
-//				srand(time(NULL));
-//				amount = rand()%(row*column/10)+1;
-//				world.addRandomCreature(amount);
+			{
+				cout << "To A" << endl;
+				int amount;
+				srand(time(NULL));
+				amount = rand()%(row*column/10)+1;
+				world.addRandomCreature(amount);
+				break;
+			}
 			case 'f' :
-//				string filename;
-//				cin >> filename;
-//				ostringstream oss(filename);
-//				world.print(oss);
+			{
+				string filename;
+				cout << "Input Filename : " << endl; 
+				cin >> filename;
+				filebuf fb;
+				fb.open(filename,ios::out);
+				ostream os(&fb);
+				world.print(os);
+				cout << "Print done at file " << filename << endl; 
+				fb.close();
+				break;
+			}
 			default :
-				{}
+			{
+				cout << "Press p to print to terminal" <<endl;
+				cout << "Press a to add random creature" << endl;
+				cout << "Press f to print to file" << endl;
+				cout << "press E to exit" << endl;
+			}
 		}
-		cout << "Press Enter to Continue" <<endl;
+		cout << "Press Enter to Continue Program" <<endl;
 		getchar();
+		fflush(stdin);
 	}
 
 	return 0;

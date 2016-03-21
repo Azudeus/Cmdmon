@@ -10,6 +10,7 @@ Centaur::Centaur(int r, int c, int x, int y){
     setColumnPosition(c);
     setDirection(x,y);
     setStrength(25);
+    setActionInterval(800);
 }
 /**
 *move the Centaur

@@ -13,9 +13,11 @@ class Creature{
 		void setRowPosition(int);
 		void setColumnPosition(int);
 		void setStrength(int);
+		void setActionInterval(int);
 		int getRowPosition();
 		int getColumnPosition();
 		int getStrength();
+		int getActionInterval();
 		bool compareStrength(Creature&);
         virtual int operator!=(Creature&);
 	protected:
@@ -24,5 +26,6 @@ class Creature{
 		int strength;
 		int rowPosition;
 		int columnPosition;
+		int actionInterval;
 };
 #endif

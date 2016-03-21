@@ -25,8 +25,8 @@ public:
 	// virtual int isWorldEmpty();
 	virtual void checkForCollisions()=0;
 
-	// virtual void createThreadsForCreatures()=0;
-	// virtual void moveAllCreaturesOnce()=0;
+	virtual void createThreadsForCreatures()=0;
+	virtual void moveAllCreaturesOnce()=0;
 
 	virtual void print(ostream&)=0;
 

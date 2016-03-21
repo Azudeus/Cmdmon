@@ -12,7 +12,7 @@ ifeq ($(VAR),Plant)
 	CMD = g++ -o plant driverPlant.cpp Plant.cpp Creature.cpp
 else
 ifeq ($(VAR),UniverseUsingList)
-	CMD = g++ -o universeusinglist driverUniverseUsingList.cpp UniverseUsingList.cpp Universe.cpp list.cpp elementList.cpp Plant.cpp Lamia.cpp Centaur.cpp Harpy.cpp Animal.cpp Creature.cpp
+	CMD = g++ -std=c++11 -o universeusinglist driverUniverseUsingList.cpp UniverseUsingList.cpp Universe.cpp list.cpp elementList.cpp Plant.cpp Lamia.cpp Centaur.cpp Harpy.cpp Animal.cpp Creature.cpp
 else
 ifeq ($(VAR),UniverseUsingSTL)
 	CMD = g++ -o universeusingstl driverUniverseUsingSTL.cpp UniverseUsingSTL.cpp Universe.cpp list.cpp elementList.cpp Plant.cpp Lamia.cpp Centaur.cpp Harpy.cpp Animal.cpp Creature.cpp
@@ -24,7 +24,7 @@ ifeq ($(VAR),Main)
 	CMD = g++ -std=c++11 -o main main.cpp UniverseUsingList.cpp Universe.cpp list.cpp elementList.cpp Harpy.cpp Lamia.cpp Animal.cpp Centaur.cpp Creature.cpp Plant.cpp
 else
 ifeq ($(VAR),MainSTL)
-	CMD = g++ -std=c++11 -o main main.cpp UniverseUsingSTL.cpp Universe.cpp Harpy.cpp Lamia.cpp Animal.cpp Centaur.cpp Creature.cpp Plant.cpp
+	CMD = g++ -std=c++11 -o mainSTL mainSTL.cpp UniverseUsingSTL.cpp Universe.cpp Harpy.cpp Lamia.cpp Animal.cpp Centaur.cpp Creature.cpp Plant.cpp
 endif	
 endif	
 endif

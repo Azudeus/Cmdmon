@@ -28,7 +28,12 @@ void Creature::setColumnPosition(int _c){
 void Creature::setStrength(int _s){
 	strength = _s;
 }
-
+/**
+*Set the Speed of a Creature
+**/
+void Creature::setActionInterval(int _s){
+	actionInterval = _s;
+}
 /**
 *Return the row Position of a Creature in integer
 **/
@@ -45,6 +50,10 @@ int Creature::getColumnPosition(){
 
 int Creature::getStrength(){
 	return strength;
+}
+
+int Creature::getActionInterval(){
+	return actionInterval;
 }
 
 int Creature::operator!=(Creature& c){

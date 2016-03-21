@@ -10,6 +10,7 @@ Lamia::Lamia(int r, int c, int x, int y){
     setColumnPosition(c);
     setDirection(x,y);
     setStrength(10);
+    setActionInterval(1200);
 }
 
 void Lamia::doAction(){

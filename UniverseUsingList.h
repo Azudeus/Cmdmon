@@ -26,7 +26,7 @@ public:
 
 private:
 	List<Creature*> CreatureList;
-	void activateCreature(ElementList<Creature*>*,Creature*);
+	void activateCreature(Creature* C);
 };
 
 #endif
