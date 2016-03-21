@@ -4,20 +4,16 @@ UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 {
 	this->setAmountOfRows(amountOfRows);
 	this->setAmountOfColumns(amountOfColumns);
-	for (int i=1;i<=n;i++)
-	{
-
-	}
 }
 
 void UniverseUsingList::killCreature(Creature* C)
 {
-	//delete C from list
+	CreatureList.Delete(*C);
 }
 
 void UniverseUsingList::addCreature(Creature* C)
 {
-	//add C to list
+    CreatureList.InsertLast(*C);
 }
 
 void addRandomCreature(int amount)
