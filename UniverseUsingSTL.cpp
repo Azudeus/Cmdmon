@@ -1,28 +1,36 @@
-#include "UniverseUsingList.h"
+#include "UniverseUsingSTL.h"
 #include <time.h>
 #include <stdlib.h>
 
-UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
+UniverseUsingSTL::UniverseUsingSTL(int amountOfRows,int amountOfColumns)
 {
 	this->setAmountOfRows(amountOfRows);
 	this->setAmountOfColumns(amountOfColumns);
 }
 
-List<Creature*>& UniverseUsingList::getCreatureList(){
-    return CreatureList;
-}
-
-void UniverseUsingList::killCreature(Creature* C)
+void UniverseUsingSTL::killCreature(Creature* C)
 {
-	CreatureList.Delete(C);
+	bool found=false;
+	int size=CreatureList.size();
+	int i=0;
+	while ((!found)&&(i<size))
+	{
+		if (CreatureList[i]==C)
+		{
+			found=true;
+			swap(CreatureList[i],CreatureList[size-1]);
+		}
+		i++;
+	}
+	CreatureList.pop_back();
 }
 
-void UniverseUsingList::addCreature(Creature* C)
+void UniverseUsingSTL::addCreature(Creature* C)
 {
-    CreatureList.InsertLast(C);
+    CreatureList.push_back(C);
 }
 
-void UniverseUsingList::addRandomCreature(int amount)
+void UniverseUsingSTL::addRandomCreature(int amount)
 {
 	Creature* temp;
 	srand(time(NULL));
@@ -63,7 +71,7 @@ void UniverseUsingList::addRandomCreature(int amount)
 	}
 }
 
-void UniverseUsingList::print(ostream& output)
+void UniverseUsingSTL::print(ostream& output)
 {
 	char board[getAmountOfRows()][getAmountOfColumns()];
 	for (int i=0;i<getAmountOfRows();i++)
@@ -73,17 +81,12 @@ void UniverseUsingList::print(ostream& output)
 			board[i][j] = '.';
 		}
 	}
-    if(!CreatureList.isListEmpty()){
-        ElementList<Creature*>* currentCreature = (CreatureList.GetAddressList());
-        do
-        {
-            board[((*currentCreature).Value())->getRowPosition()][((*currentCreature).Value())->getColumnPosition()]=((*currentCreature).Value())->draw();
-            currentCreature= ((*currentCreature).Next());
 
-        }
-        while (currentCreature != NULL);
-    }
-
+	for (int i=0;i<CreatureList.size();i++)
+	{
+		Creature* currentCreature = (CreatureList[i]);
+		board[currentCreature->getRowPosition()][currentCreature->getColumnPosition()]=currentCreature->draw();
+	}
 
 	for (int i=0;i<getAmountOfRows();i++)
 	{

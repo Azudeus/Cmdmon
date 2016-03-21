@@ -1,13 +1,13 @@
-#ifndef UNIVERSELIST_H
-#define UNIVERSELIST_H
+#ifndef UNIVERSESTL_H
+#define UNIVERSESTL_H
 
 #include "Universe.h"
+#include <vector>
 
-class UniverseUsingList : public Universe {
+class UniverseUsingSTL : public Universe {
 public:
-	UniverseUsingList(int,int);
+	UniverseUsingSTL(int,int);
 
-    List<Creature*>& getCreatureList();
 	void killCreature(Creature* C);
 	void addCreature(Creature* C);
 	void addRandomCreature(int);
@@ -20,7 +20,7 @@ public:
 	void print(ostream&);
 
 private:
-	List<Creature*> CreatureList;
+	vector <Creature*> CreatureList;
 };
 
 #endif

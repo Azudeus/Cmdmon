@@ -14,6 +14,9 @@ else
 ifeq ($(VAR),UniverseUsingList)
 	CMD = g++ -o universeusinglist driverUniverseUsingList.cpp UniverseUsingList.cpp Universe.cpp list.cpp elementList.cpp Plant.cpp Lamia.cpp Centaur.cpp Harpy.cpp Animal.cpp Creature.cpp
 else
+ifeq ($(VAR),UniverseUsingSTL)
+	CMD = g++ -o universeusingstl driverUniverseUsingSTL.cpp UniverseUsingSTL.cpp Universe.cpp list.cpp elementList.cpp Plant.cpp Lamia.cpp Centaur.cpp Harpy.cpp Animal.cpp Creature.cpp
+else
 ifeq ($(VAR),Overloading)
 	CMD = g++ -o overload driverOperatorOverloading.cpp Lamia.cpp Animal.cpp Creature.cpp Plant.cpp
 else
@@ -24,6 +27,7 @@ ifeq ($(VAR),MainSTL)
 	CMD = g++ -std=c++11 -o main main.cpp UniverseUsingSTL.cpp Universe.cpp Harpy.cpp Lamia.cpp Animal.cpp Centaur.cpp Creature.cpp Plant.cpp
 endif	
 endif	
+endif
 endif
 endif
 endif
