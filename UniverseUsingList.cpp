@@ -42,19 +42,19 @@ void addRandomCreature(int amount)
 		}
 		if (r == 0){
 			temp = new Plant(row, column);
-			CreatureList.InsertLast((*temp));
+			CreatureList.InsertLast(temp);
 		}
 		else if (r == 1){
 			temp = new Lamia(row, column, directionX, directionY);
-			CreatureList.InsertLast((*temp));			
+			CreatureList.InsertLast(temp);			
 		}
 		else if (r == 2){
 			temp = new Centaur(row, column, directionX, directionY);
-			CreatureList.InsertLast((*temp));
+			CreatureList.InsertLast(temp);
 		}
 		else{
 			temp = new Harpy(row, column, directionX, directionY);
-			CreatureList.InsertLast((*temp));
+			CreatureList.InsertLast(temp);
 		}
 	}
 }

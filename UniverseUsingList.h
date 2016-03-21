@@ -13,7 +13,7 @@ public:
 	void print(ostream&);
 
 private:
-	List<Creature> CreatureList;
+	List<Creature*> CreatureList;
 };
 
 #ifndef
