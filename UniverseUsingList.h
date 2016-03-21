@@ -8,13 +8,17 @@ public:
 	UniverseUsingList(int,int);
 
     List<Creature*>& getCreatureList();
+
 	void killCreature(Creature* C);
+
 	void addCreature(Creature* C);
+
 	void addRandomCreature(int);
 
 	void checkForCollisions();
 
 	void createThreadsForCreatures();
+
 	void moveAllCreaturesOnce();
 
 	void print(ostream&);
