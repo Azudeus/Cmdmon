@@ -4,6 +4,9 @@
 #include <chrono>
 #include <stdlib.h>
 
+/**
+*Constructor of UniverseUsingList class
+**/
 UniverseUsingList::UniverseUsingList(int amountOfRows,int amountOfColumns)
 {
 	this->setAmountOfRows(amountOfRows);
@@ -14,11 +17,19 @@ List<Creature*>& UniverseUsingList::getCreatureList(){
     return CreatureList;
 }
 
+/**
+*Kill a creature from CreatureList
+*@param C
+**/
 void UniverseUsingList::killCreature(Creature* C)
 {
 	CreatureList.Delete(C);
 }
 
+/**
+*Add a creature to CreatureList
+*@param C
+**/
 void UniverseUsingList::addCreature(Creature* C)
 {
     CreatureList.InsertLast(C);
@@ -155,31 +166,11 @@ void UniverseUsingList::checkForCollisions(){
 
         }
     }
-
-/*
-    ElementList<Creature*>* currentCreature1 = (CreatureList.GetAddressList());
-    ElementList<Creature*>* currentCreature2 = (CreatureList.GetAddressList());
-    bool Result;
-    while ((currentCreature1 != NULL) && (((*currentCreature1).Value()) != NULL)){
-        currentCreature2 = (CreatureList.GetAddressList());
-        while ((currentCreature2 != NULL) && (((*currentCreature2).Value()) != NULL)){
-            if ((((*currentCreature1).Value())->getRowPosition() == ((*currentCreature2).Value())->getRowPosition()) && (((*currentCreature1).Value())->getColumnPosition() == ((*currentCreature2).Value())->getColumnPosition())){
-                Result = ((*currentCreature1).Value())->compareStrength(*((*currentCreature2).Value()));
-                if (Result == 1){
-                    killCreature(((*currentCreature2).Value()));
-                }
-                else{
-                    killCreature(((*currentCreature1).Value()));
-                }
-            }
-            currentCreature2 = ((*currentCreature2).Next());
-        }
-        currentCreature1 = ((*currentCreature1).Next());
-    }
-    currentCreature1 = NULL;
-    currentCreature2 = NULL;*/
 }
 
+/**
+*Print the world
+**/
 void UniverseUsingList::print(ostream& output)
 {
 	char board[getAmountOfRows()][getAmountOfColumns()];
@@ -246,6 +237,7 @@ void UniverseUsingList::moveAllCreaturesOnce(){
 void UniverseUsingList::createThreadsForCreatures(){
 
 }
+
 int UniverseUsingList::isWorldEmpty(){
 	return CreatureList.isListEmpty();
 }

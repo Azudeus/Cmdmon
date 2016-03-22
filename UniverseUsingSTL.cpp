@@ -5,19 +5,14 @@
 #include <stdlib.h>
 
 using namespace std;
-/**
-*Ctor of UniverseUsingSTL class
-**/
+
+
 UniverseUsingSTL::UniverseUsingSTL(int amountOfRows,int amountOfColumns)
 {
 	this->setAmountOfRows(amountOfRows);
 	this->setAmountOfColumns(amountOfColumns);
 }
 
-/**
-*Kill a creature from CreatureList
-*@param C
-**/
 void UniverseUsingSTL::killCreature(Creature* C)
 {
 	bool found=false;
@@ -35,19 +30,11 @@ void UniverseUsingSTL::killCreature(Creature* C)
 	CreatureList.pop_back();
 }
 
-/**
-*Add a creature to CreatureList
-*@param C
-**/
 void UniverseUsingSTL::addCreature(Creature* C)
 {
     CreatureList.push_back(C);
 }
 
-/**
-*Add a random creature to CreatureList
-*@param C
-**/
 void UniverseUsingSTL::addRandomCreature(int amount)
 {
 	Creature* temp;
@@ -115,17 +102,11 @@ void UniverseUsingSTL::addRandomCreature(int amount)
 	}
 }
 
-/**
-*return 1 if Universe is empty, 0 otherwise
-**/
 int UniverseUsingSTL::isWorldEmpty()
 {
 	return (CreatureList.size()==0);
 }
 
-/**
-*check for a collision
-**/
 void UniverseUsingSTL::checkForCollisions()
 {
 	int sz = CreatureList.size();
@@ -176,9 +157,6 @@ void UniverseUsingSTL::checkForCollisions()
 	}
 }
 
-/**
-*Move all creature from CreatureList at once
-**/
 void UniverseUsingSTL::moveAllCreaturesOnce()
 {
     for (int i=0;i<CreatureList.size();i++)
@@ -188,9 +166,6 @@ void UniverseUsingSTL::moveAllCreaturesOnce()
     checkForCollisions();
 }
 
-/**
-*Print the world
-**/
 void UniverseUsingSTL::print(ostream& output)
 {
 	char board[getAmountOfRows()][getAmountOfColumns()];
