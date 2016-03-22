@@ -73,7 +73,7 @@ void UniverseUsingSTL::addRandomCreature(int amount)
 
 int UniverseUsingSTL::isWorldEmpty()
 {
-	return (CreatureList.size==0)
+	return (CreatureList.size()==0);
 }
 
 void UniverseUsingSTL::checkForCollisions()
@@ -96,24 +96,34 @@ void UniverseUsingSTL::checkForCollisions()
 	}
 
 	//Kill Collisions
+	sz = CreatureList.size();
 	for (i=0;i<getAmountOfRows();i++)
 	{
 		for (int j=0;j<getAmountOfColumns();j++)
 		{
-			int minimumStrength = 99999; //INF
+			int minimumStrength = -1; //UNDEF
 			int minimumIndex = -1;
-			for (int k=0;k<CreatureList.size();k++)
+			for (int k=0;k<sz;k++)
 			{
-				if (((CreatureList[i])->getRowPosition()==i)&&((CreatureList[i])->getColumnPosition()==j))
+				if (((CreatureList[k])->getRowPosition()==i)&&
+					((CreatureList[k])->getColumnPosition()==j))
 				{
-					if (minimumStrength>CreatureList[i]->getStrength())
+					if (minimumStrength==-1)
 					{
-						minimumStrength=CreatureList[i]->getStrength();
-						minimumIndex=i;
+						minimumStrength=CreatureList[k]->getStrength();
+					}
+					else if (minimumStrength>CreatureList[k]->getStrength())
+					{
+						minimumStrength=CreatureList[k]->getStrength();
+						minimumIndex=k;
 					}
 				}
 			}
-			killCreature(CreatureList[minimumIndex]);
+			if (minimumIndex!=-1)
+			{\
+				killCreature(CreatureList[minimumIndex]);
+				sz--;
+			}
 		}
 	}
 }
@@ -123,8 +133,8 @@ void UniverseUsingSTL::moveAllCreaturesOnce()
     for (int i=0;i<CreatureList.size();i++)
     {
     	CreatureList[i]->doAction();
-    	checkForCollisions();
     }
+    checkForCollisions();
 }
 
 void UniverseUsingSTL::createThreadsForCreatures()
