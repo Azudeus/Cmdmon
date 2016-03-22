@@ -84,6 +84,9 @@ ElementList<Type>* ElementList<Type>::Previous(){
 	return PreviousV;
 }
 
+/**
+*Erase an elementList by switching it with last elementList of it's List or erase it if it's single elementList.
+**/
 template <class Type> //Checked, kecuali kasus tunggal dan kosong
 void ElementList<Type>::DeleteSingle(){
 	ElementList<Type>* P;
@@ -142,6 +145,7 @@ void ElementList<Type>::InsertLast(Type data){
 
 /**
 *Set the Value of this Element
+*@param data
 **/
 template <class Type> //Checked
 void ElementList<Type>::SetValue(Type& data){
