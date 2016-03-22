@@ -15,8 +15,6 @@ public:
 	int isWorldEmpty();
 
 	void checkForCollisions();
-
-	void createThreadsForCreatures();
 	
 	void moveAllCreaturesOnce();
 

@@ -17,8 +17,6 @@ public:
 
 	void checkForCollisions();
 
-	void createThreadsForCreatures();
-
 	void moveAllCreaturesOnce();
 
 	void print(ostream&);

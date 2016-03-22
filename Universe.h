@@ -20,19 +20,19 @@ public:
 
 	/**
 	*Kill a creature from CreatureList
-	*@param C
+	*@param C a pointer to creature
 	**/
 	virtual void killCreature(Creature*)=0;
 
 	/**
 	*Add a creature to CreatureList
-	*@param C
+	*@param C a pointer to creature
 	**/
 	virtual void addCreature(Creature*)=0;
 
 	/**
 	*Add "amount" amount of random creatures to CreatureList
-	*@param amount
+	*@param amount an integer
 	**/
 	virtual void addRandomCreature(int)=0;
 

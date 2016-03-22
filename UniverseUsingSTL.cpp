@@ -192,5 +192,3 @@ void UniverseUsingSTL::print(ostream& output)
 		output << endl;
 	}
 }
-
-void UniverseUsingSTL::createThreadsForCreatures(){}
