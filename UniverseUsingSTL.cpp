@@ -71,6 +71,33 @@ void UniverseUsingSTL::addRandomCreature(int amount)
 	}
 }
 
+int UniverseUsingSTL::isWorldEmpty()
+{
+	return (CreatureList.size==0)
+}
+
+void UniverseUsingSTL::checkForCollisions()
+{
+	for (int i=0;i<CreatureList[i].size();i++)
+	{
+		
+	}
+}
+
+void UniverseUsingSTL::moveAllCreaturesOnce()
+{
+    for (int i=0;i<CreatureList.size();i++)
+    {
+    	CreatureList[i]->doAction();
+    	checkForCollisions();
+    }
+}
+
+void UniverseUsingSTL::createThreadsForCreatures()
+{
+	
+}
+
 void UniverseUsingSTL::print(ostream& output)
 {
 	char board[getAmountOfRows()][getAmountOfColumns()];
