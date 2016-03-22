@@ -78,9 +78,43 @@ int UniverseUsingSTL::isWorldEmpty()
 
 void UniverseUsingSTL::checkForCollisions()
 {
-	for (int i=0;i<CreatureList[i].size();i++)
+	int sz = CreatureList.size();
+	int i = 0;
+	//Kill Out Of Bounds
+	while (i<sz)
 	{
-		
+		if ((CreatureList[i]->getRowPosition()<0)||
+			(CreatureList[i]->getColumnPosition()<0)||
+			(CreatureList[i]->getRowPosition()>=getAmountOfRows())||
+			(CreatureList[i]->getColumnPosition()>=getAmountOfColumns()))
+		{
+			killCreature(CreatureList[i]);
+			i--;
+			sz--;
+		}
+		i++;
+	}
+
+	//Kill Collisions
+	for (i=0;i<getAmountOfRows();i++)
+	{
+		for (int j=0;j<getAmountOfColumns();j++)
+		{
+			int minimumStrength = 99999; //INF
+			int minimumIndex = -1;
+			for (int k=0;k<CreatureList.size();k++)
+			{
+				if (((CreatureList[i])->getRowPosition()==i)&&((CreatureList[i])->getColumnPosition()==j))
+				{
+					if (minimumStrength>CreatureList[i]->getStrength())
+					{
+						minimumStrength=CreatureList[i]->getStrength();
+						minimumIndex=i;
+					}
+				}
+			}
+			killCreature(CreatureList[minimumIndex]);
+		}
 	}
 }
 
@@ -95,7 +129,7 @@ void UniverseUsingSTL::moveAllCreaturesOnce()
 
 void UniverseUsingSTL::createThreadsForCreatures()
 {
-	
+
 }
 
 void UniverseUsingSTL::print(ostream& output)
