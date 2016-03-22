@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>	
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -12,8 +12,8 @@ using namespace std;
 
 bool stop=false;	
 char CC = 'a';
-int row = 5;
-int column = 5;
+int row = 25;
+int column = 25;
 UniverseUsingList world(row,column);
 
 void activateWorld(){
@@ -31,7 +31,7 @@ void keyListener(){
 	stop=true;
 }
 void initialize(){
-		world.addRandomCreature(1);
+		world.addRandomCreature(10);
 }
 
 int main(){
@@ -63,7 +63,7 @@ int main(){
 				int amount;
 				srand(time(NULL));
 				amount = rand()%(row*column/10)+1;
-				world.addRandomCreature(2);
+				world.addRandomCreature(amount);
 				cout << "Added Random Creature" << endl;
 				break;
 			}

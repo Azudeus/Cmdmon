@@ -12,8 +12,8 @@ using namespace std;
 
 bool stop=false;	
 char CC = 'a';
-int row = 5;
-int column = 5;
+int row = 25;
+int column = 25;
 
 UniverseUsingSTL world(row,column);
 
@@ -32,7 +32,7 @@ void keyListener(){
 	stop=true;
 }
 void initialize(){
-	world.addRandomCreature(2);
+	world.addRandomCreature(10);
 }
 
 int main(){

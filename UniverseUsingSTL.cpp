@@ -1,6 +1,10 @@
 #include "UniverseUsingSTL.h"
 #include <time.h>
+#include <thread>
+#include <chrono>
 #include <stdlib.h>
+
+using namespace std;
 
 UniverseUsingSTL::UniverseUsingSTL(int amountOfRows,int amountOfColumns)
 {
@@ -18,7 +22,6 @@ void UniverseUsingSTL::killCreature(Creature* C)
 		if (CreatureList[i]==C)
 		{
 			found=true;
-			cout << "found the creature" <<endl;
 			swap(CreatureList[i],CreatureList[size-1]);
 		}
 		i++;
@@ -163,11 +166,6 @@ void UniverseUsingSTL::moveAllCreaturesOnce()
     checkForCollisions();
 }
 
-void UniverseUsingSTL::createThreadsForCreatures()
-{
-
-}
-
 void UniverseUsingSTL::print(ostream& output)
 {
 	char board[getAmountOfRows()][getAmountOfColumns()];
@@ -195,37 +193,25 @@ void UniverseUsingSTL::print(ostream& output)
 	}
 }
 
-void UniverseUsingList::createThreadsForCreatures(){
-    ElementList<Creature*>* currentCreature1 = (CreatureList.GetAddressList());
-    int i=0;
-    int count=0;
-    ElementList<Creature*>* temp = currentCreature1;
-    while (((*temp).Value()) != NULL){
-        temp = ((*temp).Next());
-        i++;
-    }
-    temp = NULL;
-    count = i;
-    i=0;
-    while (((*currentCreature1).Value()) != NULL){
-        Creature* C = (*(currentCreature1)).Value();
-//		std::thread t(activateCreature,C);
-//         thread t[i](activateCreature,C);
-//         currentCreature1 = ((*currentCreature1).Next());
-//         thread t[i](activateCreature,C);
-//        i++;
-		break;
-    }
-    for(int i=0;i<count;i++){
-        // t[i].join();
-    }
+void UniverseUsingSTL::createThreadsForCreatures(){
+ 	// int sz = CreatureList.size();
+ 	// int i = 0;
+ 	// thread t[sz];
+  //   for (i;i<sz;i++){
+  //  		t[i] = thread(activateCreature);
+  //       i++;
+  //   }
+  //   i = 0;
+  //   for(i=0;i<sz;i++){
+  //       t[i].join();
+  //   }
 
 }
 
-void UniverseUsingList::activateCreature(Creature* C){
-    while (C != NULL){
-        // C->doAction();
-        // this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
-        // *ListC->=checkForCollisions();
-    }
+void UniverseUsingSTL::activateCreature(){
+		// Creature* C = CreatureList[i];
+  //       C->doAction();
+  //       this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
+  //       checkForCollisions();
+
 }

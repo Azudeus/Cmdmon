@@ -25,6 +25,10 @@ ifeq ($(VAR),Main)
 else
 ifeq ($(VAR),MainSTL)
 	CMD = g++ -std=c++11 -o mainSTL mainSTL.cpp UniverseUsingSTL.cpp Universe.cpp Harpy.cpp Lamia.cpp Animal.cpp Centaur.cpp Creature.cpp Plant.cpp
+else
+ifeq ($(VAR),MainSTLv2)
+	CMD = g++ -std=c++11 -o mainSTLv2 mainSTLv2.cpp UniverseUsingSTL.cpp Universe.cpp Harpy.cpp Lamia.cpp Animal.cpp Centaur.cpp Creature.cpp Plant.cpp
+endif	
 endif	
 endif	
 endif

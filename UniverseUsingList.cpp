@@ -243,6 +243,9 @@ void UniverseUsingList::moveAllCreaturesOnce(){
     }
 }
 
+void UniverseUsingList::createThreadsForCreatures(){
+
+}
 int UniverseUsingList::isWorldEmpty(){
 	return CreatureList.isListEmpty();
 }

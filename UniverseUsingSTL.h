@@ -22,9 +22,17 @@ public:
 
 	void print(ostream&);
 
+	Creature* getCreatureList(int i){
+		return CreatureList[i];
+	}
+
+	vector<Creature*> getList(){
+		return CreatureList;
+	}
+
 private:
 	vector <Creature*> CreatureList;
-	void activateCreature(Creature* C);
+	void activateCreature();
 
 };
 

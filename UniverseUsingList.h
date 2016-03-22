@@ -17,6 +17,8 @@ public:
 
 	void checkForCollisions();
 
+	void createThreadsForCreatures();
+
 	void moveAllCreaturesOnce();
 
 	void print(ostream&);
@@ -25,7 +27,6 @@ public:
 	
 private:
 	List<Creature*> CreatureList;
-	void activateCreature(Creature* C);
 };
 
 #endif
