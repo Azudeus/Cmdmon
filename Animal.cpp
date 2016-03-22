@@ -9,6 +9,8 @@ Animal::Animal(){
 
 /**
 *Set the move direction of an Animal
+*@param x
+*@param y
 **/
 void Animal::setDirection(int x,int y){
 	direction.deltax=x;

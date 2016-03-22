@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_universe-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Universe Class Reference</div>  </div>
+<div class="title">Universe Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -95,7 +95,8 @@ Inheritance diagram for Universe:</div>
  <div class="center">
   <img src="class_universe.png" usemap="#Universe_map" alt=""/>
   <map id="Universe_map" name="Universe_map">
-<area href="class_universe_using_list.html" alt="UniverseUsingList" shape="rect" coords="0,56,112,80"/>
+<area href="class_universe_using_list.html" alt="UniverseUsingList" shape="rect" coords="0,56,115,80"/>
+<area href="class_universe_using_s_t_l.html" alt="UniverseUsingSTL" shape="rect" coords="125,56,240,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -116,18 +117,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setAmountOfRows</b> (
 <tr class="memitem:a9597c59c4bf80e17c852596acf25dfc4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9597c59c4bf80e17c852596acf25dfc4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setAmountOfColumns</b> (int)</td></tr>
 <tr class="separator:a9597c59c4bf80e17c852596acf25dfc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a168e0f7fcb842adb68cbec81e0824f69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a168e0f7fcb842adb68cbec81e0824f69"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>killCreature</b> (<a class="el" href="class_creature.html">Creature</a> *)</td></tr>
-<tr class="separator:a168e0f7fcb842adb68cbec81e0824f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b3d168c51db2f2f659cfddce03394dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b3d168c51db2f2f659cfddce03394dd"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addCreature</b> (<a class="el" href="class_creature.html">Creature</a> *)</td></tr>
-<tr class="separator:a0b3d168c51db2f2f659cfddce03394dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa315baa2ff875cdc7ed127fa5508c119"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa315baa2ff875cdc7ed127fa5508c119"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addRandomCreature</b> (int)</td></tr>
-<tr class="separator:aa315baa2ff875cdc7ed127fa5508c119"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c55b38c4c100c8f810f46a4a4ec779e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c55b38c4c100c8f810f46a4a4ec779e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (ostream &amp;)</td></tr>
-<tr class="separator:a8c55b38c4c100c8f810f46a4a4ec779e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92953c55e994fd3db8ac022ef69c227"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae92953c55e994fd3db8ac022ef69c227"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>killCreature</b> (<a class="el" href="class_creature.html">Creature</a> *)=0</td></tr>
+<tr class="separator:ae92953c55e994fd3db8ac022ef69c227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882e14be433281816c58b9ccfb8d4d01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a882e14be433281816c58b9ccfb8d4d01"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addCreature</b> (<a class="el" href="class_creature.html">Creature</a> *)=0</td></tr>
+<tr class="separator:a882e14be433281816c58b9ccfb8d4d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7289af8da66eed7c88763342c5689efb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7289af8da66eed7c88763342c5689efb"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addRandomCreature</b> (int)=0</td></tr>
+<tr class="separator:a7289af8da66eed7c88763342c5689efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090dce863386ed5cdba01d440de1edfd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a090dce863386ed5cdba01d440de1edfd"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>isWorldEmpty</b> ()=0</td></tr>
+<tr class="separator:a090dce863386ed5cdba01d440de1edfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaefe829c75ee2290de431e16065dde83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaefe829c75ee2290de431e16065dde83"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>checkForCollisions</b> ()=0</td></tr>
+<tr class="separator:aaefe829c75ee2290de431e16065dde83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d79c7d4f6c76f9f15ba1aec1c81c9f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7d79c7d4f6c76f9f15ba1aec1c81c9f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createThreadsForCreatures</b> ()=0</td></tr>
+<tr class="separator:ab7d79c7d4f6c76f9f15ba1aec1c81c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6fafeecd9df7c0c2b83760cef4eced3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6fafeecd9df7c0c2b83760cef4eced3"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>moveAllCreaturesOnce</b> ()=0</td></tr>
+<tr class="separator:af6fafeecd9df7c0c2b83760cef4eced3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646c85dce1a89e8da9b7f8c7c71cb2e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a646c85dce1a89e8da9b7f8c7c71cb2e3"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (ostream &amp;)=0</td></tr>
+<tr class="separator:a646c85dce1a89e8da9b7f8c7c71cb2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_universe_8h_source.html">Universe.h</a></li>

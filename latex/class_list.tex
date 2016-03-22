@@ -5,10 +5,7 @@
 \item 
 \hyperlink{class_list_a87405d18413f3ec9e0b57ccfe39a5a1d}{List} ()
 \item 
-{\bfseries List} (Type data)\hypertarget{class_list_afbbfb958dda41678d9a138d3ad6a9b35}{}\label{class_list_afbbfb958dda41678d9a138d3ad6a9b35}
-
-\item 
-\hyperlink{class_list_ae52ebdc014f2709effb6a79917000b55}{List} (const \hyperlink{class_list}{List} \&L)
+\hyperlink{class_list_aced4729facc079892f31c0ba470ef3a7}{List} (Type \&data)
 \item 
 \hyperlink{class_list_a17633b3c9f5315c0888217947ab4bad1}{$\sim$\+List} ()
 \item 
@@ -16,9 +13,9 @@ void \hyperlink{class_list_a8e1f80f098c0ef89dccb99d624f1d5ef}{Set\+Address\+List
 \item 
 \hyperlink{class_element_list}{Element\+List}$<$ Type $>$ $\ast$ \hyperlink{class_list_a0f935df606117d95921002c4ec8da766}{Get\+Address\+List} ()
 \item 
-void \hyperlink{class_list_ae9238dae50d93e0276f9e721f32f5c10}{Insert\+Last} (Type data)
+void \hyperlink{class_list_a079a660877cc78e10e85e8c1d4c1c739}{Insert\+Last} (Type \&data)
 \item 
-void \hyperlink{class_list_a00fce1708e871f4574c90942a3b71bb3}{Delete} (Type data)
+void \hyperlink{class_list_adc9a4e4ed5fc38f29e01b92fc8627845}{Delete} (Type \&data)
 \item 
 bool \hyperlink{class_list_a4cc9e973d8289d39611b7750f01adbec}{is\+List\+Empty} ()
 \end{DoxyCompactItemize}
@@ -34,28 +31,33 @@ bool \hyperlink{class_list_a4cc9e973d8289d39611b7750f01adbec}{is\+List\+Empty} (
 )}\hypertarget{class_list_a87405d18413f3ec9e0b57ccfe39a5a1d}{}\label{class_list_a87405d18413f3ec9e0b57ccfe39a5a1d}
 Ctor of a generic \hyperlink{class_list}{List} \index{List@{List}!List@{List}}
 \index{List@{List}!List@{List}}
-\subsubsection[{\texorpdfstring{List(const List \&\+L)}{List(const List &L)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type$>$ {\bf List}$<$ Type $>$\+::{\bf List} (
+\subsubsection[{\texorpdfstring{List(\+Type \&data)}{List(Type &data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type$>$ {\bf List}$<$ Type $>$\+::{\bf List} (
 \begin{DoxyParamCaption}
-\item[{const {\bf List}$<$ Type $>$ \&}]{L}
+\item[{Type \&}]{data}
 \end{DoxyParamCaption}
-)}\hypertarget{class_list_ae52ebdc014f2709effb6a79917000b55}{}\label{class_list_ae52ebdc014f2709effb6a79917000b55}
-Cctor of a generic \hyperlink{class_list}{List} \index{List@{List}!````~List@{$\sim$\+List}}
+)}\hypertarget{class_list_aced4729facc079892f31c0ba470ef3a7}{}\label{class_list_aced4729facc079892f31c0ba470ef3a7}
+Ctor of a generic \hyperlink{class_list}{List}, using data as parameter 
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\index{List@{List}!````~List@{$\sim$\+List}}
 \index{````~List@{$\sim$\+List}!List@{List}}
 \subsubsection[{\texorpdfstring{$\sim$\+List()}{~List()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type $>$ {\bf List}$<$ Type $>$\+::$\sim${\bf List} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{class_list_a17633b3c9f5315c0888217947ab4bad1}{}\label{class_list_a17633b3c9f5315c0888217947ab4bad1}
-Dtor of a generic \hyperlink{class_list}{List} 
+Cctor of a generic \hyperlink{class_list}{List} Dtor of a generic \hyperlink{class_list}{List} 
 
 \subsection{Member Function Documentation}
 \index{List@{List}!Delete@{Delete}}
 \index{Delete@{Delete}!List@{List}}
-\subsubsection[{\texorpdfstring{Delete(\+Type data)}{Delete(Type data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type$>$ void {\bf List}$<$ Type $>$\+::Delete (
+\subsubsection[{\texorpdfstring{Delete(\+Type \&data)}{Delete(Type &data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type$>$ void {\bf List}$<$ Type $>$\+::Delete (
 \begin{DoxyParamCaption}
-\item[{Type}]{data}
+\item[{Type \&}]{data}
 \end{DoxyParamCaption}
-)}\hypertarget{class_list_a00fce1708e871f4574c90942a3b71bb3}{}\label{class_list_a00fce1708e871f4574c90942a3b71bb3}
+)}\hypertarget{class_list_adc9a4e4ed5fc38f29e01b92fc8627845}{}\label{class_list_adc9a4e4ed5fc38f29e01b92fc8627845}
 Delete an data from the list 
 \begin{DoxyParams}{Parameters}
 {\em data} & \\
@@ -70,11 +72,11 @@ Delete an data from the list
 )}\hypertarget{class_list_a0f935df606117d95921002c4ec8da766}{}\label{class_list_a0f935df606117d95921002c4ec8da766}
 Get the Adress of \hyperlink{class_list}{List} \index{List@{List}!Insert\+Last@{Insert\+Last}}
 \index{Insert\+Last@{Insert\+Last}!List@{List}}
-\subsubsection[{\texorpdfstring{Insert\+Last(\+Type data)}{InsertLast(Type data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type$>$ void {\bf List}$<$ Type $>$\+::Insert\+Last (
+\subsubsection[{\texorpdfstring{Insert\+Last(\+Type \&data)}{InsertLast(Type &data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type$>$ void {\bf List}$<$ Type $>$\+::Insert\+Last (
 \begin{DoxyParamCaption}
-\item[{Type}]{data}
+\item[{Type \&}]{data}
 \end{DoxyParamCaption}
-)}\hypertarget{class_list_ae9238dae50d93e0276f9e721f32f5c10}{}\label{class_list_ae9238dae50d93e0276f9e721f32f5c10}
+)}\hypertarget{class_list_a079a660877cc78e10e85e8c1d4c1c739}{}\label{class_list_a079a660877cc78e10e85e8c1d4c1c739}
 Insert a data to last of the list 
 \begin{DoxyParams}{Parameters}
 {\em data} & \\

@@ -23,11 +23,15 @@ void \hyperlink{class_creature_a4ab0c6b21b0826ed9691583eec078bec}{set\+Column\+P
 \item 
 void \hyperlink{class_creature_a032ac31736090da076da0ec1466c27bf}{set\+Strength} (int)
 \item 
+void \hyperlink{class_creature_a3c30cf0d39904306da51584f52a79a41}{set\+Action\+Interval} (int)
+\item 
 int \hyperlink{class_creature_a8062f777315929e10e5d626e95366438}{get\+Row\+Position} ()
 \item 
 int \hyperlink{class_creature_addfbfaf75df9268fa1288c29c50abcd0}{get\+Column\+Position} ()
 \item 
-int {\bfseries get\+Strength} ()\hypertarget{class_creature_aae311cca00cca409e3e790a96ad14b97}{}\label{class_creature_aae311cca00cca409e3e790a96ad14b97}
+int \hyperlink{class_creature_aae311cca00cca409e3e790a96ad14b97}{get\+Strength} ()
+\item 
+int {\bfseries get\+Action\+Interval} ()\hypertarget{class_creature_a846d8ba60f1d799f474e106c08f4f786}{}\label{class_creature_a846d8ba60f1d799f474e106c08f4f786}
 
 \end{DoxyCompactItemize}
 
@@ -57,21 +61,50 @@ Return the column Position of a \hyperlink{class_creature}{Creature} in integer 
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{class_creature_a8062f777315929e10e5d626e95366438}{}\label{class_creature_a8062f777315929e10e5d626e95366438}
-Return the row Position of a \hyperlink{class_creature}{Creature} in integer \index{Creature@{Creature}!set\+Column\+Position@{set\+Column\+Position}}
+Return the row Position of a \hyperlink{class_creature}{Creature} in integer \index{Creature@{Creature}!get\+Strength@{get\+Strength}}
+\index{get\+Strength@{get\+Strength}!Creature@{Creature}}
+\subsubsection[{\texorpdfstring{get\+Strength()}{getStrength()}}]{\setlength{\rightskip}{0pt plus 5cm}int Creature\+::get\+Strength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_creature_aae311cca00cca409e3e790a96ad14b97}{}\label{class_creature_aae311cca00cca409e3e790a96ad14b97}
+Return the strength of a \hyperlink{class_creature}{Creature} in integer \index{Creature@{Creature}!set\+Action\+Interval@{set\+Action\+Interval}}
+\index{set\+Action\+Interval@{set\+Action\+Interval}!Creature@{Creature}}
+\subsubsection[{\texorpdfstring{set\+Action\+Interval(int)}{setActionInterval(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\+::set\+Action\+Interval (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+s}
+\end{DoxyParamCaption}
+)}\hypertarget{class_creature_a3c30cf0d39904306da51584f52a79a41}{}\label{class_creature_a3c30cf0d39904306da51584f52a79a41}
+Set the Speed of a \hyperlink{class_creature}{Creature} 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+s} & \\
+\hline
+\end{DoxyParams}
+\index{Creature@{Creature}!set\+Column\+Position@{set\+Column\+Position}}
 \index{set\+Column\+Position@{set\+Column\+Position}!Creature@{Creature}}
 \subsubsection[{\texorpdfstring{set\+Column\+Position(int)}{setColumnPosition(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\+::set\+Column\+Position (
 \begin{DoxyParamCaption}
 \item[{int}]{\+\_\+c}
 \end{DoxyParamCaption}
 )}\hypertarget{class_creature_a4ab0c6b21b0826ed9691583eec078bec}{}\label{class_creature_a4ab0c6b21b0826ed9691583eec078bec}
-Set the Column Position of a \hyperlink{class_creature}{Creature} \index{Creature@{Creature}!set\+Row\+Position@{set\+Row\+Position}}
+Set the Column Position of a \hyperlink{class_creature}{Creature} 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+c} & \\
+\hline
+\end{DoxyParams}
+\index{Creature@{Creature}!set\+Row\+Position@{set\+Row\+Position}}
 \index{set\+Row\+Position@{set\+Row\+Position}!Creature@{Creature}}
 \subsubsection[{\texorpdfstring{set\+Row\+Position(int)}{setRowPosition(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\+::set\+Row\+Position (
 \begin{DoxyParamCaption}
 \item[{int}]{\+\_\+r}
 \end{DoxyParamCaption}
 )}\hypertarget{class_creature_a1bc33218a560eff8162a2e795e90251f}{}\label{class_creature_a1bc33218a560eff8162a2e795e90251f}
-Set the Row Position of a \hyperlink{class_creature}{Creature} \index{Creature@{Creature}!set\+Strength@{set\+Strength}}
+Set the Row Position of a \hyperlink{class_creature}{Creature} 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+r} & \\
+\hline
+\end{DoxyParams}
+\index{Creature@{Creature}!set\+Strength@{set\+Strength}}
 \index{set\+Strength@{set\+Strength}!Creature@{Creature}}
 \subsubsection[{\texorpdfstring{set\+Strength(int)}{setStrength(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\+::set\+Strength (
 \begin{DoxyParamCaption}
@@ -79,6 +112,11 @@ Set the Row Position of a \hyperlink{class_creature}{Creature} \index{Creature@{
 \end{DoxyParamCaption}
 )}\hypertarget{class_creature_a032ac31736090da076da0ec1466c27bf}{}\label{class_creature_a032ac31736090da076da0ec1466c27bf}
 Set the Strength of a \hyperlink{class_creature}{Creature} 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+s} & \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

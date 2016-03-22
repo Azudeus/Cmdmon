@@ -24,16 +24,28 @@ void {\bfseries set\+Amount\+Of\+Rows} (int)\hypertarget{class_universe_af0124ac
 void {\bfseries set\+Amount\+Of\+Columns} (int)\hypertarget{class_universe_a9597c59c4bf80e17c852596acf25dfc4}{}\label{class_universe_a9597c59c4bf80e17c852596acf25dfc4}
 
 \item 
-virtual void {\bfseries kill\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)\hypertarget{class_universe_a168e0f7fcb842adb68cbec81e0824f69}{}\label{class_universe_a168e0f7fcb842adb68cbec81e0824f69}
+virtual void {\bfseries kill\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)=0\hypertarget{class_universe_ae92953c55e994fd3db8ac022ef69c227}{}\label{class_universe_ae92953c55e994fd3db8ac022ef69c227}
 
 \item 
-virtual void {\bfseries add\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)\hypertarget{class_universe_a0b3d168c51db2f2f659cfddce03394dd}{}\label{class_universe_a0b3d168c51db2f2f659cfddce03394dd}
+virtual void {\bfseries add\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)=0\hypertarget{class_universe_a882e14be433281816c58b9ccfb8d4d01}{}\label{class_universe_a882e14be433281816c58b9ccfb8d4d01}
 
 \item 
-virtual void {\bfseries add\+Random\+Creature} (int)\hypertarget{class_universe_aa315baa2ff875cdc7ed127fa5508c119}{}\label{class_universe_aa315baa2ff875cdc7ed127fa5508c119}
+virtual void {\bfseries add\+Random\+Creature} (int)=0\hypertarget{class_universe_a7289af8da66eed7c88763342c5689efb}{}\label{class_universe_a7289af8da66eed7c88763342c5689efb}
 
 \item 
-virtual void {\bfseries print} (ostream \&)\hypertarget{class_universe_a8c55b38c4c100c8f810f46a4a4ec779e}{}\label{class_universe_a8c55b38c4c100c8f810f46a4a4ec779e}
+virtual int {\bfseries is\+World\+Empty} ()=0\hypertarget{class_universe_a090dce863386ed5cdba01d440de1edfd}{}\label{class_universe_a090dce863386ed5cdba01d440de1edfd}
+
+\item 
+virtual void {\bfseries check\+For\+Collisions} ()=0\hypertarget{class_universe_aaefe829c75ee2290de431e16065dde83}{}\label{class_universe_aaefe829c75ee2290de431e16065dde83}
+
+\item 
+virtual void {\bfseries create\+Threads\+For\+Creatures} ()=0\hypertarget{class_universe_ab7d79c7d4f6c76f9f15ba1aec1c81c9f}{}\label{class_universe_ab7d79c7d4f6c76f9f15ba1aec1c81c9f}
+
+\item 
+virtual void {\bfseries move\+All\+Creatures\+Once} ()=0\hypertarget{class_universe_af6fafeecd9df7c0c2b83760cef4eced3}{}\label{class_universe_af6fafeecd9df7c0c2b83760cef4eced3}
+
+\item 
+virtual void {\bfseries print} (ostream \&)=0\hypertarget{class_universe_a646c85dce1a89e8da9b7f8c7c71cb2e3}{}\label{class_universe_a646c85dce1a89e8da9b7f8c7c71cb2e3}
 
 \end{DoxyCompactItemize}
 
