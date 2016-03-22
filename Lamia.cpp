@@ -28,5 +28,5 @@ void Lamia::move(){
 *draw the Lamia
 **/
 char Lamia::draw(){
-    return 'H';
+    return 'L';
 }

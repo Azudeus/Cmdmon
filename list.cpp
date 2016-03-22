@@ -46,7 +46,7 @@ List<Type>::~List(){
 	if (P != NULL){
 		delete P;
 	}
-	// cout << "KILL" << endl;
+	cout << "KILL" << endl;
 }
 
 /**
@@ -101,12 +101,12 @@ void List<Type>::Delete(Type& data){ //Checked
 	while ((*P).Value() != data){
 		P = (*P).Next();
 	}
-	if ((*P).Previous() != NULL){
+	if (((*P).Previous() != NULL)||((*P).Next() != NULL)){
 		(*P).DeleteSingle();
 	}
 	else{
-		AddressList = NULL;
 		delete P;
+		AddressList = NULL;
 	}
 }
 

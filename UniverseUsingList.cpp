@@ -95,6 +95,68 @@ void UniverseUsingList::addRandomCreature(int amount)
 }
 
 void UniverseUsingList::checkForCollisions(){
+    ElementList<Creature*>* currentCreature;
+    ElementList<Creature*>* tempCreature;
+    int Found;
+    int counter = 0;
+
+    //hapus semua makhluk yang keluar batas
+    currentCreature = CreatureList.GetAddressList();
+    while(currentCreature!=NULL){
+        if((((*currentCreature).Value() )->getRowPosition() >= getAmountOfRows()) || (((*currentCreature).Value())->getColumnPosition() >= getAmountOfColumns()) || (((*currentCreature).Value() )->getRowPosition() < 0)  || (((*currentCreature).Value())->getColumnPosition() < 0)  ){
+            killCreature(currentCreature->Value());
+            //cout << currentCreature << endl;            
+            currentCreature = CreatureList.GetAddressList();
+        }
+        else{
+            //cout << "N : " << currentCreature << endl;
+            // cout << "NEXT" << endl;
+            currentCreature = (*currentCreature).Next();
+        }
+    }    
+    if (CreatureList.GetAddressList() != NULL){
+        for (int row = 0 ; row < getAmountOfRows(); row++)
+        {
+            for(int column = 0 ; column < getAmountOfColumns(); column++){
+                Found = 0;
+                counter = 0;
+                currentCreature = CreatureList.GetAddressList();
+                //Cek setiap kotak apakah ada makhluk yang mengisi
+                while((currentCreature!= NULL)&&(!Found)){
+                    if((((*currentCreature).Value())->getRowPosition() == row) && (((*currentCreature).Value())->getColumnPosition() == column)){
+                        tempCreature = currentCreature;
+                        Found = 1;
+                        counter++;
+                    }    
+                    currentCreature = (*currentCreature).Next();
+
+                }
+
+                //apabila ada, cek apakah lebih satu dan dapatkan makhluk dengan strength terendah
+                if(Found){
+                    while(currentCreature!=NULL){
+                        if((((*currentCreature).Value())->getRowPosition() == row) && (((*currentCreature).Value())->getColumnPosition() == column))
+                        {
+                            if((((*currentCreature).Value())->getStrength()) < ( ((*tempCreature).Value()) ->getStrength() )  ){
+                                tempCreature = currentCreature;
+                            } 
+                            counter++;
+                        }
+                        currentCreature = (*currentCreature).Next();
+                    }
+                }
+
+                //apabiladi kotak ada lebih dari 1 makhluk hapus makhluk dengan strength terkecil
+                if(counter>1){
+                    killCreature(tempCreature->Value());
+                }
+
+            }
+
+        }
+    }
+
+/*
     ElementList<Creature*>* currentCreature1 = (CreatureList.GetAddressList());
     ElementList<Creature*>* currentCreature2 = (CreatureList.GetAddressList());
     bool Result;
@@ -115,7 +177,7 @@ void UniverseUsingList::checkForCollisions(){
         currentCreature1 = ((*currentCreature1).Next());
     }
     currentCreature1 = NULL;
-    currentCreature2 = NULL;
+    currentCreature2 = NULL;*/
 }
 
 void UniverseUsingList::print(ostream& output)
@@ -151,24 +213,34 @@ void UniverseUsingList::print(ostream& output)
 }
 
 void UniverseUsingList::moveAllCreaturesOnce(){
-    cout << "Step 1" << endl;
-    ElementList<Creature*>* currentCreature = (CreatureList.GetAddressList());
-//    ElementList<Creature*>* currentCreature;
-    cout << "Step 2" << endl;
-    cout << "C " << currentCreature->Value() << endl;
-    while ((currentCreature != NULL) && (((*currentCreature).Value()) != NULL)){
-            cout << "Step it" << endl;
+    if(CreatureList.GetAddressList()!=NULL){
+        ElementList<Creature*>* currentCreature = (CreatureList.GetAddressList());
+    //    ElementList<Creature*>* currentCreature;
+        // cout << "C " << currentCreature->Value() << endl;
+        while ((currentCreature != NULL) && (((*currentCreature).Value()) != NULL)){
+            int lastElement = 0;
 
-        ((*currentCreature).Value())->doAction();
-        cout << "FUCK BOOBS" << endl;
-//        checkForCollisions();
-        cout << "FUCK TITS" << endl;
-        currentCreature = ((*currentCreature).Next());
-        cout << "FUCK VAGINA" << endl;
+
+            ((*currentCreature).Value())->doAction();
+            if ((*currentCreature).Next() == NULL){
+                lastElement  = 1;
+            }
+            checkForCollisions();
+            if (CreatureList.GetAddressList() != NULL){
+                if (lastElement != 1){
+                    currentCreature = ((*currentCreature).Next());
+                }
+                else{
+                    currentCreature = NULL;
+                }
+            }
+            else{
+                currentCreature = NULL;
+            }
+        }
+
+        currentCreature = NULL;
     }
-        cout << "Step 3" << endl;
-
-    currentCreature = NULL;
 }
 
 void UniverseUsingList::createThreadsForCreatures(){

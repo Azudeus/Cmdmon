@@ -48,7 +48,7 @@ ElementList<Type>::~ElementList(){
 		delete P;
 	}
 	delete Info;
-	// cout << "KILL ELMT" << endl;
+	 cout << "KILL ELMT" << endl;
 }
 
 /**
@@ -79,7 +79,7 @@ template <class Type> //Checked, kecuali kasus tunggal dan kosong
 void ElementList<Type>::DeleteSingle(){
 	ElementList<Type>* P;
 	P = NextV;
-
+	Type temp;
 /*
 	if (P != NULL){
 		while ((*P).NextV != NULL){
@@ -100,7 +100,9 @@ void ElementList<Type>::DeleteSingle(){
 		while ((*P).NextV != NULL){
 			P = (*P).NextV;
 		}
+		temp = Info;
 		Info = (*P).Info;
+		(*P).Info = temp;
 		(*((*P).PreviousV)).NextV = NULL;
 		delete P;
 	}
