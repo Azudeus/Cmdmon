@@ -56,16 +56,4 @@ int Creature::getActionInterval(){
 	return actionInterval;
 }
 
-int Creature::operator!=(Creature& c){
-    cout<<"overload"<<endl;
-    return !((strength==c.strength)&&(rowPosition==c.rowPosition)&&(columnPosition==c.columnPosition));
-}
 
-
-bool Creature::compareStrength(Creature &C){
-	if (strength > C.getStrength()){
-		return true;
-	}else{
-		return false;
-	}
-}

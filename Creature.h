@@ -18,9 +18,7 @@ class Creature{
 		int getColumnPosition();
 		int getStrength();
 		int getActionInterval();
-		bool compareStrength(Creature&);
-        virtual int operator!=(Creature&);
-	protected:
+    protected:
 
 	private:
 		int strength;
