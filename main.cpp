@@ -14,12 +14,13 @@ bool stop=false;
 char CC = 'a';
 int row = 25;
 int column = 25;
+UniverseUsingList world(row,column);
 
-void activateWorld(UniverseUsingList world){
+void activateWorld(){
 	int i=0;
-//	while ((!stop)&&(!world.isWorldEmpty())){
+	// while ((!stop)&&(!world.isWorldEmpty())){
 	while ((!stop)){
-		// world.moveAllCreatureOnce();
+		 world.moveAllCreaturesOnce();
 		cout << "Kyun" <<endl;
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
@@ -30,18 +31,25 @@ void keyListener(){
 	stop=true;
 }
 void initialize(){
-	
+		world.addRandomCreature(1);
 }
 
 int main(){
-	UniverseUsingList world(row,column);
+	initialize();
+//	UniverseUsingList world(row,column);
+	// int amount;
+	// srand(time(NULL));
+	// amount = rand()%(row*column/10)+1;
+	// world.addRandomCreature(1);
+
 	while(CC != 'E'){
 		stop=false;
-		thread t1(activateWorld,world);
+		thread t1(activateWorld);
 		thread t2(keyListener);
 		while(!stop){}
 		t2.detach();
 		t1.join();
+		cout << CC << endl;
 		switch (CC){
 			case 'p' 
 :			{ 
@@ -56,6 +64,7 @@ int main(){
 				srand(time(NULL));
 				amount = rand()%(row*column/10)+1;
 				world.addRandomCreature(amount);
+				cout << "Added Random Creature" << endl;
 				break;
 			}
 			case 'f' :
