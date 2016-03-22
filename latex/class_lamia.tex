@@ -11,8 +11,7 @@ Inheritance diagram for Lamia\+:\begin{figure}[H]
 \item 
 \hyperlink{class_lamia_a0fbc6a5d3b47d02f4455d24e6edf9000}{Lamia} (int=0, int=0, int=0, int=0)
 \item 
-void {\bfseries do\+Action} ()\hypertarget{class_lamia_a21663165aa075426083bf34fc6ff753d}{}\label{class_lamia_a21663165aa075426083bf34fc6ff753d}
-
+void \hyperlink{class_lamia_a21663165aa075426083bf34fc6ff753d}{do\+Action} ()
 \item 
 char \hyperlink{class_lamia_a5bff769396d0bc31d03306ba1c190c39}{draw} ()
 \end{DoxyCompactItemize}
@@ -36,14 +35,29 @@ void \hyperlink{class_lamia_a216ce1ca528e5bc3f35d882a4bd2cbc4}{move} ()
 )}\hypertarget{class_lamia_a0fbc6a5d3b47d02f4455d24e6edf9000}{}\label{class_lamia_a0fbc6a5d3b47d02f4455d24e6edf9000}
 Make \hyperlink{class_lamia}{Lamia} on postion (x,y) 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em r} & r is the starting row position of \hyperlink{class_lamia}{Lamia} \\
 \hline
-{\em y} & \\
+{\em c} & c is the starting column position of \hyperlink{class_lamia}{Lamia} \\
+\hline
+{\em x} & x is hoizontal component of \hyperlink{structmove_direction}{move\+Direction} \\
+\hline
+{\em y} & y is vertical componen of \hyperlink{structmove_direction}{move\+Direction} \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
+\index{Lamia@{Lamia}!do\+Action@{do\+Action}}
+\index{do\+Action@{do\+Action}!Lamia@{Lamia}}
+\subsubsection[{\texorpdfstring{do\+Action()}{doAction()}}]{\setlength{\rightskip}{0pt plus 5cm}void Lamia\+::do\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_lamia_a21663165aa075426083bf34fc6ff753d}{}\label{class_lamia_a21663165aa075426083bf34fc6ff753d}
+Make creature do some kind of action 
+
+Implements \hyperlink{class_animal}{Animal}.
+
 \index{Lamia@{Lamia}!draw@{draw}}
 \index{draw@{draw}!Lamia@{Lamia}}
 \subsubsection[{\texorpdfstring{draw()}{draw()}}]{\setlength{\rightskip}{0pt plus 5cm}char Lamia\+::draw (
@@ -51,7 +65,10 @@ Make \hyperlink{class_lamia}{Lamia} on postion (x,y)
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_lamia_a5bff769396d0bc31d03306ba1c190c39}{}\label{class_lamia_a5bff769396d0bc31d03306ba1c190c39}
-draw the \hyperlink{class_lamia}{Lamia} 
+Draw the \hyperlink{class_lamia}{Lamia} by returning its character symbol \begin{DoxyReturn}{Returns}
+Special char denoting \hyperlink{class_lamia}{Lamia} 
+\end{DoxyReturn}
+
 
 Implements \hyperlink{class_animal}{Animal}.
 
@@ -62,7 +79,7 @@ Implements \hyperlink{class_animal}{Animal}.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_lamia_a216ce1ca528e5bc3f35d882a4bd2cbc4}{}\label{class_lamia_a216ce1ca528e5bc3f35d882a4bd2cbc4}
-move the \hyperlink{class_lamia}{Lamia} 
+Move the \hyperlink{class_lamia}{Lamia} one step according to its \hyperlink{structmove_direction}{move\+Direction} 
 
 Implements \hyperlink{class_animal}{Animal}.
 

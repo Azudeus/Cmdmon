@@ -25,26 +25,6 @@ ElementList<Type>::ElementList(Type& data){
 	PreviousV = NULL;
 }
 
-//Omitted
-/*
-template <class Type> //Checked
-ElementList<Type>::ElementList(const ElementList& L){
-	ElementList<Type>* P;
-
-	Type  Creature*
-	P = L.NextV;
-	Info = L.Info;
-	PreviousV = NULL;
-	if (P == NULL){
-		NextV = NULL;
-	}
-	else{
-		NextV = (new ElementList<Type>(*P));
-		(*NextV).PreviousV = this;
-	}
-}
-*/
-
 /**
 *dtor of ElementList
 **/
@@ -92,22 +72,7 @@ void ElementList<Type>::DeleteSingle(){
 	ElementList<Type>* P;
 	P = NextV;
 	Type temp;
-/*
-	if (P != NULL){
-		while ((*P).NextV != NULL){
-			P = (*P).NextV;
-		}
-		(*((*P).Previous())).NextV = NULL;
-		(*P).PreviousV = (*this).PreviousV;
-		if ((*this).PreviousV != NULL){
-			(*((*this).PreviousV)).NextV = P;
-		}
-		(*P).NextV = (*this).NextV;
-		if ((*this).NextV != NULL){
-			(*((*this).NextV)).PreviousV = P;
-		}
-	}
-	delete this; */
+
 	if (P != NULL){
 		while ((*P).NextV != NULL){
 			P = (*P).NextV;
@@ -122,26 +87,7 @@ void ElementList<Type>::DeleteSingle(){
 		(*PreviousV).SetNext(NULL);
 		delete this;
 	}
-	// cout << "KILL SINGLE" << endl;
 }
-
-/* template <class Type>
-void ElementList<Type>::InsertLast(Type data){
-	ElementList<Type> *P;
-
-	P = NextV;
-	if (P != NULL){
-		while ((*P).Next() != NULL){
-			P = (*P).Next();
-		}
-		(*P).NextV = new ElementList<Type>(data);
-		(*((*P).NextV)).PreviousV = P;
-	}
-	else{
-		NextV = new ElementList<Type>(data);
-		(*NextV).PreviousV = this;
-	}
-} */
 
 /**
 *Set the Value of this Element

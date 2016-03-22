@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['getaddresslist',['GetAddressList',['../class_list.html#a0f935df606117d95921002c4ec8da766',1,'List']]],
-  ['getcolumnposition',['getColumnPosition',['../class_creature.html#addfbfaf75df9268fa1288c29c50abcd0',1,'Creature']]],
-  ['getdirection',['getDirection',['../class_animal.html#a64d1215d871925e471b94b35ab1f8795',1,'Animal']]],
-  ['getrowposition',['getRowPosition',['../class_creature.html#a8062f777315929e10e5d626e95366438',1,'Creature']]],
-  ['getstrength',['getStrength',['../class_creature.html#aae311cca00cca409e3e790a96ad14b97',1,'Creature']]]
+  ['elementlist',['ElementList',['../class_element_list.html#a0157b98943770fe3f09bda77d99a8641',1,'ElementList::ElementList()'],['../class_element_list.html#a042a80b094d946d3e6526ab8321e32f7',1,'ElementList::ElementList(Type &amp;data)']]]
 ];

@@ -18,22 +18,10 @@ List<Type>::List(){ //Checked
 *Ctor of a generic List, using data as parameter
 *@param data
 **/
-
 template <class Type> //Checked
 List<Type>::List(Type& data){
 	AddressList = new ElementList<Type>(data);
 }
-
-//Omitted
-/**
-*Cctor of a generic List
-**/
-/*
-template <class Type> //Checked
-List<Type>::List(const List& L){
-	AddressList = new ElementList<Type>(*(L.AddressList));
-}
-*/
 
 /**
 *Dtor of a generic List

@@ -105,8 +105,7 @@ Inheritance diagram for Harpy:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abf2c43ecb0e635d9b3027e9f1b246067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_harpy.html#abf2c43ecb0e635d9b3027e9f1b246067">Harpy</a> (int=0, int=0, int=0, int=0)</td></tr>
 <tr class="separator:abf2c43ecb0e635d9b3027e9f1b246067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab296058454b33ba304b2f6533bcd1994"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab296058454b33ba304b2f6533bcd1994"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>doAction</b> ()</td></tr>
+<tr class="memitem:ab296058454b33ba304b2f6533bcd1994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_harpy.html#ab296058454b33ba304b2f6533bcd1994">doAction</a> ()</td></tr>
 <tr class="separator:ab296058454b33ba304b2f6533bcd1994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff50872bc2e137a69e4eacc45a739d95"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_harpy.html#aff50872bc2e137a69e4eacc45a739d95">draw</a> ()</td></tr>
 <tr class="separator:aff50872bc2e137a69e4eacc45a739d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,8 +180,10 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Make <a class="el" href="class_harpy.html">Harpy</a> on postion (x,y) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">r</td><td>r is the starting row position of <a class="el" href="class_harpy.html">Harpy</a> </td></tr>
+    <tr><td class="paramname">c</td><td>c is the starting column position of <a class="el" href="class_harpy.html">Harpy</a> </td></tr>
+    <tr><td class="paramname">x</td><td>x is hoizontal component of <a class="el" href="structmove_direction.html">moveDirection</a> </td></tr>
+    <tr><td class="paramname">y</td><td>y is vertical componen of <a class="el" href="structmove_direction.html">moveDirection</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -190,6 +191,32 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab296058454b33ba304b2f6533bcd1994"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Harpy::doAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Make creature do some kind of action </p>
+
+<p>Implements <a class="el" href="class_animal.html">Animal</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aff50872bc2e137a69e4eacc45a739d95"></a>
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +237,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>draw the <a class="el" href="class_harpy.html">Harpy</a> </p>
+<p>Draw the <a class="el" href="class_harpy.html">Harpy</a> by returning its character symbol </p><dl class="section return"><dt>Returns</dt><dd>Special char denoting <a class="el" href="class_harpy.html">Harpy</a> </dd></dl>
 
 <p>Implements <a class="el" href="class_animal.html">Animal</a>.</p>
 
@@ -236,7 +263,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>move the <a class="el" href="class_harpy.html">Harpy</a> </p>
+<p>Move the <a class="el" href="class_harpy.html">Harpy</a> one step according to its <a class="el" href="structmove_direction.html">moveDirection</a> </p>
 
 <p>Implements <a class="el" href="class_animal.html">Animal</a>.</p>
 
