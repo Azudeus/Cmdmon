@@ -81,9 +81,13 @@ int main(){
 				cout << "press E to exit" << endl;
 			}
 		}
+		if(world.isWorldEmpty()){
+			exit(0);
+		}else{
 		cout << "Press Enter to Continue Program" <<endl;
 		getchar();
 		fflush(stdin);
+		}
 	}
 
 	return 0;

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
+#include <dos.h>
 #include <thread>
 #include <conio.h>
 #include <chrono> 
@@ -17,16 +18,6 @@ int column = 25;
 
 UniverseUsingSTL world(row,column);
 
-void activateWorld(){
-	int i=0;
-//	while ((!stop)&&(!world.isWorldEmpty())){
-	 while ((!stop)){
-		world.moveAllCreaturesOnce();
-		cout << "Kyun" <<endl;
-		this_thread::sleep_for(chrono::milliseconds(1000));
-	}
-	stop=true;
-}
 void keyListener(){
 	CC=_getch();
 	stop=true;
@@ -37,9 +28,19 @@ void initialize(){
 
 void activateCreature(int i){
 	Creature* C = world.getCreatureList(i);
-    C->doAction();
-    this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
-    world.checkForCollisions();
+	while(!stop){
+	    C->doAction();
+	    this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
+	    world.checkForCollisions();
+	}
+}
+
+void printEvery(){
+	while(!stop){
+		system("cls");
+		world.print(cout);
+		 this_thread::sleep_for(chrono::milliseconds(500));
+	}
 }
 
 int main(){
@@ -51,15 +52,18 @@ int main(){
 		thread t[sz];
 	    for (int i=0;i<sz;i++){
 	   		t[i] = thread(activateCreature,i);
-	        i++;
 	    }
 
-//		thread t1(activateWorld);
 		thread t2(keyListener);
+		thread t3(printEvery);
 		while(!stop){}
-		t2.detach();
+		t2.detach();			
+		t3.detach();
+
+	// cout << "t2 detach" << endl;
 		for (int i=0;i<sz;i++){
 			t[i].join();
+			// cout << "t[i] join" << endl;
 		}
 		switch (CC){
 			case 'p' 
@@ -90,17 +94,26 @@ int main(){
 				fb.close();
 				break;
 			}
+			case 'c' :
+			{
+				system("cls");
+			}
 			default :
 			{
 				cout << "Press p to print to terminal" <<endl;
 				cout << "Press a to add random creature" << endl;
 				cout << "Press f to print to file" << endl;
-				cout << "press E to exit" << endl;
+				cout << "Press E to exit" << endl;
+				cout << "Press c to clear screen" << endl;
 			}
 		}
+		if(world.isWorldEmpty()){
+			exit(0);
+		}else{
 		cout << "Press Enter to Continue Program" <<endl;
 		getchar();
 		fflush(stdin);
+		}
 	}
 
 	return 0;

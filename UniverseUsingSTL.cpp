@@ -27,7 +27,6 @@ void UniverseUsingSTL::killCreature(Creature* C)
 		i++;
 	}
 	CreatureList.pop_back();
-	cout << "KILL" << endl;
 }
 
 void UniverseUsingSTL::addCreature(Creature* C)

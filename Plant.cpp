@@ -8,7 +8,7 @@ Plant::Plant(int _r, int _c){
 	setRowPosition(_r);
 	setColumnPosition(_c);
 	setStrength(5);
-	setActionInterval(1500);
+	setActionInterval(3000);
 }
 /**
  *draw the Plant
@@ -20,5 +20,5 @@ char Plant::draw(){
 
 
 void Plant::doAction(){
-	
+	setStrength(getStrength()+1);
 }
