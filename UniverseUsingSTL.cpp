@@ -18,11 +18,13 @@ void UniverseUsingSTL::killCreature(Creature* C)
 		if (CreatureList[i]==C)
 		{
 			found=true;
+			cout << "found the creature" <<endl;
 			swap(CreatureList[i],CreatureList[size-1]);
 		}
 		i++;
 	}
 	CreatureList.pop_back();
+	cout << "KILL" << endl;
 }
 
 void UniverseUsingSTL::addCreature(Creature* C)
@@ -52,21 +54,47 @@ void UniverseUsingSTL::addRandomCreature(int amount)
 		if (directionY == 0){
 			directionY = -1;
 		}
-		if (r == 0){
-			temp = new Plant(row, column);
-			addCreature((temp));
-		}
-		else if (r == 1){
-			temp = new Lamia(row, column, directionX, directionY);
-			addCreature((temp));
-		}
-		else if (r == 2){
-			temp = new Centaur(row, column, directionX, directionY);
-			addCreature((temp));
-		}
-		else{
-			temp = new Harpy(row, column, directionX, directionY);
-			addCreature((temp));
+		int Found = 1;
+        int counter = 0;
+
+        //cari apakah sudah ada
+        while((counter<(getAmountOfColumns()*getAmountOfRows()))&&(Found)){
+            Found = 0;
+            counter = 0;
+            int sz = CreatureList.size();
+            int i = 0;
+            while((i<sz) && (!Found)&& (counter<(getAmountOfColumns()*getAmountOfRows())) ){
+                counter++;
+                if((CreatureList[i]->getRowPosition() == row) && (CreatureList[i]->getColumnPosition() == column))
+                    Found = 1;
+                i++;
+            }
+
+            if(Found)
+            {
+                column++;
+                if (column == getAmountOfColumns()){column = 0; row++;}
+                if (row == getAmountOfRows()){column = 0; row =0;}
+            }
+
+        }
+        if(counter<(getAmountOfColumns()*getAmountOfRows())){
+			if (r == 0){
+				temp = new Plant(row, column);
+				addCreature((temp));
+			}
+			else if (r == 1){
+				temp = new Lamia(row, column, directionX, directionY);
+				addCreature((temp));
+			}
+			else if (r == 2){
+				temp = new Centaur(row, column, directionX, directionY);
+				addCreature((temp));
+			}
+			else{
+				temp = new Harpy(row, column, directionX, directionY);
+				addCreature((temp));
+			}
 		}
 	}
 }
@@ -101,26 +129,24 @@ void UniverseUsingSTL::checkForCollisions()
 	{
 		for (int j=0;j<getAmountOfColumns();j++)
 		{
-			int minimumStrength = -1; //UNDEF
+			int minimumStrength = 999; //UNDEF
 			int minimumIndex = -1;
+			int counter = 0;
 			for (int k=0;k<sz;k++)
 			{
 				if (((CreatureList[k])->getRowPosition()==i)&&
 					((CreatureList[k])->getColumnPosition()==j))
 				{
-					if (minimumStrength==-1)
-					{
-						minimumStrength=CreatureList[k]->getStrength();
-					}
-					else if (minimumStrength>CreatureList[k]->getStrength())
+					if (minimumStrength>CreatureList[k]->getStrength())
 					{
 						minimumStrength=CreatureList[k]->getStrength();
 						minimumIndex=k;
 					}
+					counter++;
 				}
 			}
-			if (minimumIndex!=-1)
-			{\
+			if (counter>1)
+			{
 				killCreature(CreatureList[minimumIndex]);
 				sz--;
 			}
