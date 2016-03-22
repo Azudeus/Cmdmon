@@ -12,13 +12,15 @@ Plant::Plant(int _r, int _c){
 }
 /**
  *draw the Plant
- * @param data
  **/
 char Plant::draw(){
 	return 'T';
 }
 
 
+/**
+*do Action for the Plant
+**/
 void Plant::doAction(){
 	setStrength(getStrength()+1);
 }

@@ -10,6 +10,7 @@ Creature::Creature(){
 
 /**
 *Set the Row Position of a Creature
+*@param _r
 **/
 void Creature::setRowPosition(int _r){
 	rowPosition = _r;
@@ -17,6 +18,7 @@ void Creature::setRowPosition(int _r){
 
 /**
 *Set the Column Position of a Creature
+*@param _c
 **/
 void Creature::setColumnPosition(int _c){
 	columnPosition = _c;
@@ -24,12 +26,14 @@ void Creature::setColumnPosition(int _c){
 
 /**
 *Set the Strength of a Creature
+*@param _s
 **/
 void Creature::setStrength(int _s){
 	strength = _s;
 }
 /**
 *Set the Speed of a Creature
+*@param _s
 **/
 void Creature::setActionInterval(int _s){
 	actionInterval = _s;
@@ -48,6 +52,9 @@ int Creature::getColumnPosition(){
 	return columnPosition;
 }
 
+/**
+*Return the strength of a Creature in integer
+**/
 int Creature::getStrength(){
 	return strength;
 }

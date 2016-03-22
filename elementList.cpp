@@ -6,12 +6,18 @@
 #include <iostream>
 using namespace std;
 
+/**
+*ctor of ElementList
+**/
 template <class Type> //Checked
 ElementList<Type>::ElementList(){
 	NextV = NULL;
 	PreviousV = NULL;
 }
 
+/**
+*ctor with parameter of ElementList
+**/
 template <class Type> //Checked
 ElementList<Type>::ElementList(Type& data){
 	Info = data;
@@ -39,6 +45,9 @@ ElementList<Type>::ElementList(const ElementList& L){
 }
 */
 
+/**
+*dtor of ElementList
+**/
 template <class Type> //Checked
 ElementList<Type>::~ElementList(){
 	ElementList<Type>* P;
