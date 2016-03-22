@@ -24,6 +24,8 @@ public:
 
 private:
 	vector <Creature*> CreatureList;
+	void activateCreature(Creature* C);
+
 };
 
 #endif

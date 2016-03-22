@@ -243,41 +243,6 @@ void UniverseUsingList::moveAllCreaturesOnce(){
     }
 }
 
-void UniverseUsingList::createThreadsForCreatures(){
-    ElementList<Creature*>* currentCreature1 = (CreatureList.GetAddressList());
-    int i=0;
-    int count=0;
-    ElementList<Creature*>* temp = currentCreature1;
-    while (((*temp).Value()) != NULL){
-        temp = ((*temp).Next());
-        i++;
-    }
-    temp = NULL;
-    count = i;
-    i=0;
-    while (((*currentCreature1).Value()) != NULL){
-        Creature* C = (*(currentCreature1)).Value();
-//		std::thread t(activateCreature,C);
-//         thread t[i](activateCreature,C);
-//         currentCreature1 = ((*currentCreature1).Next());
-//         thread t[i](activateCreature,C);
-//        i++;
-		break;
-    }
-    for(int i=0;i<count;i++){
-        // t[i].join();
-    }
-
-}
-
-void UniverseUsingList::activateCreature(Creature* C){
-    while (C != NULL){
-        // C->doAction();
-        // this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
-        // *ListC->=checkForCollisions();
-    }
-}
-
 int UniverseUsingList::isWorldEmpty(){
 	return CreatureList.isListEmpty();
 }
