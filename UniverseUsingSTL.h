@@ -32,8 +32,6 @@ public:
 
 private:
 	vector <Creature*> CreatureList;
-	void activateCreature();
-
 };
 
 #endif
