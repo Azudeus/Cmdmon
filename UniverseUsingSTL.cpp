@@ -192,25 +192,4 @@ void UniverseUsingSTL::print(ostream& output)
 	}
 }
 
-void UniverseUsingSTL::createThreadsForCreatures(){
- 	// int sz = CreatureList.size();
- 	// int i = 0;
- 	// thread t[sz];
-  //   for (i;i<sz;i++){
-  //  		t[i] = thread(activateCreature);
-  //       i++;
-  //   }
-  //   i = 0;
-  //   for(i=0;i<sz;i++){
-  //       t[i].join();
-  //   }
-
-}
-
-void UniverseUsingSTL::activateCreature(){
-		// Creature* C = CreatureList[i];
-  //       C->doAction();
-  //       this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
-  //       checkForCollisions();
-
-}
+void UniverseUsingSTL::createThreadsForCreatures(){}
