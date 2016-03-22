@@ -46,7 +46,7 @@ List<Type>::~List(){
 	if (P != NULL){
 		delete P;
 	}
-//	cout << "KILL" << endl;
+	// cout << "KILL" << endl;
 }
 
 /**
@@ -85,6 +85,7 @@ void List<Type>::InsertLast(Type& data){
 	else{
 		AddressList = new ElementList<Type>(data);
 	}
+	P = NULL;
 }
 
 /**

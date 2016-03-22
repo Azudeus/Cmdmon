@@ -44,11 +44,11 @@ ElementList<Type>::~ElementList(){
 	ElementList<Type>* P;
 	P = NextV;
 
-	delete Info;
 	if (P != NULL){
 		delete P;
 	}
-//	cout << "KILL ELMT" << endl;
+	delete Info;
+	// cout << "KILL ELMT" << endl;
 }
 
 /**
@@ -108,7 +108,7 @@ void ElementList<Type>::DeleteSingle(){
 		(*PreviousV).SetNext(NULL);
 		delete this;
 	}
-	cout << "KILL SINGLE" << endl;
+	// cout << "KILL SINGLE" << endl;
 }
 
 /* template <class Type>

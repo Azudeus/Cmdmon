@@ -26,12 +26,11 @@ void UniverseUsingList::addCreature(Creature* C)
 
 void UniverseUsingList::addRandomCreature(int amount)
 {
-    ElementList<Creature*>* currentCreature;
+   ElementList<Creature*>* currentCreature;
 	Creature* temp;
 	srand(time(NULL));
 	//randomly create creature
 	for (int i = 0; i < amount; i++){
-        int j = 0;
 		int r;
 		int row;
 		int column;
@@ -73,25 +72,25 @@ void UniverseUsingList::addRandomCreature(int amount)
 
         }
 
-        currentCreature = NULL;
+       currentCreature = NULL;
         if(counter<(getAmountOfColumns()*getAmountOfRows())){
             if (r == 0){
                 temp = new Plant(row, column);
-                addCreature((temp));
+               addCreature((temp));
             }
             else if (r == 1){
                 temp = new Lamia(row, column, directionX, directionY);
-                addCreature((temp));
+               addCreature((temp));
             }
             else if (r == 2){
                 temp = new Centaur(row, column, directionX, directionY);
-                addCreature((temp));
+               addCreature((temp));
             }
             else{
                 temp = new Harpy(row, column, directionX, directionY);
-                addCreature((temp));
+               addCreature((temp));
             }
-        }
+       }
     }
 }
 
@@ -99,9 +98,9 @@ void UniverseUsingList::checkForCollisions(){
     ElementList<Creature*>* currentCreature1 = (CreatureList.GetAddressList());
     ElementList<Creature*>* currentCreature2 = (CreatureList.GetAddressList());
     bool Result;
-    while (((*currentCreature1).Value()) != NULL){
+    while ((currentCreature1 != NULL) && (((*currentCreature1).Value()) != NULL)){
         currentCreature2 = (CreatureList.GetAddressList());
-        while (((*currentCreature2).Value()) != NULL){
+        while ((currentCreature2 != NULL) && (((*currentCreature2).Value()) != NULL)){
             if ((((*currentCreature1).Value())->getRowPosition() == ((*currentCreature2).Value())->getRowPosition()) && (((*currentCreature1).Value())->getColumnPosition() == ((*currentCreature2).Value())->getColumnPosition())){
                 Result = ((*currentCreature1).Value())->compareStrength(*((*currentCreature2).Value()));
                 if (Result == 1){
@@ -152,12 +151,23 @@ void UniverseUsingList::print(ostream& output)
 }
 
 void UniverseUsingList::moveAllCreaturesOnce(){
+    cout << "Step 1" << endl;
     ElementList<Creature*>* currentCreature = (CreatureList.GetAddressList());
-    while (((*currentCreature).Value()) != NULL){
+//    ElementList<Creature*>* currentCreature;
+    cout << "Step 2" << endl;
+    cout << "C " << currentCreature->Value() << endl;
+    while ((currentCreature != NULL) && (((*currentCreature).Value()) != NULL)){
+            cout << "Step it" << endl;
+
         ((*currentCreature).Value())->doAction();
-        checkForCollisions();
+        cout << "FUCK BOOBS" << endl;
+//        checkForCollisions();
+        cout << "FUCK TITS" << endl;
         currentCreature = ((*currentCreature).Next());
+        cout << "FUCK VAGINA" << endl;
     }
+        cout << "Step 3" << endl;
+
     currentCreature = NULL;
 }
 
