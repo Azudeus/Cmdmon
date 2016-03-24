@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['setactioninterval',['setActionInterval',['../class_creature.html#a3c30cf0d39904306da51584f52a79a41',1,'Creature']]],
-  ['setaddresslist',['SetAddressList',['../class_list.html#a8e1f80f098c0ef89dccb99d624f1d5ef',1,'List']]],
-  ['setcolumnposition',['setColumnPosition',['../class_creature.html#a4ab0c6b21b0826ed9691583eec078bec',1,'Creature']]],
-  ['setdirection',['setDirection',['../class_animal.html#aee564f22d8d74725c7f718ae5fcf2cd9',1,'Animal']]],
-  ['setnext',['SetNext',['../class_element_list.html#af4c19f75c4c93b69f2023420ba477f7d',1,'ElementList']]],
-  ['setprevious',['SetPrevious',['../class_element_list.html#a60590a74e879b84d87dc3f32bd9ad801',1,'ElementList']]],
-  ['setrowposition',['setRowPosition',['../class_creature.html#a1bc33218a560eff8162a2e795e90251f',1,'Creature']]],
-  ['setstrength',['setStrength',['../class_creature.html#a032ac31736090da076da0ec1466c27bf',1,'Creature']]],
-  ['setvalue',['SetValue',['../class_element_list.html#a7c1472ac483bdef89e6fc5370591b6f7',1,'ElementList']]]
+  ['plant',['Plant',['../class_plant.html#a3b0ca01a599b8a7348afe2cef1ad8613',1,'Plant']]],
+  ['previous',['Previous',['../class_element_list.html#a5144ccc57d38ce60ec3d5d82471579f6',1,'ElementList']]],
+  ['print',['print',['../class_universe.html#a646c85dce1a89e8da9b7f8c7c71cb2e3',1,'Universe::print()'],['../class_universe_using_list.html#a9cbe5a6b7497005e60131907a3aa8120',1,'UniverseUsingList::print()'],['../class_universe_using_s_t_l.html#a3716e8b3909153a9604808d4070d7847',1,'UniverseUsingSTL::print()']]]
 ];

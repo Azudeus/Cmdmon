@@ -46,10 +46,7 @@ public:
 	**/
 	virtual void checkForCollisions()=0;
 
-
-
-
-	/**
+/**
 	*Move all creature from CreatureList once
 	**/
 	virtual void moveAllCreaturesOnce()=0;

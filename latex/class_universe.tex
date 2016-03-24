@@ -24,30 +24,118 @@ void {\bfseries set\+Amount\+Of\+Rows} (int)\hypertarget{class_universe_af0124ac
 void {\bfseries set\+Amount\+Of\+Columns} (int)\hypertarget{class_universe_a9597c59c4bf80e17c852596acf25dfc4}{}\label{class_universe_a9597c59c4bf80e17c852596acf25dfc4}
 
 \item 
-virtual void {\bfseries kill\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)=0\hypertarget{class_universe_ae92953c55e994fd3db8ac022ef69c227}{}\label{class_universe_ae92953c55e994fd3db8ac022ef69c227}
-
+virtual void \hyperlink{class_universe_ae92953c55e994fd3db8ac022ef69c227}{kill\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)=0
 \item 
-virtual void {\bfseries add\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)=0\hypertarget{class_universe_a882e14be433281816c58b9ccfb8d4d01}{}\label{class_universe_a882e14be433281816c58b9ccfb8d4d01}
-
+virtual void \hyperlink{class_universe_a882e14be433281816c58b9ccfb8d4d01}{add\+Creature} (\hyperlink{class_creature}{Creature} $\ast$)=0
 \item 
-virtual void {\bfseries add\+Random\+Creature} (int)=0\hypertarget{class_universe_a7289af8da66eed7c88763342c5689efb}{}\label{class_universe_a7289af8da66eed7c88763342c5689efb}
-
+virtual void \hyperlink{class_universe_a7289af8da66eed7c88763342c5689efb}{add\+Random\+Creature} (int)=0
 \item 
-virtual int {\bfseries is\+World\+Empty} ()=0\hypertarget{class_universe_a090dce863386ed5cdba01d440de1edfd}{}\label{class_universe_a090dce863386ed5cdba01d440de1edfd}
-
+virtual int \hyperlink{class_universe_a090dce863386ed5cdba01d440de1edfd}{is\+World\+Empty} ()=0
 \item 
-virtual void {\bfseries check\+For\+Collisions} ()=0\hypertarget{class_universe_aaefe829c75ee2290de431e16065dde83}{}\label{class_universe_aaefe829c75ee2290de431e16065dde83}
-
+virtual void \hyperlink{class_universe_aaefe829c75ee2290de431e16065dde83}{check\+For\+Collisions} ()=0
 \item 
 virtual void {\bfseries create\+Threads\+For\+Creatures} ()=0\hypertarget{class_universe_ab7d79c7d4f6c76f9f15ba1aec1c81c9f}{}\label{class_universe_ab7d79c7d4f6c76f9f15ba1aec1c81c9f}
 
 \item 
-virtual void {\bfseries move\+All\+Creatures\+Once} ()=0\hypertarget{class_universe_af6fafeecd9df7c0c2b83760cef4eced3}{}\label{class_universe_af6fafeecd9df7c0c2b83760cef4eced3}
-
+virtual void \hyperlink{class_universe_af6fafeecd9df7c0c2b83760cef4eced3}{move\+All\+Creatures\+Once} ()=0
 \item 
-virtual void {\bfseries print} (ostream \&)=0\hypertarget{class_universe_a646c85dce1a89e8da9b7f8c7c71cb2e3}{}\label{class_universe_a646c85dce1a89e8da9b7f8c7c71cb2e3}
-
+virtual void \hyperlink{class_universe_a646c85dce1a89e8da9b7f8c7c71cb2e3}{print} (ostream \&)=0
 \end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Universe@{Universe}!add\+Creature@{add\+Creature}}
+\index{add\+Creature@{add\+Creature}!Universe@{Universe}}
+\subsubsection[{\texorpdfstring{add\+Creature(\+Creature $\ast$)=0}{addCreature(Creature *)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Universe\+::add\+Creature (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_universe_a882e14be433281816c58b9ccfb8d4d01}{}\label{class_universe_a882e14be433281816c58b9ccfb8d4d01}
+Add a creature to Creature\+List 
+\begin{DoxyParams}{Parameters}
+{\em C} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_universe_using_list_a936d1a839b5cd80f9715c7f2e2daf1da}{Universe\+Using\+List}, and \hyperlink{class_universe_using_s_t_l_a7c56631786245000f84a7711fb756ebc}{Universe\+Using\+S\+TL}.
+
+\index{Universe@{Universe}!add\+Random\+Creature@{add\+Random\+Creature}}
+\index{add\+Random\+Creature@{add\+Random\+Creature}!Universe@{Universe}}
+\subsubsection[{\texorpdfstring{add\+Random\+Creature(int)=0}{addRandomCreature(int)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Universe\+::add\+Random\+Creature (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_universe_a7289af8da66eed7c88763342c5689efb}{}\label{class_universe_a7289af8da66eed7c88763342c5689efb}
+Add \char`\"{}amount\char`\"{} amount of random creatures to Creature\+List 
+\begin{DoxyParams}{Parameters}
+{\em amount} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_universe_using_list_ae7ed5dcf3d2c24f82fd677f6df814818}{Universe\+Using\+List}, and \hyperlink{class_universe_using_s_t_l_add010d19865f5316a501a3f1a2f8161b}{Universe\+Using\+S\+TL}.
+
+\index{Universe@{Universe}!check\+For\+Collisions@{check\+For\+Collisions}}
+\index{check\+For\+Collisions@{check\+For\+Collisions}!Universe@{Universe}}
+\subsubsection[{\texorpdfstring{check\+For\+Collisions()=0}{checkForCollisions()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Universe\+::check\+For\+Collisions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_universe_aaefe829c75ee2290de431e16065dde83}{}\label{class_universe_aaefe829c75ee2290de431e16065dde83}
+check for a collision or out of bounds creatures to be killed 
+
+Implemented in \hyperlink{class_universe_using_list_aa42ce1540f469e72a4a05cce7d9f2baf}{Universe\+Using\+List}, and \hyperlink{class_universe_using_s_t_l_af23951880252568e26f5a63f3342e1c8}{Universe\+Using\+S\+TL}.
+
+\index{Universe@{Universe}!is\+World\+Empty@{is\+World\+Empty}}
+\index{is\+World\+Empty@{is\+World\+Empty}!Universe@{Universe}}
+\subsubsection[{\texorpdfstring{is\+World\+Empty()=0}{isWorldEmpty()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Universe\+::is\+World\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_universe_a090dce863386ed5cdba01d440de1edfd}{}\label{class_universe_a090dce863386ed5cdba01d440de1edfd}
+return 1 if \hyperlink{class_universe}{Universe} is empty, 0 otherwise 
+
+Implemented in \hyperlink{class_universe_using_list_ab60b016b417ad376180ff95fb4ac7531}{Universe\+Using\+List}, and \hyperlink{class_universe_using_s_t_l_aa0f64503c1815854d796555c28bf42da}{Universe\+Using\+S\+TL}.
+
+\index{Universe@{Universe}!kill\+Creature@{kill\+Creature}}
+\index{kill\+Creature@{kill\+Creature}!Universe@{Universe}}
+\subsubsection[{\texorpdfstring{kill\+Creature(\+Creature $\ast$)=0}{killCreature(Creature *)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Universe\+::kill\+Creature (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_universe_ae92953c55e994fd3db8ac022ef69c227}{}\label{class_universe_ae92953c55e994fd3db8ac022ef69c227}
+Kill a creature from Creature\+List 
+\begin{DoxyParams}{Parameters}
+{\em C} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_universe_using_list_ad5ae1ddeb1ea11111e506373de5364d8}{Universe\+Using\+List}, and \hyperlink{class_universe_using_s_t_l_a9f622a5cc6948a91c8a14e5b214771b1}{Universe\+Using\+S\+TL}.
+
+\index{Universe@{Universe}!move\+All\+Creatures\+Once@{move\+All\+Creatures\+Once}}
+\index{move\+All\+Creatures\+Once@{move\+All\+Creatures\+Once}!Universe@{Universe}}
+\subsubsection[{\texorpdfstring{move\+All\+Creatures\+Once()=0}{moveAllCreaturesOnce()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Universe\+::move\+All\+Creatures\+Once (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_universe_af6fafeecd9df7c0c2b83760cef4eced3}{}\label{class_universe_af6fafeecd9df7c0c2b83760cef4eced3}
+Move all creature from Creature\+List once 
+
+Implemented in \hyperlink{class_universe_using_list_ab02c14d60f147146649289d09b732b5d}{Universe\+Using\+List}, and \hyperlink{class_universe_using_s_t_l_affe91699ea1b5936720a9f921daada1a}{Universe\+Using\+S\+TL}.
+
+\index{Universe@{Universe}!print@{print}}
+\index{print@{print}!Universe@{Universe}}
+\subsubsection[{\texorpdfstring{print(ostream \&)=0}{print(ostream &)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Universe\+::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_universe_a646c85dce1a89e8da9b7f8c7c71cb2e3}{}\label{class_universe_a646c85dce1a89e8da9b7f8c7c71cb2e3}
+Print the world and all its creatures 
+
+Implemented in \hyperlink{class_universe_using_list_a9cbe5a6b7497005e60131907a3aa8120}{Universe\+Using\+List}, and \hyperlink{class_universe_using_s_t_l_a3716e8b3909153a9604808d4070d7847}{Universe\+Using\+S\+TL}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

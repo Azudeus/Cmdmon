@@ -116,12 +116,13 @@ void UniverseUsingList::checkForCollisions(){
     while(currentCreature!=NULL){
         if((((*currentCreature).Value() )->getRowPosition() >= getAmountOfRows()) || (((*currentCreature).Value())->getColumnPosition() >= getAmountOfColumns()) || (((*currentCreature).Value() )->getRowPosition() < 0)  || (((*currentCreature).Value())->getColumnPosition() < 0)  ){
             killCreature(currentCreature->Value());
+<<<<<<< HEAD
             //cout << currentCreature << endl;
+=======
+>>>>>>> 657c28adc9be45b586aee8c1432923c794b1edea
             currentCreature = CreatureList.GetAddressList();
         }
         else{
-            //cout << "N : " << currentCreature << endl;
-            // cout << "NEXT" << endl;
             currentCreature = (*currentCreature).Next();
         }
     }
@@ -206,8 +207,6 @@ void UniverseUsingList::print(ostream& output)
 void UniverseUsingList::moveAllCreaturesOnce(){
     if(CreatureList.GetAddressList()!=NULL){
         ElementList<Creature*>* currentCreature = (CreatureList.GetAddressList());
-    //    ElementList<Creature*>* currentCreature;
-        // cout << "C " << currentCreature->Value() << endl;
         while ((currentCreature != NULL) && (((*currentCreature).Value()) != NULL)){
             int lastElement = 0;
 
