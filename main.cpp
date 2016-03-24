@@ -1,16 +1,18 @@
-#include <stdio.h>	
+#include <stdio.h>
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <time.h>
 #include <thread>
 #include <conio.h>
-#include <chrono> 
+#include <chrono>
 #include "UniverseUsingList.h"
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-bool stop=false;	
+bool stop=false;
 char CC = 'a';
 int row = 25;
 int column = 25;
@@ -21,7 +23,6 @@ void activateWorld(){
 	 // while ((!stop)&&(!world.isWorldEmpty()){
 	 while ((!stop)){
 		world.moveAllCreaturesOnce();
-		cout << "Kyun" <<endl;
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 	stop=true;
@@ -51,8 +52,8 @@ int main(){
 		t1.join();
 		cout << CC << endl;
 		switch (CC){
-			case 'p' 
-:			{ 
+			case 'p'
+:			{
 				cout << "To P" << endl;
 				world.print(cout);
 				break;
@@ -70,13 +71,13 @@ int main(){
 			case 'f' :
 			{
 				string filename;
-				cout << "Input Filename : " << endl; 
+				cout << "Input Filename : " << endl;
 				cin >> filename;
 				filebuf fb;
 				fb.open(filename,ios::out);
 				ostream os(&fb);
 				world.print(os);
-				cout << "Print done at file " << filename << endl; 
+				cout << "Print done at file " << filename << endl;
 				fb.close();
 				break;
 			}

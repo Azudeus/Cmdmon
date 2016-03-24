@@ -5,12 +5,15 @@
 #include <time.h>
 #include <thread>
 #include <conio.h>
-#include <chrono> 
+#include <chrono>
 #include "UniverseUsingSTL.h"
+#include <cstdlib>
+#include <ctime>
+
 
 using namespace std;
 
-bool stop=false;	
+bool stop=false;
 char CC = 'a';
 int row = 25;
 int column = 25;
@@ -45,8 +48,8 @@ int main(){
 		t2.detach();
 		t1.join();
 		switch (CC){
-			case 'p' 
-:			{ 
+			case 'p'
+:			{
 				cout << "To P" << endl;
 				world.print(cout);
 				break;
@@ -63,13 +66,13 @@ int main(){
 			case 'f' :
 			{
 				string filename;
-				cout << "Input Filename : " << endl; 
+				cout << "Input Filename : " << endl;
 				cin >> filename;
 				filebuf fb;
 				fb.open(filename,ios::out);
 				ostream os(&fb);
 				world.print(os);
-				cout << "Print done at file " << filename << endl; 
+				cout << "Print done at file " << filename << endl;
 				fb.close();
 				break;
 			}

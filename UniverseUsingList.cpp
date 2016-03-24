@@ -1,8 +1,8 @@
 #include "UniverseUsingList.h"
-#include <time.h>
 #include <thread>
 #include <chrono>
-#include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
 
 /**
 *Constructor of UniverseUsingList class
@@ -116,7 +116,7 @@ void UniverseUsingList::checkForCollisions(){
     while(currentCreature!=NULL){
         if((((*currentCreature).Value() )->getRowPosition() >= getAmountOfRows()) || (((*currentCreature).Value())->getColumnPosition() >= getAmountOfColumns()) || (((*currentCreature).Value() )->getRowPosition() < 0)  || (((*currentCreature).Value())->getColumnPosition() < 0)  ){
             killCreature(currentCreature->Value());
-            //cout << currentCreature << endl;            
+            //cout << currentCreature << endl;
             currentCreature = CreatureList.GetAddressList();
         }
         else{
@@ -124,7 +124,7 @@ void UniverseUsingList::checkForCollisions(){
             // cout << "NEXT" << endl;
             currentCreature = (*currentCreature).Next();
         }
-    }    
+    }
     if (CreatureList.GetAddressList() != NULL){
         for (int row = 0 ; row < getAmountOfRows(); row++)
         {
@@ -138,7 +138,7 @@ void UniverseUsingList::checkForCollisions(){
                         tempCreature = currentCreature;
                         Found = 1;
                         counter++;
-                    }    
+                    }
                     currentCreature = (*currentCreature).Next();
 
                 }
@@ -150,7 +150,7 @@ void UniverseUsingList::checkForCollisions(){
                         {
                             if((((*currentCreature).Value())->getStrength()) < ( ((*tempCreature).Value()) ->getStrength() )  ){
                                 tempCreature = currentCreature;
-                            } 
+                            }
                             counter++;
                         }
                         currentCreature = (*currentCreature).Next();
