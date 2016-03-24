@@ -47,8 +47,6 @@ public:
 	virtual void checkForCollisions()=0;
 
 
-	virtual void createThreadsForCreatures()=0;
-
 	/**
 	*Move all creature from CreatureList once
 	**/
