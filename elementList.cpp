@@ -37,7 +37,7 @@ ElementList<Type>::~ElementList(){
 		delete P;
 	}
 	delete Info;
-	 cout << "KILL ELMT" << endl;
+//	 cout << "KILL ELMT" << endl;
 }
 
 /**
