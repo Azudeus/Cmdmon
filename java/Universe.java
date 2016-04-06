@@ -16,11 +16,11 @@ public abstract class Universe{
   *<br>amountOfRows diinisialisasi dengan 0.
   *<br>amountOfColumns diinisialisasi dengan 0.
   */
-  public Universe(){
+  public Universe() {
     amountOfRows = 0;
     amountOfColumns = 0;
   }
-  
+
   /**
   *Constructor dengan parameter dari Universe yang melakukan inisialisasi.
   *<br>amountOfRows diinisialisasi dengan rows.
@@ -28,7 +28,7 @@ public abstract class Universe{
   *@param rows, integer yang akan menyatakan jumlah baris dari dunia.
   *@param columns, integer yang akan menyatakan jumlah kolom dari dunia.
   */
-  public Universe(int rows,int columns){
+  public Universe(int rows, int columns) {
     amountOfRows = rows;
     amountOfColumns = columns;
   }
@@ -37,15 +37,15 @@ public abstract class Universe{
   *Mengembalikan nilai amountOfRows dari Universe.
   *@return int, integer dengan nilai amountOfRows dari Universe.
   */
-  public int getAmountOfRows(){
+  public int getAmountOfRows() {
     return amountOfRows;
   }
-  
+
   /**
   *Mengembalikan nilai amountOfColumns dari Universe.
   *@return int, integer dengan nilai amountOfColumns dari Universe.
   */
-  public int getAmountOfColumns(){
+  public int getAmountOfColumns() {
     return amountOfColumns;
   }
 
@@ -54,7 +54,7 @@ public abstract class Universe{
   *<br>Merupakan setter untuk mengubah jumlah baris dunia.
   *@param rows, integer yang jumlah baris dari dunia.
   */
-  void setAmountOfRows(int rows){
+  void setAmountOfRows(int rows) {
     amountOfRows = rows;
   }
 
@@ -63,34 +63,34 @@ public abstract class Universe{
   *<br>Merupakan setter untuk mengubah jumlah kolom dunia.
   *@param columns, integer yang jumlah kolom dari dunia.
   */
-  void setAmountOfColumns(int columns){
+  void setAmountOfColumns(int columns) {
     amountOfColumns = columns;
   }
 
   /**
   *Membunuh sebuah Creature (hilang dari dunia).
-  *@param C, Creature yang akan dibunuh.
+  *@param creature, Creature yang akan dibunuh.
   **/
-  abstract void killCreature(Creature C);
+  public abstract void killCreature(Creature creature);
 
   /**
   *Menambahkan sebuah Creature ke dunia.
-  *@param C, Creature yang akan dimasukan ke dalam dunia.
+  *@param creature, Creature yang akan dimasukan ke dalam dunia.
   **/
-  abstract void addCreature(Creature C);
+  public abstract void addCreature(Creature creature);
 
   /**
   *Menambahkan Creature acak pada posisi acak ke dunia sejumlah parameter masukan fungsi ini.
   *@param amount, integer yang menyatakan jumlah mahluk yang ingin ditambahkan.
   **/
-  abstract void addRandomCreature(int amount);
+  public abstract void addRandomCreature(int amount);
 
   /**
   *Memeriksa apakah dunia kosong (tidak memiliki Creature).
   *<br> Mengembalikan true jika dunia kosong dan sebaliknya.
   *@return boolean, boolean yang menyatkan apakah dunia kosong atau tidak.
   **/
-  abstract boolean isWorldEmpty();
+  public abstract boolean isWorldEmpty();
 
   /**
   *Memeriksa kasus tabrakan antar dua mahluk dan juga mahluk yang pergi ke luar batas.
@@ -98,13 +98,13 @@ public abstract class Universe{
   *<br>Jika terjadi tabrakan antar dua mahluk akan terjai persaingan.
   *<br>Persaingan ini menentukan mahluk mana yang akan dibunuh berdasarkan strength mereka.
   **/
-  abstract void checkForCollisions();
+  public abstract void checkForCollisions();
 
 
   /**
   *Membuat semua mahluk di dunia untuk melakukan aksi satu kali.
   **/
-  abstract void moveAllCreaturesOnce();
+  public abstract void moveAllCreaturesOnce();
 
   /**
   *Menuliskan status dunia saat ini ke dalam sautu file.
@@ -112,11 +112,11 @@ public abstract class Universe{
   *@param str, String yang menunjukan nama file.
   *@throws IOException IOException akan di-throw jika terjadi masalah dengan file yang ditulis.
   **/
-  abstract void printFile(String str) throws IOException;
-  
+  public abstract void printFile(String str) throws IOException;
+
   /**
   *Menuliskan status dunia saat ini ke System.out (layar).
   *<br>Status ini menggambarkan posisi mahluk yang ada di dalam dunia.
   **/
-  abstract void print();
+  public abstract void print();
 }
