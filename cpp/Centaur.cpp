@@ -30,6 +30,7 @@ void Centaur::doAction(){
 	Centaur::move();
 }
 
+
 /**
 *Draw the Centaur by returning its character symbol
 *@return Special char denoting Centaur

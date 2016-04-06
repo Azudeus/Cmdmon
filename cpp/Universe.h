@@ -46,7 +46,11 @@ public:
 	**/
 	virtual void checkForCollisions()=0;
 
+<<<<<<< HEAD:Universe.h
 /**
+=======
+	/**
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/Universe.h
 	*Move all creature from CreatureList once
 	**/
 	virtual void moveAllCreaturesOnce()=0;

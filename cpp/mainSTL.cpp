@@ -3,14 +3,18 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
-#include <dos.h>
 #include <thread>
+<<<<<<< HEAD:mainSTL.cpp
 #include <conio.h>
 #include <chrono>
+=======
+#include <ncurses.h>
+#include <chrono> 
+#include <stdlib.h>
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/mainSTL.cpp
 #include "UniverseUsingSTL.h"
 #include <cstdlib>
 #include <ctime>
-
 
 using namespace std;
 
@@ -21,26 +25,36 @@ int column = 25;
 
 UniverseUsingSTL world(row,column);
 
-void keyListener(){
-	CC=_getch();
-	stop=true;
-}
-void initialize(){
-	world.addRandomCreature(10);
-}
-
-void activateCreature(int i){
-	Creature* C = world.getCreatureList(i);
-	while(!stop){
-	    C->doAction();
-	    this_thread::sleep_for(chrono::milliseconds(C->getActionInterval()));
-	    world.checkForCollisions();
-	}
-}
-
 void printEvery(){
 	while(!stop){
 		system("cls");
+		world.print(cout);
+		 this_thread::sleep_for(chrono::milliseconds(1000));
+	}
+}
+
+void activateWorld(){
+	int i=0;
+//	while ((!stop)&&(!world.isWorldEmpty())){
+	 while ((!stop)){
+		world.moveAllCreaturesOnce();
+		this_thread::sleep_for(chrono::milliseconds(1000));
+	}
+	stop=true;
+}
+
+void keyListener(){
+	CC=getchar();
+	fflush(stdin);
+	stop=true;
+}
+
+void initialize(){
+	world.addRandomCreature(10);
+}
+void printEvery(){
+	while(!stop){
+		system("clear");
 		world.print(cout);
 		 this_thread::sleep_for(chrono::milliseconds(500));
 	}
@@ -50,27 +64,25 @@ int main(){
 	initialize();
 	while(CC != 'E'){
 		stop=false;
-
-		int sz = world.getList().size();
-		thread t[sz];
-	    for (int i=0;i<sz;i++){
-	   		t[i] = thread(activateCreature,i);
-	    }
-
+		thread t1(activateWorld);
 		thread t2(keyListener);
 		thread t3(printEvery);
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5037f05aa76d758faf16153f2c8d91e9152e8bf
 		while(!stop){}
 		t2.detach();
 		t3.join();
-
-	// cout << "t2 detach" << endl;
-		for (int i=0;i<sz;i++){
-			t[i].join();
-			// cout << "t[i] join" << endl;
-		}
+		t1.join();
 		switch (CC){
+<<<<<<< HEAD:mainSTL.cpp
 			case 'p'
 :			{
+=======
+			case 'p' :
+			{ 
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/mainSTL.cpp
 				cout << "To P" << endl;
 				world.print(cout);
 				break;
@@ -97,17 +109,12 @@ int main(){
 				fb.close();
 				break;
 			}
-			case 'c' :
-			{
-				system("cls");
-			}
 			default :
 			{
 				cout << "Press p to print to terminal" <<endl;
 				cout << "Press a to add random creature" << endl;
 				cout << "Press f to print to file" << endl;
-				cout << "Press E to exit" << endl;
-				cout << "Press c to clear screen" << endl;
+				cout << "press E to exit" << endl;
 			}
 		}
 		if(world.isWorldEmpty()){

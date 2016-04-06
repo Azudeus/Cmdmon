@@ -34,10 +34,13 @@ List<Type>::~List(){
 	if (P != NULL){
 		delete P;
 	}
+<<<<<<< HEAD:list.cpp
 <<<<<<< HEAD
 =======
 //	cout << "KILL" << endl;
 >>>>>>> d89a12817c0de65ceee3058fe177e5d7ab285933
+=======
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/list.cpp
 }
 
 /**
