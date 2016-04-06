@@ -4,14 +4,21 @@
 #include <fstream>
 #include <time.h>
 #include <thread>
+<<<<<<< HEAD:mainSTL.cpp
+#include <conio.h>
+#include <chrono>
+=======
 #include <ncurses.h>
 #include <chrono> 
 #include <stdlib.h>
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/mainSTL.cpp
 #include "UniverseUsingSTL.h"
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-bool stop=false;	
+bool stop=false;
 char CC = 'a';
 int row = 25;
 int column = 25;
@@ -35,11 +42,13 @@ void activateWorld(){
 	}
 	stop=true;
 }
+
 void keyListener(){
 	CC=getchar();
 	fflush(stdin);
 	stop=true;
 }
+
 void initialize(){
 	world.addRandomCreature(10);
 }
@@ -67,8 +76,13 @@ int main(){
 		t3.join();
 		t1.join();
 		switch (CC){
+<<<<<<< HEAD:mainSTL.cpp
+			case 'p'
+:			{
+=======
 			case 'p' :
 			{ 
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/mainSTL.cpp
 				cout << "To P" << endl;
 				world.print(cout);
 				break;
@@ -85,13 +99,13 @@ int main(){
 			case 'f' :
 			{
 				string filename;
-				cout << "Input Filename : " << endl; 
+				cout << "Input Filename : " << endl;
 				cin >> filename;
 				filebuf fb;
 				fb.open(filename,ios::out);
 				ostream os(&fb);
 				world.print(os);
-				cout << "Print done at file " << filename << endl; 
+				cout << "Print done at file " << filename << endl;
 				fb.close();
 				break;
 			}

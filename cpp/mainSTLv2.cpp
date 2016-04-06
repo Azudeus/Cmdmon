@@ -5,13 +5,21 @@
 #include <time.h>
 #include <stdlib.h>
 #include <thread>
+<<<<<<< HEAD:mainSTLv2.cpp
+#include <conio.h>
+#include <chrono>
+=======
 #include <curses.h>
 #include <chrono> 
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/mainSTLv2.cpp
 #include "UniverseUsingSTL.h"
+#include <cstdlib>
+#include <ctime>
+
 
 using namespace std;
 
-bool stop=false;	
+bool stop=false;
 char CC = 'a';
 int row = 25;
 int column = 25;
@@ -57,7 +65,7 @@ int main(){
 		thread t2(keyListener);
 		thread t3(printEvery);
 		while(!stop){}
-		t2.detach();			
+		t2.detach();
 		t3.join();
 
 	// cout << "t2 detach" << endl;
@@ -66,8 +74,8 @@ int main(){
 			// cout << "t[i] join" << endl;
 		}
 		switch (CC){
-			case 'p' 
-:			{ 
+			case 'p'
+:			{
 				cout << "To P" << endl;
 				world.print(cout);
 				break;
@@ -84,13 +92,13 @@ int main(){
 			case 'f' :
 			{
 				string filename;
-				cout << "Input Filename : " << endl; 
+				cout << "Input Filename : " << endl;
 				cin >> filename;
 				filebuf fb;
 				fb.open(filename,ios::out);
 				ostream os(&fb);
 				world.print(os);
-				cout << "Print done at file " << filename << endl; 
+				cout << "Print done at file " << filename << endl;
 				fb.close();
 				break;
 			}

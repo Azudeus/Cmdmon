@@ -37,7 +37,10 @@ ElementList<Type>::~ElementList(){
 		delete P;
 	}
 	delete Info;
+<<<<<<< HEAD
+=======
 //	 cout << "KILL ELMT" << endl;
+>>>>>>> d89a12817c0de65ceee3058fe177e5d7ab285933
 }
 
 /**

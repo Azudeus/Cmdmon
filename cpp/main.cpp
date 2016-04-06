@@ -1,16 +1,23 @@
-#include <stdio.h>	
+#include <stdio.h>
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <time.h>
 #include <thread>
+<<<<<<< HEAD:main.cpp
+#include <conio.h>
+#include <chrono>
+=======
 #include <curses.h>
 #include <chrono> 
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/main.cpp
 #include "UniverseUsingList.h"
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-bool stop=false;	
+bool stop=false;
 char CC = 'a';
 int row = 25;
 int column = 25;
@@ -68,8 +75,13 @@ int main(){
 		t1.join();
 		cout << CC << endl;
 		switch (CC){
+<<<<<<< HEAD:main.cpp
+			case 'p'
+:			{
+=======
 			case 'p' :
 			{ 
+>>>>>>> 24832f8482f08f2e1f1f059aa9e32c8343ab0315:cpp/main.cpp
 				cout << "To P" << endl;
 				world.print(cout);
 				break;
@@ -87,13 +99,13 @@ int main(){
 			case 'f' :
 			{
 				string filename;
-				cout << "Input Filename : " << endl; 
+				cout << "Input Filename : " << endl;
 				cin >> filename;
 				filebuf fb;
 				fb.open(filename,ios::out);
 				ostream os(&fb);
 				world.print(os);
-				cout << "Print done at file " << filename << endl; 
+				cout << "Print done at file " << filename << endl;
 				fb.close();
 				break;
 			}
