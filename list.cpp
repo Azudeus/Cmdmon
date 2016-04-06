@@ -34,6 +34,10 @@ List<Type>::~List(){
 	if (P != NULL){
 		delete P;
 	}
+<<<<<<< HEAD
+=======
+//	cout << "KILL" << endl;
+>>>>>>> d89a12817c0de65ceee3058fe177e5d7ab285933
 }
 
 /**
@@ -107,4 +111,3 @@ bool List<Type>::isListEmpty(){
 
 template class List<int*>;
 template class List<Creature*>;
-

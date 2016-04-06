@@ -10,7 +10,6 @@
 #include <cstdlib>
 #include <ctime>
 
-
 using namespace std;
 
 bool stop=false;
@@ -20,20 +19,29 @@ int column = 25;
 
 UniverseUsingSTL world(row,column);
 
+void printEvery(){
+	while(!stop){
+		system("cls");
+		world.print(cout);
+		 this_thread::sleep_for(chrono::milliseconds(1000));
+	}
+}
+
 void activateWorld(){
 	int i=0;
 //	while ((!stop)&&(!world.isWorldEmpty())){
 	 while ((!stop)){
 		world.moveAllCreaturesOnce();
-		cout << "Kyun" <<endl;
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 	stop=true;
 }
+
 void keyListener(){
 	CC=_getch();
 	stop=true;
 }
+
 void initialize(){
 	world.addRandomCreature(10);
 }
@@ -44,8 +52,11 @@ int main(){
 		stop=false;
 		thread t1(activateWorld);
 		thread t2(keyListener);
+		thread t3(printEvery);
+
 		while(!stop){}
 		t2.detach();
+		t3.join();
 		t1.join();
 		switch (CC){
 			case 'p'

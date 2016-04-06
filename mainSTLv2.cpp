@@ -61,7 +61,7 @@ int main(){
 		thread t3(printEvery);
 		while(!stop){}
 		t2.detach();
-		t3.detach();
+		t3.join();
 
 	// cout << "t2 detach" << endl;
 		for (int i=0;i<sz;i++){
