@@ -11,8 +11,7 @@ Inheritance diagram for Centaur\+:\begin{figure}[H]
 \item 
 \hyperlink{class_centaur_afc70d85a296f8bb7006525675ee4d92a}{Centaur} (int=0, int=0, int=0, int=0)
 \item 
-char {\bfseries draw} ()\hypertarget{class_centaur_a377c0ba95b6599ce868049f551b37b6e}{}\label{class_centaur_a377c0ba95b6599ce868049f551b37b6e}
-
+char \hyperlink{class_centaur_a377c0ba95b6599ce868049f551b37b6e}{draw} ()
 \item 
 void \hyperlink{class_centaur_a548d9ff34d62d1ba596a6dbdd3199216}{do\+Action} ()
 \end{DoxyCompactItemize}
@@ -36,9 +35,13 @@ void \hyperlink{class_centaur_a3e69089861f1d984eb7528952c3c1d04}{move} ()
 )}\hypertarget{class_centaur_afc70d85a296f8bb7006525675ee4d92a}{}\label{class_centaur_afc70d85a296f8bb7006525675ee4d92a}
 Make \hyperlink{class_centaur}{Centaur} on postion (x,y) 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em r} & r is the starting row position of \hyperlink{class_centaur}{Centaur} \\
 \hline
-{\em y} & \\
+{\em c} & c is the starting column position of \hyperlink{class_centaur}{Centaur} \\
+\hline
+{\em x} & x is hoizontal component of \hyperlink{structmove_direction}{move\+Direction} \\
+\hline
+{\em y} & y is vertical componen of \hyperlink{structmove_direction}{move\+Direction} \\
 \hline
 \end{DoxyParams}
 
@@ -51,7 +54,21 @@ Make \hyperlink{class_centaur}{Centaur} on postion (x,y)
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_centaur_a548d9ff34d62d1ba596a6dbdd3199216}{}\label{class_centaur_a548d9ff34d62d1ba596a6dbdd3199216}
-draw the \hyperlink{class_centaur}{Centaur} 
+Make creature do some kind of action 
+
+Implements \hyperlink{class_animal}{Animal}.
+
+\index{Centaur@{Centaur}!draw@{draw}}
+\index{draw@{draw}!Centaur@{Centaur}}
+\subsubsection[{\texorpdfstring{draw()}{draw()}}]{\setlength{\rightskip}{0pt plus 5cm}char Centaur\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_centaur_a377c0ba95b6599ce868049f551b37b6e}{}\label{class_centaur_a377c0ba95b6599ce868049f551b37b6e}
+Draw the \hyperlink{class_centaur}{Centaur} by returning its character symbol \begin{DoxyReturn}{Returns}
+Special char denoting \hyperlink{class_centaur}{Centaur} 
+\end{DoxyReturn}
+
 
 Implements \hyperlink{class_animal}{Animal}.
 
@@ -62,7 +79,7 @@ Implements \hyperlink{class_animal}{Animal}.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_centaur_a3e69089861f1d984eb7528952c3c1d04}{}\label{class_centaur_a3e69089861f1d984eb7528952c3c1d04}
-move the \hyperlink{class_centaur}{Centaur} 
+Move the \hyperlink{class_centaur}{Centaur} one step according to its \hyperlink{structmove_direction}{move\+Direction} 
 
 Implements \hyperlink{class_animal}{Animal}.
 

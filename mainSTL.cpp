@@ -18,6 +18,14 @@ int column = 25;
 
 UniverseUsingSTL world(row,column);
 
+void printEvery(){
+	while(!stop){
+		system("cls");
+		world.print(cout);
+		 this_thread::sleep_for(chrono::milliseconds(1000));
+	}
+}
+
 void activateWorld(){
 	int i=0;
 //	while ((!stop)&&(!world.isWorldEmpty())){
@@ -50,6 +58,10 @@ int main(){
 		thread t1(activateWorld);
 		thread t2(keyListener);
 		thread t3(printEvery);
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5037f05aa76d758faf16153f2c8d91e9152e8bf
 		while(!stop){}
 		t2.detach();
 		t3.join();

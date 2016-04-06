@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['insertlast',['InsertLast',['../class_list.html#a079a660877cc78e10e85e8c1d4c1c739',1,'List']]],
-  ['islistempty',['isListEmpty',['../class_list.html#a4cc9e973d8289d39611b7750f01adbec',1,'List']]],
-  ['isworldempty',['isWorldEmpty',['../class_universe_using_s_t_l.html#aa0f64503c1815854d796555c28bf42da',1,'UniverseUsingSTL']]]
+  ['harpy',['Harpy',['../class_harpy.html#abf2c43ecb0e635d9b3027e9f1b246067',1,'Harpy']]]
 ];

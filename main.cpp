@@ -16,6 +16,14 @@ int row = 25;
 int column = 25;
 UniverseUsingList world(row,column);
 
+void printEvery(){
+	while(!stop){
+		system("cls");
+		world.print(cout);
+		 this_thread::sleep_for(chrono::milliseconds(1000));
+	}
+}
+
 void activateWorld(){
 	int i=0;
 	 // while ((!stop)&&(!world.isWorldEmpty()){
@@ -53,14 +61,15 @@ int main(){
 		thread t1(activateWorld);
 		thread t2(keyListener);
 		thread t3(printEvery);
+		
 		while(!stop){}
 		t2.detach();
 		t3.join();
 		t1.join();
 		cout << CC << endl;
 		switch (CC){
-			case 'p' 
-:			{ 
+			case 'p' :
+			{ 
 				cout << "To P" << endl;
 				world.print(cout);
 				break;

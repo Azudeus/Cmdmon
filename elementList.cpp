@@ -25,26 +25,6 @@ ElementList<Type>::ElementList(Type& data){
 	PreviousV = NULL;
 }
 
-//Omitted
-/*
-template <class Type> //Checked
-ElementList<Type>::ElementList(const ElementList& L){
-	ElementList<Type>* P;
-
-	Type  Creature*
-	P = L.NextV;
-	Info = L.Info;
-	PreviousV = NULL;
-	if (P == NULL){
-		NextV = NULL;
-	}
-	else{
-		NextV = (new ElementList<Type>(*P));
-		(*NextV).PreviousV = this;
-	}
-}
-*/
-
 /**
 *dtor of ElementList
 **/
@@ -57,7 +37,7 @@ ElementList<Type>::~ElementList(){
 		delete P;
 	}
 	delete Info;
-	 cout << "KILL ELMT" << endl;
+//	 cout << "KILL ELMT" << endl;
 }
 
 /**
@@ -84,27 +64,15 @@ ElementList<Type>* ElementList<Type>::Previous(){
 	return PreviousV;
 }
 
+/**
+*Erase an elementList by switching it with last elementList of it's List or erase it if it's single elementList.
+**/
 template <class Type> //Checked, kecuali kasus tunggal dan kosong
 void ElementList<Type>::DeleteSingle(){
 	ElementList<Type>* P;
 	P = NextV;
 	Type temp;
-/*
-	if (P != NULL){
-		while ((*P).NextV != NULL){
-			P = (*P).NextV;
-		}
-		(*((*P).Previous())).NextV = NULL;
-		(*P).PreviousV = (*this).PreviousV;
-		if ((*this).PreviousV != NULL){
-			(*((*this).PreviousV)).NextV = P;
-		}
-		(*P).NextV = (*this).NextV;
-		if ((*this).NextV != NULL){
-			(*((*this).NextV)).PreviousV = P;
-		}
-	}
-	delete this; */
+
 	if (P != NULL){
 		while ((*P).NextV != NULL){
 			P = (*P).NextV;
@@ -119,29 +87,11 @@ void ElementList<Type>::DeleteSingle(){
 		(*PreviousV).SetNext(NULL);
 		delete this;
 	}
-	// cout << "KILL SINGLE" << endl;
 }
-
-/* template <class Type>
-void ElementList<Type>::InsertLast(Type data){
-	ElementList<Type> *P;
-
-	P = NextV;
-	if (P != NULL){
-		while ((*P).Next() != NULL){
-			P = (*P).Next();
-		}
-		(*P).NextV = new ElementList<Type>(data);
-		(*((*P).NextV)).PreviousV = P;
-	}
-	else{
-		NextV = new ElementList<Type>(data);
-		(*NextV).PreviousV = this;
-	}
-} */
 
 /**
 *Set the Value of this Element
+*@param data
 **/
 template <class Type> //Checked
 void ElementList<Type>::SetValue(Type& data){

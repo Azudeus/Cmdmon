@@ -3,8 +3,11 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Element\+List} (Type \&data)\hypertarget{class_element_list_a042a80b094d946d3e6526ab8321e32f7}{}\label{class_element_list_a042a80b094d946d3e6526ab8321e32f7}
-
+\hyperlink{class_element_list_a0157b98943770fe3f09bda77d99a8641}{Element\+List} ()
+\item 
+\hyperlink{class_element_list_a042a80b094d946d3e6526ab8321e32f7}{Element\+List} (Type \&data)
+\item 
+\hyperlink{class_element_list_adf838c89433130d312b11c7e304b710b}{$\sim$\+Element\+List} ()
 \item 
 Type \hyperlink{class_element_list_a0f874b08fce53174aa75eedf45682d64}{Value} ()
 \item 
@@ -12,8 +15,7 @@ Type \hyperlink{class_element_list_a0f874b08fce53174aa75eedf45682d64}{Value} ()
 \item 
 \hyperlink{class_element_list}{Element\+List} $\ast$ \hyperlink{class_element_list_a5144ccc57d38ce60ec3d5d82471579f6}{Previous} ()
 \item 
-void {\bfseries Delete\+Single} ()\hypertarget{class_element_list_a55fedd16d90c0b856117e02e837e311e}{}\label{class_element_list_a55fedd16d90c0b856117e02e837e311e}
-
+void \hyperlink{class_element_list_a55fedd16d90c0b856117e02e837e311e}{Delete\+Single} ()
 \item 
 void \hyperlink{class_element_list_a7c1472ac483bdef89e6fc5370591b6f7}{Set\+Value} (Type \&data)
 \item 
@@ -23,8 +25,39 @@ void \hyperlink{class_element_list_a60590a74e879b84d87dc3f32bd9ad801}{Set\+Previ
 \end{DoxyCompactItemize}
 
 
+\subsection{Constructor \& Destructor Documentation}
+\index{Element\+List@{Element\+List}!Element\+List@{Element\+List}}
+\index{Element\+List@{Element\+List}!Element\+List@{Element\+List}}
+\subsubsection[{\texorpdfstring{Element\+List()}{ElementList()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type $>$ {\bf Element\+List}$<$ Type $>$\+::{\bf Element\+List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_element_list_a0157b98943770fe3f09bda77d99a8641}{}\label{class_element_list_a0157b98943770fe3f09bda77d99a8641}
+ctor of \hyperlink{class_element_list}{Element\+List} \index{Element\+List@{Element\+List}!Element\+List@{Element\+List}}
+\index{Element\+List@{Element\+List}!Element\+List@{Element\+List}}
+\subsubsection[{\texorpdfstring{Element\+List(\+Type \&data)}{ElementList(Type &data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type$>$ {\bf Element\+List}$<$ Type $>$\+::{\bf Element\+List} (
+\begin{DoxyParamCaption}
+\item[{Type \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_element_list_a042a80b094d946d3e6526ab8321e32f7}{}\label{class_element_list_a042a80b094d946d3e6526ab8321e32f7}
+ctor with parameter of \hyperlink{class_element_list}{Element\+List} \index{Element\+List@{Element\+List}!````~Element\+List@{$\sim$\+Element\+List}}
+\index{````~Element\+List@{$\sim$\+Element\+List}!Element\+List@{Element\+List}}
+\subsubsection[{\texorpdfstring{$\sim$\+Element\+List()}{~ElementList()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type $>$ {\bf Element\+List}$<$ Type $>$\+::$\sim${\bf Element\+List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_element_list_adf838c89433130d312b11c7e304b710b}{}\label{class_element_list_adf838c89433130d312b11c7e304b710b}
+dtor of \hyperlink{class_element_list}{Element\+List} 
+
 \subsection{Member Function Documentation}
-\index{Element\+List@{Element\+List}!Next@{Next}}
+\index{Element\+List@{Element\+List}!Delete\+Single@{Delete\+Single}}
+\index{Delete\+Single@{Delete\+Single}!Element\+List@{Element\+List}}
+\subsubsection[{\texorpdfstring{Delete\+Single()}{DeleteSingle()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type $>$ void {\bf Element\+List}$<$ Type $>$\+::Delete\+Single (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_element_list_a55fedd16d90c0b856117e02e837e311e}{}\label{class_element_list_a55fedd16d90c0b856117e02e837e311e}
+Erase an element\+List by switching it with last element\+List of it\textquotesingle{}s \hyperlink{class_list}{List} or erase it if it\textquotesingle{}s single element\+List. \index{Element\+List@{Element\+List}!Next@{Next}}
 \index{Next@{Next}!Element\+List@{Element\+List}}
 \subsubsection[{\texorpdfstring{Next()}{Next()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type $>$ {\bf Element\+List}$<$ Type $>$ $\ast$ {\bf Element\+List}$<$ Type $>$\+::Next (
 \begin{DoxyParamCaption}
@@ -69,7 +102,12 @@ Set the pointer of Previous Elemnt
 \item[{Type \&}]{data}
 \end{DoxyParamCaption}
 )}\hypertarget{class_element_list_a7c1472ac483bdef89e6fc5370591b6f7}{}\label{class_element_list_a7c1472ac483bdef89e6fc5370591b6f7}
-Set the Value of this Element \index{Element\+List@{Element\+List}!Value@{Value}}
+Set the Value of this Element 
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\index{Element\+List@{Element\+List}!Value@{Value}}
 \index{Value@{Value}!Element\+List@{Element\+List}}
 \subsubsection[{\texorpdfstring{Value()}{Value()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Type $>$ Type {\bf Element\+List}$<$ Type $>$\+::Value (
 \begin{DoxyParamCaption}

@@ -11,8 +11,7 @@ Inheritance diagram for Harpy\+:\begin{figure}[H]
 \item 
 \hyperlink{class_harpy_abf2c43ecb0e635d9b3027e9f1b246067}{Harpy} (int=0, int=0, int=0, int=0)
 \item 
-void {\bfseries do\+Action} ()\hypertarget{class_harpy_ab296058454b33ba304b2f6533bcd1994}{}\label{class_harpy_ab296058454b33ba304b2f6533bcd1994}
-
+void \hyperlink{class_harpy_ab296058454b33ba304b2f6533bcd1994}{do\+Action} ()
 \item 
 char \hyperlink{class_harpy_aff50872bc2e137a69e4eacc45a739d95}{draw} ()
 \end{DoxyCompactItemize}
@@ -36,14 +35,29 @@ void \hyperlink{class_harpy_a0a4f8328e78902b76fba8eecf5e0c99e}{move} ()
 )}\hypertarget{class_harpy_abf2c43ecb0e635d9b3027e9f1b246067}{}\label{class_harpy_abf2c43ecb0e635d9b3027e9f1b246067}
 Make \hyperlink{class_harpy}{Harpy} on postion (x,y) 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em r} & r is the starting row position of \hyperlink{class_harpy}{Harpy} \\
 \hline
-{\em y} & \\
+{\em c} & c is the starting column position of \hyperlink{class_harpy}{Harpy} \\
+\hline
+{\em x} & x is hoizontal component of \hyperlink{structmove_direction}{move\+Direction} \\
+\hline
+{\em y} & y is vertical componen of \hyperlink{structmove_direction}{move\+Direction} \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
+\index{Harpy@{Harpy}!do\+Action@{do\+Action}}
+\index{do\+Action@{do\+Action}!Harpy@{Harpy}}
+\subsubsection[{\texorpdfstring{do\+Action()}{doAction()}}]{\setlength{\rightskip}{0pt plus 5cm}void Harpy\+::do\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_harpy_ab296058454b33ba304b2f6533bcd1994}{}\label{class_harpy_ab296058454b33ba304b2f6533bcd1994}
+Make creature do some kind of action 
+
+Implements \hyperlink{class_animal}{Animal}.
+
 \index{Harpy@{Harpy}!draw@{draw}}
 \index{draw@{draw}!Harpy@{Harpy}}
 \subsubsection[{\texorpdfstring{draw()}{draw()}}]{\setlength{\rightskip}{0pt plus 5cm}char Harpy\+::draw (
@@ -51,7 +65,10 @@ Make \hyperlink{class_harpy}{Harpy} on postion (x,y)
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_harpy_aff50872bc2e137a69e4eacc45a739d95}{}\label{class_harpy_aff50872bc2e137a69e4eacc45a739d95}
-draw the \hyperlink{class_harpy}{Harpy} 
+Draw the \hyperlink{class_harpy}{Harpy} by returning its character symbol \begin{DoxyReturn}{Returns}
+Special char denoting \hyperlink{class_harpy}{Harpy} 
+\end{DoxyReturn}
+
 
 Implements \hyperlink{class_animal}{Animal}.
 
@@ -62,7 +79,7 @@ Implements \hyperlink{class_animal}{Animal}.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_harpy_a0a4f8328e78902b76fba8eecf5e0c99e}{}\label{class_harpy_a0a4f8328e78902b76fba8eecf5e0c99e}
-move the \hyperlink{class_harpy}{Harpy} 
+Move the \hyperlink{class_harpy}{Harpy} one step according to its \hyperlink{structmove_direction}{move\+Direction} 
 
 Implements \hyperlink{class_animal}{Animal}.
 
