@@ -1,7 +1,7 @@
 public class Plant extends Creature {
-  public Plant(int _r, int _c) {
-    setRowPosition(_r);
-    setColumnPosition(_c);
+  public Plant(int row, int column) {
+    setRowPosition(row);
+    setColumnPosition(column);
     setStrength(5);
     setActionInterval(3000);
   }

@@ -1,4 +1,4 @@
-public abstract class Animal extends Creature{
+public abstract class Animal extends Creature {
   private int directionX;
   private int directionY;
 
@@ -7,14 +7,15 @@ public abstract class Animal extends Creature{
   }
 
   public abstract char draw();
+
   public abstract void doAction();
 
-  public void setDirectionX(int x) {
-    directionX = x;
+  public void setDirectionX(int directionX) {
+    this.directionX = directionX;
   }
 
-  public void setDirectionY(int y) {
-    directionY = y;
+  public void setDirectionY(int directionY) {
+    this.directionY = directionY;
   }
 
   public int getDirectionX() {
