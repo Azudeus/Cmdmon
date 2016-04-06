@@ -2,7 +2,8 @@ public class Lamia extends Animal {
 	public Lamia(int r, int c, int x, int y) {
 		setRowPosition(r);
 	    setColumnPosition(c);
-	    setDirection(x,y);
+	    setDirectionX(x);
+	    setDirectionY(y);
 	    setStrength(10);
 	    setActionInterval(1200);
 	}

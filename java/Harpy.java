@@ -2,7 +2,8 @@ public class Harpy extends Animal {
 	public Harpy(int r, int c, int x, int y) {
 		setRowPosition(r);
 	    setColumnPosition(c);
-	    setDirection(x,y);
+	    setDirectionX(x);
+	    setDirectionY(y);
 	    setStrength(15);
 	    setActionInterval(1000);
 	}

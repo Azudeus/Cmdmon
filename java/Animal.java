@@ -1,11 +1,6 @@
-struct moveDirection
-{
-	int deltax;
-	int deltay;
-};
-
 public abstract class Animal extends Creature{
-	private moveDirection direction;
+	private int directionX;
+	private int directionY;
 
 	public Animal() {
 		//do nothing
@@ -13,16 +8,25 @@ public abstract class Animal extends Creature{
 
 	public abstract char draw();
 	public abstract void doAction();
-	public void setDirection(int,int) {
 
+	public void setDirectionX(int x) {
+		directionX = x;
 	}
 
-	public moveDirection getDirection() {
+	public void setDirectionY(int y) {
+		directionY = y;
+	}
 
+	public int getDirectionX() {
+		return directionX;
+	}
+
+	public int getDirectionY() {
+		return directionY;
 	}
 
 	protected void move() {
-		setRowPosition(getRowPosition()+getDirection().deltax);
-		setColumnPosition(getColumnPosition()+getDirection().deltay);
+		setRowPosition(getRowPosition()+getDirectionX());
+		setColumnPosition(getColumnPosition()+getDirectionY());
 	}
 }
