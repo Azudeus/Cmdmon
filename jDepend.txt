@@ -1,0 +1,69 @@
+
+--------------------------------------------------
+- Package: Default
+--------------------------------------------------
+
+Stats:
+    Total Classes: 9
+    Concrete Classes: 6
+    Abstract Classes: 3
+
+    Ca: 0
+    Ce: 3
+
+    A: 0.33
+    I: 1
+    D: 0.33
+
+Abstract Classes:
+    Animal
+    Creature
+    Universe
+
+Concrete Classes:
+    Centaur
+    Harpy
+    Lamia
+    Main
+    Plant
+    UniverseUsingSTL
+
+Depends Upon:
+    java.io
+    java.lang
+    java.util
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+Default,9,3,0,3,0.33,1,0.33,1
+java.io,0,0,1,0,0,0,1,1
+java.lang,0,0,1,0,0,0,1,1
+java.util,0,0,1,0,0,0,1,1
