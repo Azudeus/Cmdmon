@@ -4,8 +4,9 @@
 #include <fstream>
 #include <time.h>
 #include <thread>
-#include <conio.h>
+#include <ncurses.h>
 #include <chrono> 
+#include <stdlib.h>
 #include "UniverseUsingSTL.h"
 
 using namespace std;
@@ -22,17 +23,24 @@ void activateWorld(){
 //	while ((!stop)&&(!world.isWorldEmpty())){
 	 while ((!stop)){
 		world.moveAllCreaturesOnce();
-		cout << "Kyun" <<endl;
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 	stop=true;
 }
 void keyListener(){
-	CC=_getch();
+	CC=getchar();
+	fflush(stdin);
 	stop=true;
 }
 void initialize(){
 	world.addRandomCreature(10);
+}
+void printEvery(){
+	while(!stop){
+		system("clear");
+		world.print(cout);
+		 this_thread::sleep_for(chrono::milliseconds(500));
+	}
 }
 
 int main(){
@@ -41,12 +49,14 @@ int main(){
 		stop=false;
 		thread t1(activateWorld);
 		thread t2(keyListener);
+		thread t3(printEvery);
 		while(!stop){}
 		t2.detach();
+		t3.join();
 		t1.join();
 		switch (CC){
-			case 'p' 
-:			{ 
+			case 'p' :
+			{ 
 				cout << "To P" << endl;
 				world.print(cout);
 				break;

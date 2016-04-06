@@ -22,12 +22,11 @@ void Centaur::move(){
 /**
 *draw the Centaur
 **/
-
+char Centaur::draw(){
+    return 'C';
+}
 
 void Centaur::doAction(){
 	Centaur::move();
 }
 
-char Centaur::draw(){
-    return 'C';
-}

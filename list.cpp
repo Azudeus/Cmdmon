@@ -46,7 +46,6 @@ List<Type>::~List(){
 	if (P != NULL){
 		delete P;
 	}
-	cout << "KILL" << endl;
 }
 
 /**

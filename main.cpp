@@ -4,7 +4,7 @@
 #include <fstream>
 #include <time.h>
 #include <thread>
-#include <conio.h>
+#include <curses.h>
 #include <chrono> 
 #include "UniverseUsingList.h"
 
@@ -21,17 +21,23 @@ void activateWorld(){
 	 // while ((!stop)&&(!world.isWorldEmpty()){
 	 while ((!stop)){
 		world.moveAllCreaturesOnce();
-		cout << "Kyun" <<endl;
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 	stop=true;
 }
 void keyListener(){
-	CC=_getch();
+	CC=getchar();
 	stop=true;
 }
 void initialize(){
 		world.addRandomCreature(10);
+}
+void printEvery(){
+	while(!stop){
+		system("clear");
+		world.print(cout);
+		 this_thread::sleep_for(chrono::milliseconds(500));
+	}
 }
 
 int main(){
@@ -46,8 +52,10 @@ int main(){
 		stop=false;
 		thread t1(activateWorld);
 		thread t2(keyListener);
+		thread t3(printEvery);
 		while(!stop){}
 		t2.detach();
+		t3.join();
 		t1.join();
 		cout << CC << endl;
 		switch (CC){

@@ -3,9 +3,9 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
-#include <dos.h>
+#include <stdlib.h>
 #include <thread>
-#include <conio.h>
+#include <curses.h>
 #include <chrono> 
 #include "UniverseUsingSTL.h"
 
@@ -19,7 +19,7 @@ int column = 25;
 UniverseUsingSTL world(row,column);
 
 void keyListener(){
-	CC=_getch();
+	CC=getchar();
 	stop=true;
 }
 void initialize(){
@@ -37,7 +37,7 @@ void activateCreature(int i){
 
 void printEvery(){
 	while(!stop){
-		system("cls");
+		system("clear");
 		world.print(cout);
 		 this_thread::sleep_for(chrono::milliseconds(500));
 	}
@@ -96,7 +96,7 @@ int main(){
 			}
 			case 'c' :
 			{
-				system("cls");
+				system("clear");
 			}
 			default :
 			{
