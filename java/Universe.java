@@ -1,3 +1,5 @@
+import java.io.*;
+
 public abstract class Universe{
   private int amountOfRows;
   private int amountOfColumns;
@@ -67,7 +69,7 @@ public abstract class Universe{
   /**
   *Print the world and all its creatures
   **/
-  abstract void printFile(String str);
+  abstract void printFile(String str) throws IOException;
   
   abstract void print();
 }

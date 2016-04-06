@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.Random;
 import java.util.Vector;
+import java.util.Collections;
 
 
 public class UniverseUsingSTL extends Universe {
@@ -19,7 +20,7 @@ public class UniverseUsingSTL extends Universe {
     while ((!found) && (index < size)) {
       if (CreatureList.get(index) == creature) {
         found = true;
-        swap(CreatureList.get(index), CreatureList.get(CreatureList.size() - 1));
+        Collections.swap(CreatureList, index, CreatureList.size() - 1);
       }
       index++;
     }
@@ -167,10 +168,10 @@ public class UniverseUsingSTL extends Universe {
     } 
   }
 
-  public void printFile(String filename) {
+  public void printFile(String str) throws IOException{
     try {
       BufferedWriter outputWriter = new BufferedWriter(new OutputStreamWriter(
-          new FileOutputStream(filename)));
+          new FileOutputStream(str)));
       char[][] board = new char[getAmountOfRows()][getAmountOfColumns()];
       for (int i = 0;i < getAmountOfRows();i++) {
         for (int j = 0;j < getAmountOfColumns();j++) {
