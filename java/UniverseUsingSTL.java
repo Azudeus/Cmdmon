@@ -167,7 +167,7 @@ public class UniverseUsingSTL extends Universe {
     } 
   }
 
-  public void print(String filename) {
+  public void printFile(String filename) {
     try {
       BufferedWriter outputWriter = new BufferedWriter(new OutputStreamWriter(
           new FileOutputStream(filename)));
