@@ -3,26 +3,26 @@
 */
 public abstract class Creature {
   /**
-  *strength merupakan integer yang menunjukan kekuatan dari suatu creature. 
+  *strength merupakan integer yang menunjukan kekuatan dari suatu Creature. 
   *Kekuatan ini akan menentukan kelangsungan hidup dalam persaingan.
-  *rowPosition merupakan integer yang menunjukan posisi baris dari creature pada dunia.
-  *columnPosition merupakan integer yang menunjukan posisi kolom dari creature pada dunia.
-  *actionInterval merupakan integer yang menunjukan jeda waktu antar aksi dari suatu creature.
+  *rowPosition merupakan integer yang menunjukan posisi baris dari Creature pada dunia.
+  *columnPosition merupakan integer yang menunjukan posisi kolom dari Creature pada dunia.
+  *actionInterval merupakan integer yang menunjukan jeda waktu antar aksi dari suatu Creature.
   */
   private int strength;
   private int rowPosition;
   private int columnPosition;
   private int actionInterval;
-  
+
   /**
-  *Constructor dari kelas creature yang tidak melakukan apa - apa.
+  *Constructor dari kelas Creature yang tidak melakukan apa - apa.
   */
   public Creature() {
     //do nothing
   }
 
   /**
-  *Mengembalikan sebuah char yang merupakan penanda khusus dari suatu creature.
+  *Mengembalikan sebuah char yang merupakan penanda khusus dari suatu Creature.
   *@return char, char yang dikembalikan merupakan karakter penanda yang ditampilkan di dunia.
   */
   public abstract char draw();
@@ -34,25 +34,25 @@ public abstract class Creature {
 
 
   /**
-  *Mengubah rowPosition creature menjadi rowPosition pada parameter.
+  *Mengubah rowPosition Creature menjadi rowPosition pada parameter.
   *<br>Merupakan setter untuk mengubah posisi baris suatu mahluk.
-  *@param rowPosition, integer yang menandakan posisi baris baru suatu creature di dunia.
+  *@param rowPosition, integer yang menandakan posisi baris baru suatu Creature di dunia.
   */
   public void setRowPosition(int rowPosition) {
     this.rowPosition = rowPosition;
   }
 
   /**
-  *Mengubah columnPosition creature menjadi columnPosition pada parameter.
+  *Mengubah columnPosition Creature menjadi columnPosition pada parameter.
   *<br>Merupakan setter untuk mengubah posisi kolom suatu mahluk.
-  *@param columnPosition, integer yang menandakan posisi kolom baru suatu creature di dunia.
+  *@param columnPosition, integer yang menandakan posisi kolom baru suatu Creature di dunia.
   */
   public void setColumnPosition(int columnPosition) {
     this.columnPosition = columnPosition;
   }
 
   /**
-  *Mengubah strength creature menjadi strength pada parameter.
+  *Mengubah strength Creature menjadi strength pada parameter.
   *<br>Merupakan setter untuk mengubah kekuatan suatu mahluk dalam persaingan.
   *@param strength, merupakan integer yang menandakan kekuatan suatu mahluk dalam persaingan.
   */
@@ -61,41 +61,41 @@ public abstract class Creature {
   }
 
   /**
-  *Mengubah actionInterval creature menjadi actionInterval pada parameter.
-  *<br>Merupakan setter untuk mengubah jeda waktu antar aksi dari suatu creature.
-  *@param actionInterval, integer yang menandakan jeda waktu antar aksi dari suatu creature.
+  *Mengubah actionInterval Creature menjadi actionInterval pada parameter.
+  *<br>Merupakan setter untuk mengubah jeda waktu antar aksi dari suatu Creature.
+  *@param actionInterval, integer yang menandakan jeda waktu antar aksi dari suatu Creature.
   */
   public void setActionInterval(int actionInterval) {
     this.actionInterval = actionInterval;
   }
 
   /**
-  *Mengembalikan nilai rowPosition suatu creature.
-  *@return int, integer dengan nilai rowPosition suatu creature.
+  *Mengembalikan nilai rowPosition suatu Creature.
+  *@return int, integer dengan nilai rowPosition suatu Creature.
   */
   public int getRowPosition() {
     return rowPosition;
   }
 
   /**
-  *Mengembalikan nilai columnPosition suatu creature.
-  *@return int, integer dengan nilai columnPosition suatu creature.
+  *Mengembalikan nilai columnPosition suatu Creature.
+  *@return int, integer dengan nilai columnPosition suatu Creature.
   */
   public int getColumnPosition() {
     return columnPosition;
   }
 
   /**
-  *Mengembalikan nilai strength suatu creature.
-  *@return int, integer dengan nilai strength suatu creature.
+  *Mengembalikan nilai strength suatu Creature.
+  *@return int, integer dengan nilai strength suatu Creature.
   */
   public int getStrength() {
     return strength;
   }
 
   /**
-  *Mengembalikan nilai actionInterval suatu creature.
-  *@return int, integer dengan nilai actionInterval suatu creature.
+  *Mengembalikan nilai actionInterval suatu Creature.
+  *@return int, integer dengan nilai actionInterval suatu Creature.
   */
   public int getActionInterval() {
     return actionInterval;
