@@ -10,18 +10,39 @@ public class Main{
 	private static UniverseUsingSTL world = new UniverseUsingSTL(row,col);
 
 	
-	 public static void CLS(){
-        try{
-        	new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } catch (IOException e){
-        	System.exit(0);
-        }catch (InterruptedException e){
-        	System.exit(0);
-        } 
-	 }
+	// public static void CLS(){
+	// 	try{
+	// 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+	// 	} catch (IOException e){
+	// 		e.printStackTrace();
+	// 	} catch (InterruptedException e){
+	// 		e.printStackTrace();
+	// 	} 
+	// }
+
+	public final static void clearConsole()
+	{
+		try
+		{
+			final String os = System.getProperty("os.name");
+
+			if (os.contains("Windows"))
+			{
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			}
+			else
+			{
+				new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
+			}
+		}
+		catch (final Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 	
 	public static void printEvery() {	
-		CLS();
+		clearConsole();
 		world.print();
 		// System.out.println("Print Every");
 		// System.out.println();

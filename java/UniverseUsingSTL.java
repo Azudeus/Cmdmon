@@ -36,17 +36,13 @@ public class UniverseUsingSTL extends Universe {
     Random generator = new Random();
     //randomly create creature
     for (int i = 0; i < amount; i++) {
-      int rand = generator.nextInt(3);
+      int rand = generator.nextInt(4);
       int row = (generator.nextInt(getAmountOfRows()));
       int column = (generator.nextInt(getAmountOfColumns()));
-      int directionX = (generator.nextInt(2));
-      if (directionX == 0) {
-        directionX = -1;
-      }
-      int directionY = (generator.nextInt(2));
-      if (directionY == 0) {
-        directionY = -1;
-      }
+      int directionX = (generator.nextInt(3));
+      directionX = directionX - 1;
+      int directionY = (generator.nextInt(3));
+      directionY = directionY - 1;
       boolean found = true;
       int counter = 0;
 
@@ -79,8 +75,8 @@ public class UniverseUsingSTL extends Universe {
       }
       if (counter < (getAmountOfColumns() * getAmountOfRows())) {
         if (rand == 0) {
-          temp = new Plant(row, column);
-          addCreature((temp));
+          // temp = new Plant(row, column);
+          // addCreature((temp));
         } else if (rand == 1) {
           temp = new Lamia(row, column, directionX, directionY);
           addCreature((temp));
