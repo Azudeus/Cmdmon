@@ -79,8 +79,8 @@ public class UniverseUsingSTL extends Universe {
       }
       if (counter < (getAmountOfColumns() * getAmountOfRows())) {
         if (rand == 0) {
-          temp = new Plant(row, column);
-          addCreature((temp));
+//          temp = new Plant(row, column);
+ //         addCreature((temp));
         } else if (rand == 1) {
           temp = new Lamia(row, column, directionX, directionY);
           addCreature((temp));

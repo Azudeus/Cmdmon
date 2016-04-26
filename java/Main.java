@@ -65,7 +65,7 @@ public class Main{
 		
 		initialize();
 		Scanner scan = new Scanner(System.in);
-		while (CC != 'E'){
+		while (CC != 'E') {
 			switch (CC){
 				case 'p' : {
 					printEvery();
@@ -86,7 +86,10 @@ public class Main{
 					break;
 				}
 			}
-			
+			if (world.isWorldEmpty()){
+				System.exit(0);
+			}
+
 			activeWorld();	
 			CC = scan.next().trim().charAt(0);
 		}
