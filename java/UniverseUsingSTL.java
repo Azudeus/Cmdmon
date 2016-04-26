@@ -4,15 +4,36 @@ import java.util.Vector;
 import java.util.Collections;
 
 
+/**
+*@author Davin Prasetya/13514003
+*/
 public class UniverseUsingSTL extends Universe {
+  /**
+  *CreatureList merupakan Vector of Creature yang mencatat semua mahluk yang ada pada dunia.
+  */
   private Vector<Creature> CreatureList;
 
+  /**
+  *Constructor dari UniverseUsingSTL yang melakukan inisialisasi attribute.
+  *<br>amountOfRows akan diinisialisasi dengan amountOfRows dari parameter.
+  *<br>amountOfColumns akan diinisialisasi dengan amountOfColumns dari parameter.
+  *<br>CreatureList akan diisi dengan object Vector of Creature baru.
+  *<br>Inisialisasi ini dilakukan dengan memanggil setter kecuali untuk CreatureList.
+  *@param amountOfRows, integer yang menyatakan jumlah baris dari dunia.
+  *@param amountOfColumns, integer yang menyatakan jumlah kolom dari dunia.
+  */
   public UniverseUsingSTL(int amountOfRows, int amountOfColumns) {
     this.setAmountOfRows(amountOfRows);
     this.setAmountOfColumns(amountOfColumns);
     CreatureList = new Vector<Creature>();
   }
 
+  /**
+  *{@inheritDoc}
+  *<br>Creature dibunuh dengan cara dihilangkan dari CreatureList.
+  *<br>creature akan pertama dicari pada CreatureList.
+  *@param creature, Creature yang akan dibunuh.
+  */
   public void killCreature(Creature creature) {
     boolean found = false;
     int size = CreatureList.size();
@@ -27,10 +48,18 @@ public class UniverseUsingSTL extends Universe {
     CreatureList.remove(CreatureList.size() - 1);
   }
 
+  /**
+  *{@inheritDoc}
+  *<br>Penambahan dilakukan dengan menambahkan creature ke dalam CreatureList.
+  *@param creature, Creature yang akan dimasukan ke dalam dunia.
+  */
   public void addCreature(Creature creature) {
     CreatureList.add(creature);
   }
 
+  /**
+  *{@inheritDoc}
+  **/
   public void addRandomCreature(int amount) {
     Creature temp;
     Random generator = new Random();
@@ -91,10 +120,18 @@ public class UniverseUsingSTL extends Universe {
     }
   }
 
+  /**
+  *{@inheritDoc}
+  *<br>Pemeriksaan dunia kosong dilakukan dengan memeriksa size dari CreatureList.
+  *<br>Jika size sama dengan 0 maka dikembalikan true.
+  */
   public boolean isWorldEmpty() {
     return (CreatureList.size() == 0);
   }
 
+  /**
+  *{@inheritDoc}
+  */
   public void checkForCollisions() {
     int sz = CreatureList.size();
     int index = 0;
@@ -136,6 +173,10 @@ public class UniverseUsingSTL extends Universe {
     }
   }
 
+  /**
+  *{@inheritDoc}
+  *<br>Melakukan traversal pada list dan memanggil doAction untuk setiap mahluk.
+  */
   public void moveAllCreaturesOnce() {
     for (int i = 0; i < CreatureList.size(); i++) {
       CreatureList.get(i).doAction();
@@ -143,6 +184,12 @@ public class UniverseUsingSTL extends Universe {
     checkForCollisions();
   }
 
+  /**
+  *{@inheritDoc}
+  *<br>Dilakukan dengan membuat matrix secara local yang kemudian diisikan.
+  *<br>Isi dari matrix adalah . jika tidak ada mahluk atau karakterk penanda khusus jika ada.
+  *<br>Matrix kemudian dicetak ke layar.
+  */
   public void print() {
     char[][] board = new char[getAmountOfRows()][getAmountOfColumns()];
     for (int i = 0; i < getAmountOfRows(); i++) {
@@ -164,6 +211,12 @@ public class UniverseUsingSTL extends Universe {
     }
   }
 
+  /**
+  *{@inheritDoc}
+  *<br>Dilakukan dengan membuat matrix secara local yang kemudian diisikan.
+  *<br>Isi dari matrix adalah . jika tidak ada mahluk atau karakterk penanda khusus jika ada.
+  *<br>Matrix kemudian dicetak ke file yang sudah dibuka.
+  */
   public void printFile(String str) throws IOException {
     try {
       BufferedWriter outputWriter = new BufferedWriter(new OutputStreamWriter(
