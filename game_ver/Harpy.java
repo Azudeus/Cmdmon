@@ -16,13 +16,15 @@ public class Harpy extends Animal {
   *@param directionX, integer yang menandakan arah pergerakan Harpy pada sumbu X.
   *@param directionY, integer yang menandakan arah pergerakan Harpy pada sumbu Y.
   */
-  public Harpy(int row, int column, int directionX, int directionY) {
+  public Harpy(int row, int column, int directionX, int directionY,int multiplier) {
     setRowPosition(row);
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(15);
+    setStrength(30 + 3 * multiplier);
     setActionInterval(1000);
+    setHealth(15 + 2 * multiplier);
+    setRange(2);
   }
 
   /**

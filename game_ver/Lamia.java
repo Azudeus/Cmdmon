@@ -16,13 +16,15 @@ public class Lamia extends Animal {
   *@param directionX, integer yang menandakan arah pergerakan Lamia pada sumbu X.
   *@param directionY, integer yang menandakan arah pergerakan Lamia pada sumbu Y.
   */
-  public Lamia(int row, int column, int directionX, int directionY) {
+  public Lamia(int row, int column, int directionX, int directionY,int multiplier) {
     setRowPosition(row);
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(10);
+    setStrength(10 + 1 * multiplier);
     setActionInterval(1200);
+    setHealth(30 + 3 * multiplier);
+    setRange(3);
   }
 
   /**
