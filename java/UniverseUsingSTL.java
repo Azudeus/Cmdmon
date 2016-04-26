@@ -197,4 +197,22 @@ public class UniverseUsingSTL extends Universe {
       System.exit(0);
     }
   }
+  
+    public static void main(String args[]){
+	  UniverseUsingSTL world= new UniverseUsingSTL(10,10);
+	  
+	  for (int i = 0 ; i < 10 ; i ++){
+		  world.addRandomCreature(3);
+		  world.print();		 
+		  System.out.println();
+	  }
+	  try{
+			world.printFile("tes.txt");
+			System.out.println("Printed file to tes.txt");
+		} catch (IOException e){
+			System.out.println("File tidak ditemukan");
+			System.exit(0);		
+		}
+	 }
+ 
 }
