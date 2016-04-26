@@ -16,13 +16,15 @@ public class Centaur extends Animal {
   *@param directionX, integer yang menandakan arah pergerakan Centaur pada sumbu X.
   *@param directionY, integer yang menandakan arah pergerakan Centaur pada sumbu Y.
   */
-  public Centaur(int row, int column, int directionX, int directionY) {
+  public Centaur(int row, int column, int directionX, int directionY, int multiplier) {
     setRowPosition(row);
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(25);
+    setStrength(30 + 3 * multiplier);
     setActionInterval(800);
+    setHealth(30 + 3 * multiplier);
+    setRange(1);
   }
 
   /**

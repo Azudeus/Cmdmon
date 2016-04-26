@@ -3,7 +3,7 @@
 */
 public abstract class Creature {
   /**
-  *strength merupakan integer yang menunjukan kekuatan dari suatu Creature. 
+  *strength merupakan integer yang menunjukan kekuatan dari suatu Creature.
   *Kekuatan ini akan menentukan kelangsungan hidup dalam persaingan.
   *rowPosition merupakan integer yang menunjukan posisi baris dari Creature pada dunia.
   *columnPosition merupakan integer yang menunjukan posisi kolom dari Creature pada dunia.
@@ -13,6 +13,8 @@ public abstract class Creature {
   private int rowPosition;
   private int columnPosition;
   private int actionInterval;
+  private int range;
+  private int health;
 
   /**
   *Constructor dari kelas Creature yang tidak melakukan apa - apa.
@@ -38,7 +40,7 @@ public abstract class Creature {
   *<br>Merupakan setter untuk mengubah posisi baris suatu mahluk.
   *@param rowPosition, integer yang menandakan posisi baris baru suatu Creature di dunia.
   */
-  public void setRowPosition(int rowPosition) {
+  public void setRowPosition(final int rowPosition) {
     this.rowPosition = rowPosition;
   }
 
@@ -47,7 +49,7 @@ public abstract class Creature {
   *<br>Merupakan setter untuk mengubah posisi kolom suatu mahluk.
   *@param columnPosition, integer yang menandakan posisi kolom baru suatu Creature di dunia.
   */
-  public void setColumnPosition(int columnPosition) {
+  public void setColumnPosition(final int columnPosition) {
     this.columnPosition = columnPosition;
   }
 
@@ -56,8 +58,12 @@ public abstract class Creature {
   *<br>Merupakan setter untuk mengubah kekuatan suatu mahluk dalam persaingan.
   *@param strength, merupakan integer yang menandakan kekuatan suatu mahluk dalam persaingan.
   */
-  public void setStrength(int strength) {
+  public void setStrength(final int strength) {
     this.strength = strength;
+  }
+
+  public void setHealth(final int health) {
+    this.health = health;
   }
 
   /**
@@ -65,15 +71,19 @@ public abstract class Creature {
   *<br>Merupakan setter untuk mengubah jeda waktu antar aksi dari suatu Creature.
   *@param actionInterval, integer yang menandakan jeda waktu antar aksi dari suatu Creature.
   */
-  public void setActionInterval(int actionInterval) {
+  public void setActionInterval(final int actionInterval) {
     this.actionInterval = actionInterval;
+  }
+
+  public void setRange(final int range) {
+    this.range = range;
   }
 
   /**
   *Mengembalikan nilai rowPosition suatu Creature.
   *@return int, integer dengan nilai rowPosition suatu Creature.
   */
-  public int getRowPosition() {
+  public final int getRowPosition() {
     return rowPosition;
   }
 
@@ -81,7 +91,7 @@ public abstract class Creature {
   *Mengembalikan nilai columnPosition suatu Creature.
   *@return int, integer dengan nilai columnPosition suatu Creature.
   */
-  public int getColumnPosition() {
+  public final int getColumnPosition() {
     return columnPosition;
   }
 
@@ -89,7 +99,7 @@ public abstract class Creature {
   *Mengembalikan nilai strength suatu Creature.
   *@return int, integer dengan nilai strength suatu Creature.
   */
-  public int getStrength() {
+  public final int getStrength() {
     return strength;
   }
 
@@ -97,7 +107,15 @@ public abstract class Creature {
   *Mengembalikan nilai actionInterval suatu Creature.
   *@return int, integer dengan nilai actionInterval suatu Creature.
   */
-  public int getActionInterval() {
+  public final int getActionInterval() {
     return actionInterval;
+  }
+
+  public final int getRange() {
+    return range;
+  }
+
+  public final int getHealth() {
+    return health;
   }
 }

@@ -13,11 +13,13 @@ public class Plant extends Creature {
   *@param row, integer yang menandakan posisi baris suatu creature di dunia.
   *@param column, integer yang menandakan posisi kolom suatu creature di dunia.
   */
-  public Plant(int row, int column) {
+  public Plant(int row, int column, int multiplier) {
     setRowPosition(row);
     setColumnPosition(column);
-    setStrength(5);
+    setStrength(0);
     setActionInterval(3000);
+    setRange(0);
+    setHealth(20 + 2 * multiplier);
   }
 
   /**
@@ -35,6 +37,6 @@ public class Plant extends Creature {
   *<br>Aksi yang dilakukan kelas Plant adalah menambahkan strength sebesar 1.
   */
   public void doAction() {
-    setStrength(getStrength() + 1);
+    setHealth(getHealth() + 5);
   }
 }
