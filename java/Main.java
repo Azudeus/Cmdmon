@@ -2,26 +2,56 @@ import java.util.Scanner;
 import java.util.Random;
 import java.io.*;
 
+/**
+*@author Yeksadiningrat Al Valentino/13514055
+*/
 public class Main{
-	private static char CC;
-	private static boolean stop = false;
-	private static int row = 25;
-	private static int col = 25;
-	private static UniverseUsingSTL world = new UniverseUsingSTL(row,col);
-
+  /**
+  *strength merupakan integer yang menunjukan kekuatan dari suatu Creature. 
+  *Kekuatan ini akan menentukan kelangsungan hidup dalam persaingan.
+  *rowPosition merupakan integer yang menunjukan posisi baris dari Creature pada dunia.
+  *columnPosition merupakan integer yang menunjukan posisi kolom dari Creature pada dunia.
+  *actionInterval merupakan integer yang menunjukan jeda waktu antar aksi dari suatu Creature.
+  */
+  private static char CC;
+  private static boolean stop = false;
+  private static int row = 25;
+  private static int col = 25;
+  private static UniverseUsingSTL world = new UniverseUsingSTL(row,col);
 	
-	 public static void CLS(){
-        try{
-        	new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } catch (IOException e){
-        	System.exit(0);
-        }catch (InterruptedException e){
-        	System.exit(0);
-        } 
-	 }
+	// public static void CLS(){
+	// 	try{
+	// 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+	// 	} catch (IOException e){
+	// 		e.printStackTrace();
+	// 	} catch (InterruptedException e){
+	// 		e.printStackTrace();
+	// 	} 
+	// }
+
+	public final static void clearConsole()
+	{
+		try
+		{
+			final String os = System.getProperty("os.name");
+
+			if (os.contains("Windows"))
+			{
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			}
+			else
+			{
+				new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
+			}
+		}
+		catch (final Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 	
 	public static void printEvery() {	
-		CLS();
+		clearConsole();
 		world.print();
 		// System.out.println("Print Every");
 		// System.out.println();
@@ -95,4 +125,5 @@ public class Main{
 		}
 		
 	}	
+
 }
