@@ -25,10 +25,10 @@ public class Centaur extends Animal {
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(30 + 3 * multiplier);
+    setStrength(20 + 1 * multiplier);
     setActionInterval(50);
-    setHealth(30 + 3 * multiplier);
-    setRange(10);
+    setHealth(50 + 5 * multiplier);
+    setRange(12);
     setSize(20);
   }
 
