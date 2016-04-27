@@ -5,6 +5,7 @@ import javax.swing.*;
 public class UserInterface {
 	public static JFrame mainFrame;
 	public static GamePanel mainPanel;
+	public static ActiveLabel hp;
 	
 	public UserInterface() {
 		mainFrame = new JFrame("Cmdmon");
@@ -14,12 +15,8 @@ public class UserInterface {
 		JPanel holder = new JPanel();
 		holder.setMaximumSize(new Dimension(800,50));
 		holder.setBackground(Color.black);
+		holder.setLayout(new FlowLayout(0));
 		mainFrame.add(holder);
-		
-		//JButton tmp = new JButton("tmp");
-		//mainFrame.add(tmp);
-		//JButton X = new JButton("X");
-		//mainFrame.add(X);
 		
 		mainFrame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent windowEvent) {
@@ -30,6 +27,12 @@ public class UserInterface {
 		mainPanel = new GamePanel();
 		mainPanel.setMaximumSize(new Dimension(800,550));
 		mainFrame.add(mainPanel);
+		
+		hp = new ActiveLabel();
+		hp.setPreferredSize(new Dimension(200,40));
+		hp.setBackground(Color.white);
+		hp.setOpaque(true);
+		holder.add(hp);
 	}
 	
 	public void show() {
@@ -40,4 +43,20 @@ public class UserInterface {
 		UserInterface ui = new UserInterface();
 		ui.show();
 	}
+	
+	class ActiveLabel extends JLabel implements ActionListener{
+		Timer refresh;
+		
+		ActiveLabel(){
+			super();
+			refresh = new Timer(10,this);
+			refresh.start();
+		}
+		
+		public void actionPerformed(ActionEvent e){
+			String tmp = "";
+			tmp = tmp + mainPanel.world.P.getHealth();
+			hp.setText(tmp);
+		}
+	};
 }
