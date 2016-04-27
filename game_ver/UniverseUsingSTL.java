@@ -73,7 +73,7 @@ public class UniverseUsingSTL extends Universe {
     }
 	if(found) {
 		CreatureList.remove(CreatureList.size() - 1);
-    P.setHealth(P.getHealth()+20);
+    
     }
   }
   
@@ -148,6 +148,7 @@ public class UniverseUsingSTL extends Universe {
 			CreatureList.get(i).setHealth(CreatureList.get(i).getHealth() - P.getStrength());
 			if(CreatureList.get(i).getHealth() <= 0){
 				killCreature(CreatureList.get(i));
+				P.setHealth(P.getHealth()+20);
 				size--;
 				i--;
 			}	
@@ -214,7 +215,7 @@ public class UniverseUsingSTL extends Universe {
         int sz = CreatureList.size();
         int index = 0;
 
-    		if((Math.abs(P.getRowPosition() - row) + Math.abs(P.getColumnPosition() - column)) <= (P.getSize() + CreatureSize + P.getRange())) {
+    		if((Math.abs(P.getRowPosition() - row) + Math.abs(P.getColumnPosition() - column)) <= (P.getSize() + CreatureSize + 3*P.getRange())) {
     			found = true;
     		}
         while ((index < sz) && (!found) && (counter < MaxCreature)) {
@@ -286,9 +287,10 @@ public class UniverseUsingSTL extends Universe {
             || (CreatureList.get(index).getColumnPosition() >= getAmountOfColumns())) {
           killCreature(CreatureList.get(index));
           index--;
-          sz--;
+          //sz--;
       }
       index++;
+	  sz = CreatureList.size();
     }
 	//is Player Out Of Bounds
 
@@ -297,6 +299,8 @@ public class UniverseUsingSTL extends Universe {
   		|| (P.getRowPosition() >= getAmountOfRows())
   		|| (P.getColumnPosition() >= getAmountOfColumns())){
   			isGameOver = true;
+			P.setHealth(0);
+			System.out.println("Player out of bound");
   	}
   		
   	//Kill Player if Collision
