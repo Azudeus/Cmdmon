@@ -3,7 +3,7 @@
 */
 
 public class CreatureFactory {
-	public static Creature createCreature(String what,int multiplier)
+	public static Creature createCreature(String what, int row, int column, int directionX, int directionY, int multiplier)
 	{
 		if (what.equals("Harpy"))
 		{

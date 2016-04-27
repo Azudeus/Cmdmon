@@ -17,6 +17,7 @@ public class UniverseUsingSTL extends Universe {
   private boolean isGameOver; 
   private int Turn;
   private int turnInterval;
+  // private int MAX_CREATURE = 30;
 
   /**
   *Constructor dari UniverseUsingSTL yang melakukan inisialisasi attribute.
@@ -155,13 +156,13 @@ public class UniverseUsingSTL extends Universe {
         int sz = CreatureList.size();
         int index = 0;
 
-    		if((Math.abs(P.getRowPosition() - row) + Math.abs(P.getColumnPosition() - column)) <= (P.getSize() + CreatureSize + P.getRange())){
+    		if((Math.abs(P.getRowPosition() - row) + Math.abs(P.getColumnPosition() - column)) <= (P.getSize() + CreatureSize + P.getRange())) {
     			found = true;
     		}
-            while ((index < sz) && (!found) && (counter < MaxCreature)) {
+        while ((index < sz) && (!found) && (counter < MaxCreature)) {
           counter++;
           if ((Math.abs(CreatureList.get(index).getRowPosition() - row) + Math.abs(CreatureList.get(index).getColumnPosition() - column)) 
-			  <= (2*CreatureSize)) {
+			       <= (2*CreatureSize)) {
             found = true;
           }
           index++;
@@ -182,21 +183,21 @@ public class UniverseUsingSTL extends Universe {
 	  
       if (!found) {
         if (rand == 0) {
-          temp = new Plant(row, column, getTurn()/3);
-          addCreature(temp);
-          // addCreature(CreatureFactory.createCreature("Plant",getTurn()));
+          // temp = new Plant(row, column, getTurn()/3);
+          // addCreature(temp);
+          addCreature(CreatureFactory.createCreature("Plant",row, column, 0, 0, getTurn()/3));
         } else if (rand == 1) {
-          temp = new Lamia(row, column, directionX, directionY, getTurn()/3);
-          addCreature((temp));
-          // addCreature(CreatureFactory.createCreature("Lamia",getTurn()));
+          // temp = new Lamia(row, column, directionX, directionY, getTurn()/3);
+          // addCreature((temp));
+          addCreature(CreatureFactory.createCreature("Lamia",row, column, directionX, directionY, getTurn()/3));
         } else if (rand == 2) {
-          temp = new Centaur(row, column, directionX, directionY, getTurn()/3);
-          addCreature((temp));
-          // addCreature(CreatureFactory.createCreature("Centaur",getTurn()));
+          // temp = new Centaur(row, column, directionX, directionY, getTurn()/3);
+          // addCreature((temp));
+          addCreature(CreatureFactory.createCreature("Centaur",row, column, directionX, directionY, getTurn()/3));
         } else {
-          temp = new Harpy(row, column, directionX, directionY, getTurn()/3);
-          addCreature((temp));
-          // addCreature(CreatureFactory.createCreature("Harpy",getTurn()));
+          // temp = new Harpy(row, column, directionX, directionY, getTurn()/3);
+          // addCreature((temp));
+          addCreature(CreatureFactory.createCreature("Harpy",row, column, directionX, directionY, getTurn()/3));
         }
       }
     }
