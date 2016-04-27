@@ -61,7 +61,6 @@ public class UniverseUsingSTL extends Universe {
   *@param creature, Creature yang akan dibunuh.
   */
   public void killCreature(Creature creature) {
-    System.out.println("Delete Creature");  
     boolean found = false;
     int size = CreatureList.size();
     int index = 0;
@@ -144,7 +143,7 @@ public class UniverseUsingSTL extends Universe {
 	int i = 0;
     while(i < size){
 		if(Distance(P, CreatureList.get(i)) <= (P.getRange() + P.getSize() + CreatureList.get(i).getSize())) {
-      System.out.println("Player Attack Creature");
+      System.out.println("Player attack creature around him by " + P.getStrength() + " damage");
 			CreatureList.get(i).setHealth(CreatureList.get(i).getHealth() - P.getStrength());
 			if(CreatureList.get(i).getHealth() <= 0){
 				killCreature(CreatureList.get(i));
@@ -384,8 +383,8 @@ public class UniverseUsingSTL extends Universe {
   *<br>Matrix kemudian dicetak ke file yang sudah dibuka.
   */
   /*
-  public void printFile(String str) throws IOException {
-    try {
+    public void printFile(String str) throws IOException {
+      try {
       BufferedWriter outputWriter = new BufferedWriter(new OutputStreamWriter(
           new FileOutputStream(str)));
       char[][] board = new char[getAmountOfRows()][getAmountOfColumns()];
