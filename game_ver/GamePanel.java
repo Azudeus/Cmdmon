@@ -69,7 +69,9 @@ class GamePanel extends JPanel implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		repaint();
-		world.P.setRowPosition(world.P.getRowPosition() + velX);
-		world.P.setColumnPosition(world.P.getColumnPosition() + velY);
+		if (!world.getIsGameOver()){
+			world.P.setRowPosition(world.P.getRowPosition() + velX);
+			world.P.setColumnPosition(world.P.getColumnPosition() + velY);
+		}
 	}
 }
