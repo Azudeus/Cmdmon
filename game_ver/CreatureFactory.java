@@ -17,7 +17,7 @@ public class CreatureFactory {
 		{
 			return new Centaur(row, column, directionX, directionY, multiplier);
 		}
-		else if (what.equals("Plant"))
+		else // if (what.equals("Plant"))
 		{
 			return new Plant(row, column, multiplier);
 		}
