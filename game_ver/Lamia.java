@@ -20,7 +20,7 @@ public class Lamia extends Animal {
   *@param directionX, integer yang menandakan arah pergerakan Lamia pada sumbu X.
   *@param directionY, integer yang menandakan arah pergerakan Lamia pada sumbu Y.
   */
-  public Lamia(int row, int column, int directionX, int directionY,int multiplier) {
+  public Lamia(final int row, final int column, final int directionX, final int directionY, final int multiplier) {
     setRowPosition(row);
     setColumnPosition(column);
     setDirectionX(directionX);
@@ -44,11 +44,11 @@ public class Lamia extends Animal {
 
   public void draw(Graphics2D g2) {
     //return 'P';
-	ImageIcon ic = new ImageIcon("Assets/Lamia.png");
-	Image i = ic.getImage();
-	g2.drawImage(i, getRowPosition(), getColumnPosition(), null); 
+  ImageIcon ic = new ImageIcon("Assets/Lamia.png");
+  Image i = ic.getImage();
+  g2.drawImage(i, getRowPosition(), getColumnPosition(), null);
   }
-  
+
   /**
   *{@inheritDoc}
   *<br>Aksi yang dilakukan kelas Lamia adalah bergerak (memanggil method move).
