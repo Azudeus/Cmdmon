@@ -92,5 +92,9 @@ public class Main{
 //    createCreatorThread();
     initializeRandom();
     createAllMonsterThread();
+	while (!userInterface.mainPanel.world.getIsGameOver()){
+		System.out.print("");
+	}
+	userInterface.gameOverFrame.setVisible(true);
   }
 }
