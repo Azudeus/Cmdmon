@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 /**
 *@author Davin Prasetya/13514003
 *{@inheritDoc}
@@ -29,10 +33,17 @@ public class Player extends Creature {
   *@return {@inheritDoc}
   *<br>Karakter tersebut adalah T.
   */
-  public char draw() {
-    return 'P';
+  public char draw(){
+	return 'P';
   }
-
+  
+  public void draw(Graphics2D g2) {
+    //return 'P';
+	ImageIcon ic = new ImageIcon("Assets/Player.png");
+	Image i = ic.getImage();
+	g2.drawImage(i, getRowPosition(), getColumnPosition(), null); 
+  }
+  
   /**
   *{@inheritDoc}
   *<br>Aksi yang dilakukan kelas Plant adalah menambahkan strength sebesar 1.

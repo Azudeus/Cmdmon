@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 /**
 *@author Nathan James Runtuwene/13514083
 */
@@ -30,6 +34,8 @@ public abstract class Creature {
   */
   public abstract char draw();
 
+  public abstract void draw(Graphics2D g2);
+  
   /**
   *Melakukan suatu aksi yang berhubungan dengan kelas yang memanggil fungsi ini.
   */
@@ -70,7 +76,7 @@ public abstract class Creature {
   public void setSize(final int size) {
     this.size = size;
   }
-
+  
   /**
   *Mengubah actionInterval Creature menjadi actionInterval pada parameter.
   *<br>Merupakan setter untuk mengubah jeda waktu antar aksi dari suatu Creature.

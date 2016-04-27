@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 /**
 *@author Nathan James Runtuwene/13514083
 *{@inheritDoc}
@@ -32,12 +36,19 @@ public class Plant extends Creature {
   public char draw() {
     return 'T';
   }
+  
+  public void draw(Graphics2D g2) {
+    //return 'P';
+	ImageIcon ic = new ImageIcon("Assets/Plant.png");
+	Image i = ic.getImage();
+	g2.drawImage(i, getRowPosition(), getColumnPosition(), null); 
+  }
 
   /**
   *{@inheritDoc}
   *<br>Aksi yang dilakukan kelas Plant adalah menambahkan strength sebesar 1.
   */
   public void doAction() {
-    setHealth(getHealth() + 10);
+    setHealth(getHealth() + 5);
   }
 }

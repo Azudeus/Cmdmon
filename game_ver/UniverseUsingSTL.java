@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Scanner;
 import java.util.Random;
 import java.util.Vector;
 import java.util.Collections;
@@ -12,8 +11,8 @@ public class UniverseUsingSTL extends Universe {
   /**
   *CreatureList merupakan Vector of Creature yang mencatat semua mahluk yang ada pada dunia.
   */
-  private Vector<Creature> CreatureList;
-  private Player P;
+  Vector<Creature> CreatureList;
+  Player P;
   private boolean isGameOver; 
   private int Turn;
   private int turnInterval;
@@ -59,7 +58,7 @@ public class UniverseUsingSTL extends Universe {
     }
 	if(found) {
 		CreatureList.remove(CreatureList.size() - 1);
-  }
+    }
   }
   
   public final Vector<Creature> getCreatureList(){
@@ -352,19 +351,5 @@ public class UniverseUsingSTL extends Universe {
       System.out.println("File tidak ditemukan");
       System.exit(0);
     }
-  }
-  
-  public static void main (String[] args){
-	  UniverseUsingSTL universe = new UniverseUsingSTL(150,150);
-	  Scanner scan = new Scanner(System.in);
-	  while(!universe.getIsGameOver()){
-		  universe.addRandomCreature(10);
-		  universe.print();
-		 //universe.moveAllCreaturesOnce();
-		  //String c = scan.next();
-		  System.out.println();
-		  System.out.println();
-		  System.out.println();
-	  }
   }
 }

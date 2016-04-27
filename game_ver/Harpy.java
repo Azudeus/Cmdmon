@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 /**
 *@author Nathan James Runtuwene/13514083
 */
@@ -38,6 +42,13 @@ public class Harpy extends Animal {
     return 'H';
   }
 
+  public void draw(Graphics2D g2) {
+    //return 'P';
+	ImageIcon ic = new ImageIcon("Assets/Harpy.png");
+	Image i = ic.getImage();
+	g2.drawImage(i, getRowPosition(), getColumnPosition(), null); 
+  }
+  
   /**
   *{@inheritDoc}
   *<br>Aksi yang dilakukan kelas Harpy adalah bergerak (memanggil method move).

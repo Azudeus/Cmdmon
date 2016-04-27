@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 /**
 *@author Nathan James Runtuwene/13514083
 */
@@ -24,6 +28,8 @@ public abstract class Animal extends Creature {
   */
   public abstract char draw();
 
+  public abstract void draw(Graphics2D g);
+  
   /**
   *{@inheritDoc}
   */
