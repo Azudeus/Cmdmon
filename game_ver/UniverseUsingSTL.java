@@ -88,12 +88,17 @@ public class UniverseUsingSTL extends Universe {
   
   public void attackPlayer() {
 	int size = CreatureList.size();
-    for(int i = 0 ; i < size ; i++){
+	int i = 0;
+    while(i < size){
 		if(Distance(P, CreatureList.get(i)) <= (P.getRange() + P.getSize() + CreatureList.get(i).getSize())) {
 			CreatureList.get(i).setHealth(CreatureList.get(i).getHealth() - P.getStrength());
-			if(CreatureList.get(i).getHealth() <= 0)
+			if(CreatureList.get(i).getHealth() <= 0){
 				killCreature(CreatureList.get(i));
+				size--;
+				i--;
+			}	
 		}
+		i++;
 	}
   }
   
