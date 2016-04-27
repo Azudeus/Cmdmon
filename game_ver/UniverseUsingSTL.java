@@ -295,6 +295,7 @@ public class UniverseUsingSTL extends Universe {
 		|| (P.getRowPosition() >= getAmountOfRows())
 		|| (P.getColumnPosition() >= getAmountOfColumns())){
 			isGameOver = true;
+			P.setHealth(0);
 		}
 		
 	//Kill Player if Collision
@@ -303,6 +304,7 @@ public class UniverseUsingSTL extends Universe {
 		if(Distance(P, CreatureList.get(index)) <= (P.getSize() + CreatureList.get(index).getSize())){
 	    System.out.println("Player collide with monster");
       isGameOver = true;
+	  P.setHealth(0);
 		}
 		index++;
 	}
