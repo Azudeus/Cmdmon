@@ -163,7 +163,7 @@ public class UniverseUsingSTL extends Universe {
   */
   public void attackCreature(Creature c){
   //System.out.println(Distance(P,c) + " " + (P.getSize() + c.getRange() + c.getSize()));
-  if(Distance(P,c) <= (c.getRange() + c.getSize())){
+  if(Distance(P,c) <= (c.getRange() + c.getSize() + P.getSize())){
     System.out.println("Creature attack Player");
 		P.setHealth(P.getHealth() - c.getStrength());
 		if(P.getHealth() <= 0){
@@ -341,7 +341,7 @@ public class UniverseUsingSTL extends Universe {
     int i = 0;
     while ((i < CreatureList.size()) && (!isGameOver)){
       CreatureList.get(i).doAction();
-	    attackCreature(CreatureList.get(i));
+	  attackCreature(CreatureList.get(i));
       i++;
     }
     checkForCollisions();
