@@ -62,6 +62,7 @@ class GamePanel extends JPanel implements ActionListener {
 		  //System.out.println(world.CreatureList.get(i).getRowPosition());
 		  //System.out.println(world.CreatureList.get(i).getColumnPosition());
 		  //System.out.println(world.CreatureList.get(i).draw());
+		  size = world.CreatureList.size();
 		}
 		world.P.draw(g2);
 	}

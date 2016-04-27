@@ -23,7 +23,7 @@ public class Player extends Creature {
     setStrength(25);
     setActionInterval(80);
     setRange(35);
-    setHealth(100);
+    setHealth(500);
     setSize(27);
   }
 
