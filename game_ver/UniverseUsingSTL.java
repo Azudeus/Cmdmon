@@ -57,6 +57,14 @@ public class UniverseUsingSTL extends Universe {
     CreatureList.remove(CreatureList.size() - 1);
   }
   
+  public final Vector<Creature> getCreatureList(){
+	return CreatureList;
+  } 
+  
+  public final Player getPlayer(){
+	  return P;
+  }
+  
   public final boolean getisGameOver(){
 	  return isGameOver;
   }
