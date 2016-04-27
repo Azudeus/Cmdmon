@@ -16,6 +16,7 @@ public class UniverseUsingSTL extends Universe {
   private Player P;
   private boolean isGameOver; 
   private int Turn;
+  private int turnInterval;
 
   /**
   *Constructor dari UniverseUsingSTL yang melakukan inisialisasi attribute.
@@ -35,6 +36,7 @@ public class UniverseUsingSTL extends Universe {
 	P = new Player(row,column);
 	isGameOver = false;
     CreatureList = new Vector<Creature>();
+    turnInterval = 3000;
   }
 
   /**
@@ -73,6 +75,9 @@ public class UniverseUsingSTL extends Universe {
 	  Turn++;
   }
   
+  public final int getTurnInterval() {
+	return turnInterval;
+  }
   public final int getTurn() {
 	  return Turn;
   }
@@ -81,7 +86,7 @@ public class UniverseUsingSTL extends Universe {
 	return (Math.abs(c1.getColumnPosition() - c2.getColumnPosition()) + Math.abs(c1.getRowPosition() - c2.getRowPosition()));
   }
   
-  public void AttackPlayer() {
+  public void attackPlayer() {
 	int size = CreatureList.size();
     for(int i = 0 ; i < size ; i++){
 		if(Distance(P, CreatureList.get(i)) <= (P.getRange() + P.getSize() + CreatureList.get(i).getSize())) {
@@ -92,7 +97,7 @@ public class UniverseUsingSTL extends Universe {
 	}
   }
   
-  public void AttackCreature(int index){
+  public void attackCreature(int index){
 	if(Distance(P, CreatureList.get(index)) <= CreatureList.get(index).getRange()){
 		P.setHealth(P.getHealth() - CreatureList.get(index).getStrength());
 		if(P.getHealth() <= 0)
@@ -197,6 +202,8 @@ public class UniverseUsingSTL extends Universe {
     int index = 0;
     //Kill Out Of Bounds
     while (index < sz) {
+      System.out.println(sz + "X");
+      System.out.println(index);
       if ((CreatureList.get(index).getRowPosition() < 0)
           || (CreatureList.get(index).getColumnPosition() < 0)
           || (CreatureList.get(index).getRowPosition() >= getAmountOfRows())
