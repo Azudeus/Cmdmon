@@ -11,27 +11,28 @@ public class UniverseUsingSTL extends Universe {
   /**
   *CreatureList merupakan Vector of Creature yang mencatat semua mahluk yang ada pada dunia.
   */
-
   Vector<Creature> CreatureList;
+  
   /**
   *P adalah Player yang akan dikendalikan oleh pemain
   */
   Player P;
+  
   /**
   *isGameOVer adalah boolean yang menyatakan apakah game sudah berakhir atau belum.
   *<br>isGameOver akan bernilai true apabila P mati.
   */
-
   private boolean isGameOver; 
+
   /**
   *Turn menunjukan sudah urutan ke berapa sejak objek ini dibangun.
   */
   private int Turn;
+
   /**
   *turnInterval adalah durasi detik dimana turn bertambah.
   */
   private int turnInterval;
-  // private int MAX_CREATURE = 30;
 
   /**
   *Constructor dari UniverseUsingSTL yang melakukan inisialisasi attribute.
