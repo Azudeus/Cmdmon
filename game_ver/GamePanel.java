@@ -12,7 +12,7 @@ class GamePanel extends JPanel implements ActionListener {
 		super();
 		setFocusable(true);
 		setBackground(Color.white);
-		world = new UniverseUsingSTL(680,485);
+		world = new UniverseUsingSTL(740,460);
 		addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 				int key = e.getKeyCode();

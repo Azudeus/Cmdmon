@@ -418,15 +418,14 @@ public class UniverseUsingSTL extends Universe {
   
   public static void main (String[] args){
     UniverseUsingSTL universe = new UniverseUsingSTL(150,150);
-    Scanner scan = new Scanner(System.in);
     while(!universe.getIsGameOver()){
       universe.addRandomCreature(10);
       universe.print();
      //universe.moveAllCreaturesOnce();
       //String c = scan.next();
       System.out.println();
-  　　  System.out.println();
-  　　  System.out.println();
+      System.out.println();
+      System.out.println();
     }
   }
 }
