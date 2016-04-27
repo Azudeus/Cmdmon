@@ -15,6 +15,7 @@ public class Harpy extends Animal {
   *@param column, integer yang menandakan posisi kolom suatu creature di dunia.
   *@param directionX, integer yang menandakan arah pergerakan Harpy pada sumbu X.
   *@param directionY, integer yang menandakan arah pergerakan Harpy pada sumbu Y.
+  *@param multiplier, integer yang menentukan sudah berapa kali munucl yangmana
   */
   public Harpy(int row, int column, int directionX, int directionY,int multiplier) {
     setRowPosition(row);
@@ -34,8 +35,8 @@ public class Harpy extends Animal {
   *@return {@inheritDoc}
   *<br>Karakter tersebut adalah H.
   */
-  public char draw() {
-    return 'H';
+    public char draw() {
+      return 'H';
   }
 
   /**
