@@ -26,7 +26,7 @@ public class Harpy extends Animal {
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(30 + 3 * multiplier);
+    setStrength(30 + 1 * multiplier);
     setActionInterval(80);
     setHealth(15 + 2 * multiplier);
     setRange(20);

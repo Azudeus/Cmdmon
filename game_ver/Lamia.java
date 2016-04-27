@@ -25,7 +25,7 @@ public class Lamia extends Animal {
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(10 + 1 * multiplier);
+    setStrength(10 + 1 * multiplier / 3);
     setActionInterval(100);
     setHealth(30 + 3 * multiplier);
     setRange(30);
