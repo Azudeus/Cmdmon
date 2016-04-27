@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Scanner;
 import java.util.Random;
 import java.util.Vector;
 import java.util.Collections;
@@ -75,7 +76,7 @@ public class UniverseUsingSTL extends Universe {
   public void AttackPlayer() {
 	int size = CreatureList.size();
     for(int i = 0 ; i < size ; i++){
-		if(Distance(P, CreatureList.get(i)) <= P.getRange()){
+		if(Distance(P, CreatureList.get(i)) <= (P.getRange() + P.getSize() + CreatureList.get(i).getSize())) {
 			CreatureList.get(i).setHealth(CreatureList.get(i).getHealth() - P.getStrength());
 			if(CreatureList.get(i).getHealth() <= 0)
 				killCreature(CreatureList.get(i));
@@ -116,24 +117,25 @@ public class UniverseUsingSTL extends Universe {
       directionX = directionX - 1;
       int directionY = (generator.nextInt(3));
       directionY = directionY - 1;
+	  int MaxCreature = 30;
+	  int CreatureSize = 20;
       boolean found = true;
       int counter = 0;
 
       //cari apakah sudah ada
-      while ((counter < (getAmountOfColumns() * getAmountOfRows())) && (found)) {
+      while ((counter < MaxCreature) && (found)) {
         found = false;
         counter = 0;
         int sz = CreatureList.size();
         int index = 0;
 
-		if((P.getRowPosition() == row) && (P.getColumnPosition() == column)){
+		if((Math.abs(P.getRowPosition() - row) + Math.abs(P.getColumnPosition() - column)) <= (P.getSize() + CreatureSize)){
 			found = true;
 		}
-        while ((index < sz) && (!found) && (counter < (getAmountOfColumns()
-            * getAmountOfRows())) ) {
+        while ((index < sz) && (!found) && (counter < MaxCreature)) {
           counter++;
-          if ((CreatureList.get(index).getRowPosition() == row)
-              && (CreatureList.get(index).getColumnPosition() == column)) {
+          if ((Math.abs(CreatureList.get(index).getRowPosition() - row) + Math.abs(CreatureList.get(index).getColumnPosition() - column)) 
+			  <= (2*CreatureSize)) {
             found = true;
           }
           index++;
@@ -149,9 +151,10 @@ public class UniverseUsingSTL extends Universe {
             row = 0;
           }
         }
+		//System.out.println(counter);
       }
 	  
-      if (counter < (getAmountOfColumns() * getAmountOfRows())) {
+      if (!found) {
         if (rand == 0) {
           temp = new Plant(row, column, getTurn()/3);
           addCreature((temp));
@@ -207,7 +210,7 @@ public class UniverseUsingSTL extends Universe {
 	//Kill Player if Collision
 	index = 0;
 	while((!isGameOver) && (index < sz)){
-		if((CreatureList.get(index).getRowPosition() == P.getRowPosition()) && (CreatureList.get(index).getColumnPosition() == P.getColumnPosition())){
+		if(Distance(P, CreatureList.get(index)) <= (P.getSize() + CreatureList.get(index).getSize())){
 			isGameOver = true;
 		}
 		index++;
@@ -315,5 +318,19 @@ public class UniverseUsingSTL extends Universe {
       System.out.println("File tidak ditemukan");
       System.exit(0);
     }
+  }
+  
+  public static void main (String[] args){
+	  UniverseUsingSTL universe = new UniverseUsingSTL(150,150);
+	  Scanner scan = new Scanner(System.in);
+	  while(!universe.getisGameOver()){
+		  universe.addRandomCreature(10);
+		  universe.print();
+		 //universe.moveAllCreaturesOnce();
+		  //String c = scan.next();
+		  System.out.println();
+		  System.out.println();
+		  System.out.println();
+	  }
   }
 }

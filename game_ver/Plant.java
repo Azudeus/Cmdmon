@@ -19,6 +19,7 @@ public class Plant extends Creature {
     setStrength(0);
     setActionInterval(200);
     setRange(0);
+	setSize(20);
     setHealth(100 + 10 * multiplier);
   }
 
