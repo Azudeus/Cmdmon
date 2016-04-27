@@ -1,3 +1,6 @@
+package universe;
+
+import creature.*;
 import java.io.*;
 
 /**

@@ -1,3 +1,5 @@
+package creature;
+
 /**
 *@author Nathan James Runtuwene/13514083
 */
