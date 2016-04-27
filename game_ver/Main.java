@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.Random;
 import java.io.*;
 import java.util.Vector;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
 *@author Yeksadiningrat Al Valentino/13514055
@@ -89,5 +92,9 @@ public class Main{
 //    createCreatorThread();
     initializeRandom();
     createAllMonsterThread();
+	while (!userInterface.mainPanel.world.getIsGameOver()){
+		System.out.print("");
+	}
+	userInterface.gameOverFrame.setVisible(true);
   }
 }

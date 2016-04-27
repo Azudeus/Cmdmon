@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class UserInterface {
 	public static JFrame mainFrame;
+	public static JFrame gameOverFrame;
 	public static GamePanel mainPanel;
 	public static HPLabel hp;
 	public static ScoreLabel score;
@@ -44,6 +45,18 @@ public class UserInterface {
 		score.setBackground(Color.white);
 		score.setOpaque(true);
 		holder.add(score);
+		
+		gameOverFrame = new JFrame("Game Over");
+		
+		gameOverFrame.setSize(300,100);
+		gameOverFrame.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent windowEvent) {
+				System.exit(0);
+			}
+		});
+		JLabel gameOverLabel = new JLabel("Game Over",JLabel.CENTER);	
+		gameOverFrame.add(gameOverLabel);
+		gameOverFrame.setLocationRelativeTo(mainFrame);
 	}
 	
 	public void show() {
@@ -68,6 +81,9 @@ public class UserInterface {
 			String tmp = "Hit Points : ";
 			if (mainPanel.world.P.getHealth() > 0){
 				tmp = tmp + mainPanel.world.P.getHealth();
+			}
+			else if (mainPanel.world.getIsGameOver()) {
+				tmp = "DEAD";
 			}
 			else {
 				tmp = tmp + "Bleeding";
