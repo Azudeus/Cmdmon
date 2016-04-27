@@ -22,9 +22,10 @@ public class Harpy extends Animal {
     setDirectionX(directionX);
     setDirectionY(directionY);
     setStrength(30 + 3 * multiplier);
-    setActionInterval(1000);
+    setActionInterval(80);
     setHealth(15 + 2 * multiplier);
-    setRange(2);
+    setRange(20);
+    setSize(20);
   }
 
   /**
