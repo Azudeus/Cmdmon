@@ -154,16 +154,20 @@ public class UniverseUsingSTL extends Universe {
       if (counter < (getAmountOfColumns() * getAmountOfRows())) {
         if (rand == 0) {
           temp = new Plant(row, column, getTurn()/3);
-          addCreature((temp));
+          addCreature(temp);
+          // addCreature(CreatureFactory.createCreature("Plant",getTurn()));
         } else if (rand == 1) {
           temp = new Lamia(row, column, directionX, directionY, getTurn()/3);
           addCreature((temp));
+          // addCreature(CreatureFactory.createCreature("Lamia",getTurn()));
         } else if (rand == 2) {
           temp = new Centaur(row, column, directionX, directionY, getTurn()/3);
           addCreature((temp));
+          // addCreature(CreatureFactory.createCreature("Centaur",getTurn()));
         } else {
           temp = new Harpy(row, column, directionX, directionY, getTurn()/3);
           addCreature((temp));
+          // addCreature(CreatureFactory.createCreature("Harpy",getTurn()));
         }
       }
     }
