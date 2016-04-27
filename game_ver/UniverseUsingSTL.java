@@ -49,14 +49,15 @@ public class UniverseUsingSTL extends Universe {
     boolean found = false;
     int size = CreatureList.size();
     int index = 0;
-    while ((!found) && (index < size)) {
+    while ((!found) && (index < CreatureList.size())) {
       if (CreatureList.get(index) == creature) {
         found = true;
         Collections.swap(CreatureList, index, CreatureList.size() - 1);
       }
       index++;
     }
-    CreatureList.remove(CreatureList.size() - 1);
+	if(found)
+		CreatureList.remove(CreatureList.size() - 1);
   }
   
   public final Vector<Creature> getCreatureList(){
@@ -207,9 +208,7 @@ public class UniverseUsingSTL extends Universe {
     int index = 0;
     //Kill Out Of Bounds
     while (index < sz) {
-      // System.out.println(sz + "X");
-      // System.out.println(index);
-      if ((CreatureList.get(index).getRowPosition() < 0)
+    if ((CreatureList.get(index).getRowPosition() < 0)
           || (CreatureList.get(index).getColumnPosition() < 0)
           || (CreatureList.get(index).getRowPosition() >= getAmountOfRows())
           || (CreatureList.get(index).getColumnPosition() >= getAmountOfColumns())) {
@@ -269,6 +268,7 @@ public class UniverseUsingSTL extends Universe {
   public void moveAllCreaturesOnce() {
     for (int i = 0; i < CreatureList.size(); i++) {
       CreatureList.get(i).doAction();
+	  attackCreature(i);
     }
     checkForCollisions();
   }
