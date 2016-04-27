@@ -73,6 +73,7 @@ public class UniverseUsingSTL extends Universe {
     }
 	if(found) {
 		CreatureList.remove(CreatureList.size() - 1);
+    P.setHealth(P.getHealth()+20);
     }
   }
   
