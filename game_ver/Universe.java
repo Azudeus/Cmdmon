@@ -106,13 +106,13 @@ public abstract class Universe{
   **/
   public abstract void moveAllCreaturesOnce();
 
-  /**
-  *Menuliskan status dunia saat ini ke dalam sautu file.
-  *<br>Status ini menggambarkan posisi mahluk yang ada di dalam dunia.
-  *@param str, String yang menunjukan nama file.
-  *@throws IOException IOException akan di-throw jika terjadi masalah dengan file yang ditulis.
-  **/
-  public abstract void printFile(String str) throws IOException;
+  // /**
+  // *Menuliskan status dunia saat ini ke dalam sautu file.
+  // *<br>Status ini menggambarkan posisi mahluk yang ada di dalam dunia.
+  // *@param str, String yang menunjukan nama file.
+  // *@throws IOException IOException akan di-throw jika terjadi masalah dengan file yang ditulis.
+  // **/
+  // public abstract void printFile(String str) throws IOException;
 
   /**
   *Menuliskan status dunia saat ini ke System.out (layar).

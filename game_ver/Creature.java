@@ -63,16 +63,25 @@ public abstract class Creature {
   /**
   *Mengubah strength Creature menjadi strength pada parameter.
   *<br>Merupakan setter untuk mengubah kekuatan suatu mahluk dalam persaingan.
-  *@param strength, merupakan integer yang menandakan kekuatan suatu mahluk dalam persaingan.
+  *@param strength, merupakan integer yang menandakan kekuatan suatu mahluk
   */
   public void setStrength(final int strength) {
     this.strength = strength;
   }
 
+  /**
+  *Mengubah nyawa seseorang Creature.
+  *@param health, menupakan integer yang menandakan nyawa Creature.
+  */
   public void setHealth(final int health) {
     this.health = health;
   }
 
+
+  /**
+  *Mengubah ukuran
+  *@param health, menupakan integer yang menandakan ukuran Creature.
+  */
   public void setSize(final int size) {
     this.size = size;
   }
@@ -86,6 +95,10 @@ public abstract class Creature {
     this.actionInterval = actionInterval;
   }
 
+  /**
+  *<br>Merupakan setter untuk mengubah jarak serang makhluk ini.
+  *@param range, integer range teraru
+  */
   public void setRange(final int range) {
     this.range = range;
   }
@@ -121,15 +134,27 @@ public abstract class Creature {
   public final int getActionInterval() {
     return actionInterval;
   }
-
+  
+  /**
+  *Mengembalikan nilai Rangge suatu Creature.
+  *@return int, integer dengan nilai range suatu Creature.
+  */
   public final int getRange() {
     return range;
   }
 
+  /**
+  *Mengembalikan nilai health suatu Creature.
+  *@return int, integer dengan nilai health suatu Creature.
+  */
   public final int getHealth() {
     return health;
   }
 
+  /**
+  *Mengembalikan nilai size suatu Creature.
+  *@return int, integer dengan nilai size suatu Creature.
+  */
   public final int getSize(){
     return size;
   }
