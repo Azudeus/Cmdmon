@@ -22,9 +22,10 @@ public class Centaur extends Animal {
     setDirectionX(directionX);
     setDirectionY(directionY);
     setStrength(30 + 3 * multiplier);
-    setActionInterval(800);
+    setActionInterval(50);
     setHealth(30 + 3 * multiplier);
-    setRange(1);
+    setRange(10);
+    setSize(20);
   }
 
   /**

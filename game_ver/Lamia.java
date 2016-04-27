@@ -22,9 +22,10 @@ public class Lamia extends Animal {
     setDirectionX(directionX);
     setDirectionY(directionY);
     setStrength(10 + 1 * multiplier);
-    setActionInterval(1200);
+    setActionInterval(100);
     setHealth(30 + 3 * multiplier);
-    setRange(3);
+    setRange(30);
+    setSize(20);
   }
 
   /**

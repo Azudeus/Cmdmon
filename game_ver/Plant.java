@@ -17,9 +17,9 @@ public class Plant extends Creature {
     setRowPosition(row);
     setColumnPosition(column);
     setStrength(0);
-    setActionInterval(3000);
+    setActionInterval(200);
     setRange(0);
-    setHealth(20 + 2 * multiplier);
+    setHealth(100 + 10 * multiplier);
   }
 
   /**
@@ -37,6 +37,6 @@ public class Plant extends Creature {
   *<br>Aksi yang dilakukan kelas Plant adalah menambahkan strength sebesar 1.
   */
   public void doAction() {
-    setHealth(getHealth() + 5);
+    setHealth(getHealth() + 10);
   }
 }

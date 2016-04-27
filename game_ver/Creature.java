@@ -15,6 +15,7 @@ public abstract class Creature {
   private int actionInterval;
   private int range;
   private int health;
+  private int size;
 
   /**
   *Constructor dari kelas Creature yang tidak melakukan apa - apa.
@@ -64,6 +65,10 @@ public abstract class Creature {
 
   public void setHealth(final int health) {
     this.health = health;
+  }
+
+  public void setSize(final int size) {
+    this.size = size;
   }
 
   /**
@@ -117,5 +122,9 @@ public abstract class Creature {
 
   public final int getHealth() {
     return health;
+  }
+
+  public final int getSize(){
+    return size;
   }
 }
