@@ -14,7 +14,7 @@ public class Harpy extends Animal {
   *<br>columnPosition akan diinisialisasi dengan column.
   *<br>directionX akan diinisialisasi dengan directionX dari parameter.
   *<br>directionY akan diinisialisasi dengan directionY dari parameter.
-  *<br>strength akan diinisialisasi dengan 15.  
+  *<br>strength akan diinisialisasi dengan 15.
   *<br>actionInterval akan diinisialisasi dengan 1000.
   *<br>Inisialisasi ini dilakukan dengan memanggil setter.
   *@param row, integer yang menandakan posisi baris suatu creature di dunia.
@@ -23,12 +23,12 @@ public class Harpy extends Animal {
   *@param directionY, integer yang menandakan arah pergerakan Harpy pada sumbu Y.
   *@param multiplier, integer yang menentukan sudah berapa kali munucl yangmana
   */
-  public Harpy(int row, int column, int directionX, int directionY,int multiplier) {
+  public Harpy(final int row, final int column, final int directionX, final int directionY, final int multiplier) {
     setRowPosition(row);
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(30 + 3 * multiplier);
+    setStrength(30 + 1 * multiplier);
     setActionInterval(80);
     setHealth(15 + 2 * multiplier);
     setRange(20);
@@ -47,11 +47,11 @@ public class Harpy extends Animal {
 
   public void draw(Graphics2D g2) {
     //return 'P';
-	ImageIcon ic = new ImageIcon("Assets/Harpy.png");
-	Image i = ic.getImage();
-	g2.drawImage(i, getRowPosition(), getColumnPosition(), null); 
+  ImageIcon ic = new ImageIcon("Assets/Harpy.png");
+  Image i = ic.getImage();
+  g2.drawImage(i, getRowPosition(), getColumnPosition(), null);
   }
-  
+
   /**
   *{@inheritDoc}
   *<br>Aksi yang dilakukan kelas Harpy adalah bergerak (memanggil method move).

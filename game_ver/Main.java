@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.Random;
 import java.io.*;
 import java.util.Vector;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
 *@author Yeksadiningrat Al Valentino/13514055
@@ -16,22 +19,13 @@ public class Main{
   */
   private static char CC;
   private static boolean stop = false;
-  private static int row = 680;
-  private static int col = 485;
+  private static final int row = 680;
+  private static final int col = 485;
 //  private static UniverseUsingSTL world = new UniverseUsingSTL(row,col);
   private static Vector<Thread> vectorThread = new Vector<Thread>();
   private static UserInterface userInterface;
-
-  /**
-  *Melakukan pembersihan layar dan mencetak dunia ke layar.
-  *<br>Pembersihan dilakukan dengan memanggil static method CLS.
-  */
-  public static void printEvery() {	
-    //clearConsole();
-    userInterface.mainPanel.world.print();
-    // System.out.println("Print Every");
-    // System.out.println();
-  }
+  private static final int spawnInterval = 10;
+  private static final int spawnAmount = 3;
 
   /**
   *Menambahkan creature ke dunia dengan jumlah acak.
@@ -40,33 +34,12 @@ public class Main{
   public static void initializeRandom(){
     System.out.println("initialized Random Creature");
     Random rand = new Random();
-    int fixedNum = 4; 
-    int randomNum = rand.nextInt(fixedNum);
-    userInterface.mainPanel.world.addRandomCreature(fixedNum + randomNum);;
+    int randomNum = rand.nextInt(spawnAmount);
+    userInterface.mainPanel.world.addRandomCreature(spawnAmount + randomNum);;
     // System.out.println("initialize " + randomNum);
     // System.out.println();
   }
 
-  public static void createMonsterThread(int i) {
-    Thread t1 = new Thread(new Runnable() {
-      public void run() {
-        try {
-          Creature c = userInterface.mainPanel.world.getCreatureList().get(i);
-          while(!stop && (i<userInterface.mainPanel.world.getCreatureList().size())) {
-            c.doAction();
-            userInterface.mainPanel.world.checkForCollisions();
-            userInterface.mainPanel.world.attackCreature(c);
-            Thread.currentThread().sleep(c.getActionInterval());
-          }
-        } catch (InterruptedException e) {
-          System.err.println("Message monster thread interrupted");
-        }
-      }
-    }); 
-    vectorThread.add(t1);
-    t1.start();
-  }
-  
   public static void createPlayerThread() {
     new Thread(new Runnable() {
       public void run() {
@@ -87,37 +60,15 @@ public class Main{
       }
     }).start();
   }
-
-  public static void createCreatorThread() {
-    new Thread(new Runnable() {
-      public void run() {
-        try {
-          while(!stop){
-            Thread.sleep(userInterface.mainPanel.world.getTurnInterval());      
-            int prevSize = userInterface.mainPanel.world.getCreatureList().size();
-            initializeRandom();
-            userInterface.mainPanel.world.addTurn();
-            for (int i=prevSize;i < userInterface.mainPanel.world.getCreatureList().size();i++) {
-              // System.out.println(world.getCreatureList().size() + " X");
-              // System.out.println(i);
-              createMonsterThread(i);
-            }
-          }
-        } catch (InterruptedException e) {
-          System.err.println("Message monster thread interrupted");
-        }
-      }
-    }).start();
-  }
   
   public static void createAllMonsterThread() {
     new Thread(new Runnable() {
       public void run() {
         try {
-          while(!stop) {
+          while((!stop) && (!userInterface.mainPanel.world.getIsGameOver())) {
             userInterface.mainPanel.world.moveAllCreaturesOnce();
             userInterface.mainPanel.world.addTurn();
-            if (userInterface.mainPanel.world.getTurn() % 10 == 0){
+            if (userInterface.mainPanel.world.getTurn() % spawnInterval == 0) {
               initializeRandom();
             }
             Thread.sleep(userInterface.mainPanel.world.getPlayer().getActionInterval());  
@@ -141,5 +92,9 @@ public class Main{
 //    createCreatorThread();
     initializeRandom();
     createAllMonsterThread();
+	while (!userInterface.mainPanel.world.getIsGameOver()){
+		System.out.print("");
+	}
+	userInterface.gameOverFrame.setVisible(true);
   }
 }

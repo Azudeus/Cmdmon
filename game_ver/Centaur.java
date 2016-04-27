@@ -22,15 +22,15 @@ public class Centaur extends Animal {
   *@param directionX, integer yang menandakan arah pergerakan Centaur pada sumbu X.
   *@param directionY, integer yang menandakan arah pergerakan Centaur pada sumbu Y.
   */
-  public Centaur(int row, int column, int directionX, int directionY, int multiplier) {
+  public Centaur(final int row, final int column, final int directionX, final int directionY, final int multiplier) {
     setRowPosition(row);
     setColumnPosition(column);
     setDirectionX(directionX);
     setDirectionY(directionY);
-    setStrength(30 + 3 * multiplier);
+    setStrength(20 + 1 * multiplier);
     setActionInterval(50);
-    setHealth(30 + 3 * multiplier);
-    setRange(10);
+    setHealth(50 + 5 * multiplier);
+    setRange(12);
     setSize(20);
   }
 
@@ -46,11 +46,11 @@ public class Centaur extends Animal {
 
   public void draw(Graphics2D g2) {
     //return 'P';
-	ImageIcon ic = new ImageIcon("Assets/Centaur.png");
-	Image i = ic.getImage();
-	g2.drawImage(i, getRowPosition(), getColumnPosition(), null);
+  ImageIcon ic = new ImageIcon("Assets/Centaur.png");
+  Image i = ic.getImage();
+  g2.drawImage(i, getRowPosition(), getColumnPosition(), null);
   }
-  
+
   /**
   *{@inheritDoc}
   *<br>Aksi yang dilakukan kelas Centaur adalah bergerak (memanggil method move).

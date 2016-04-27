@@ -87,7 +87,7 @@ public abstract class Creature {
   public void setSize(final int size) {
     this.size = size;
   }
-  
+
   /**
   *Mengubah actionInterval Creature menjadi actionInterval pada parameter.
   *<br>Merupakan setter untuk mengubah jeda waktu antar aksi dari suatu Creature.
@@ -136,7 +136,7 @@ public abstract class Creature {
   public final int getActionInterval() {
     return actionInterval;
   }
-  
+
   /**
   *Mengembalikan nilai Rangge suatu Creature.
   *@return int, integer dengan nilai range suatu Creature.
@@ -157,7 +157,7 @@ public abstract class Creature {
   *Mengembalikan nilai size suatu Creature.
   *@return int, integer dengan nilai size suatu Creature.
   */
-  public final int getSize(){
+  public final int getSize() {
     return size;
   }
 }
