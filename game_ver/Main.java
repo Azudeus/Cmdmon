@@ -42,7 +42,7 @@ public class Main{
   public static void initializeRandom(){
     System.out.println("initialized Random Creature");
     Random rand = new Random();
-    int randomNum = rand.nextInt(fixedNum);
+    int randomNum = rand.nextInt(spawnAmount);
     userInterface.mainPanel.world.addRandomCreature(spawnAmount + randomNum);;
     // System.out.println("initialize " + randomNum);
     // System.out.println();
@@ -115,10 +115,10 @@ public class Main{
     new Thread(new Runnable() {
       public void run() {
         try {
-          while(!stop) {
+          while((!stop) && (!userInterface.mainPanel.world.getIsGameOver())) {
             userInterface.mainPanel.world.moveAllCreaturesOnce();
             userInterface.mainPanel.world.addTurn();
-            if (userInterface.mainPanel.world.getTurn() % spawnInterval == 0){
+            if (userInterface.mainPanel.world.getTurn() % spawnInterval == 0) {
               initializeRandom();
             }
             Thread.sleep(userInterface.mainPanel.world.getPlayer().getActionInterval());  

@@ -5,7 +5,8 @@ import javax.swing.*;
 public class UserInterface {
 	public static JFrame mainFrame;
 	public static GamePanel mainPanel;
-	public static ActiveLabel hp;
+	public static HPLabel hp;
+	public static ScoreLabel score;
 	private static int frameWidth = 800;
 	private static int frameHeight = 600;
 	private static int labelWidth = 200;
@@ -32,11 +33,17 @@ public class UserInterface {
 		mainPanel.setMaximumSize(new Dimension(frameWidth, frameHeight - 50));
 		mainFrame.add(mainPanel);
 		
-		hp = new ActiveLabel();
+		hp = new HPLabel();
 		hp.setPreferredSize(new Dimension(labelWidth, labelHeight));
 		hp.setBackground(Color.white);
 		hp.setOpaque(true);
 		holder.add(hp);
+		
+		score = new ScoreLabel();
+		score.setPreferredSize(new Dimension(labelWidth, labelHeight));
+		score.setBackground(Color.white);
+		score.setOpaque(true);
+		holder.add(score);
 	}
 	
 	public void show() {
@@ -48,24 +55,40 @@ public class UserInterface {
 		ui.show();
 	}
 	
-	class ActiveLabel extends JLabel implements ActionListener {
-		Timer refresh;
+	class HPLabel extends JLabel implements ActionListener {
+		Timer refreshHP;
 		
-		ActiveLabel(){
-			super();
-			refresh = new Timer(10,this);
-			refresh.start();
+		HPLabel(){
+			super("",JLabel.CENTER);
+			refreshHP = new Timer(10,this);
+			refreshHP.start();
 		}
 		
 		public void actionPerformed(ActionEvent e) {
-			String tmp = "";
+			String tmp = "Hit Points : ";
 			if (mainPanel.world.P.getHealth() > 0){
 				tmp = tmp + mainPanel.world.P.getHealth();
 			}
 			else {
-				tmp = "1";
+				tmp = tmp + "Bleeding";
 			}
 			hp.setText(tmp);
+		}
+	};
+	
+	class ScoreLabel extends JLabel implements ActionListener {
+		Timer refreshScore;
+		
+		ScoreLabel(){
+			super("",JLabel.CENTER);
+			refreshScore = new Timer(10,this);
+			refreshScore.start();
+		}
+		
+		public void actionPerformed(ActionEvent e) {
+			String tmp = "Score : ";
+			tmp = tmp + mainPanel.world.getTurn();
+			score.setText(tmp);
 		}
 	};
 }
