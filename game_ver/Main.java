@@ -34,6 +34,7 @@ public class Main{
   }
 
   public static void initializeRandom() {
+    System.out.println("initialized Random Creature");
     Random rand = new Random();
     int fixedNum = 4; 
     int randomNum = rand.nextInt(fixedNum);
@@ -72,6 +73,9 @@ public class Main{
             world.checkForCollisions();
             world.attackPlayer();
             Thread.sleep(p.getActionInterval());
+            if(world.getIsGameOver()) {
+              stop = true;
+            }
           }
         } catch (InterruptedException e){
           System.err.println("Message player thread interrupted");
@@ -107,10 +111,12 @@ public class Main{
       public void run() {
         try {
           while(!stop) {
-            for (int i = 0;i < world.getCreatureList().size();i++) {
-              world.moveAllCreaturesOnce();
-              Thread.sleep(player.getActionInterval());
+            world.moveAllCreaturesOnce();
+            world.addTurn();
+            if (world.getTurn() % 3 == 0){
+              initializeRandom();
             }
+            Thread.sleep(world.getPlayer().getActionInterval());  
           }
 
         } catch (InterruptedException e) {
@@ -128,6 +134,7 @@ public class Main{
   public static void main(String[] args){
     createPlayerThread();
 //    createCreatorThread();
+    initializeRandom();
     createAllMonsterThread();
   }
 }
