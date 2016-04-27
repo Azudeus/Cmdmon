@@ -47,10 +47,10 @@ public class Main{
       public void run() {
         try {
           Creature c = world.getCreatureList().get(i);
-          while(!stop) {
+          while(!stop && (i<world.getCreatureList().size())) {
             c.doAction();
             world.checkForCollisions();
-            world.attackCreature(i);
+            world.attackCreature(c);
             Thread.currentThread().sleep(c.getActionInterval());
           }
         } catch (InterruptedException e) {
@@ -90,13 +90,31 @@ public class Main{
           initializeRandom();
           world.addTurn();
           for (int i=prevSize;i < world.getCreatureList().size();i++) {
-            System.out.println(world.getCreatureList().size() + " X");
-            System.out.println(i);
+            // System.out.println(world.getCreatureList().size() + " X");
+            // System.out.println(i);
             createMonsterThread(i);
           }
           }
         } catch (InterruptedException e) {
           System.err.println("Message monster thread interrupted");
+        }
+      }
+    }).start();
+  }
+
+  public static void createAllMonsterThread() {
+    new Thread(new Runnable() {
+      public void run() {
+        try {
+          while(!stop) {
+            for (int i = 0;i < world.getCreatureList().size();i++) {
+              world.moveAllCreaturesOnce();
+              Thread.sleep(player.getActionInterval());
+            }
+          }
+
+        } catch (InterruptedException e) {
+          System.err.println("Message All Monster Thread interrupted");
         }
       }
     }).start();
@@ -109,6 +127,7 @@ public class Main{
   */
   public static void main(String[] args){
     createPlayerThread();
-    createCreatorThread();
+//    createCreatorThread();
+    createAllMonsterThread();
   }
 }
