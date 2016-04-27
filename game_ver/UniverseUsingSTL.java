@@ -103,9 +103,9 @@ public class UniverseUsingSTL extends Universe {
 	}
   }
   
-  public void attackCreature(int index){
-	if(Distance(P, CreatureList.get(index)) <= CreatureList.get(index).getRange()){
-		P.setHealth(P.getHealth() - CreatureList.get(index).getStrength());
+  public void attackCreature(Creature c){
+	if(Distance(P,c) <= c.getRange()){
+		P.setHealth(P.getHealth() - c.getStrength());
 		if(P.getHealth() <= 0)
 			isGameOver = true;
 	}
@@ -208,9 +208,7 @@ public class UniverseUsingSTL extends Universe {
     int index = 0;
     //Kill Out Of Bounds
     while (index < sz) {
-      //System.out.println(sz + "X");
-      //System.out.println(index);
-      if ((CreatureList.get(index).getRowPosition() < 0)
+    if ((CreatureList.get(index).getRowPosition() < 0)
           || (CreatureList.get(index).getColumnPosition() < 0)
           || (CreatureList.get(index).getRowPosition() >= getAmountOfRows())
           || (CreatureList.get(index).getColumnPosition() >= getAmountOfColumns())) {
@@ -270,6 +268,7 @@ public class UniverseUsingSTL extends Universe {
   public void moveAllCreaturesOnce() {
     for (int i = 0; i < CreatureList.size(); i++) {
       CreatureList.get(i).doAction();
+	  attackCreature(i);
     }
     checkForCollisions();
   }
