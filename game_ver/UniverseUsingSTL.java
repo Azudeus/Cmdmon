@@ -30,7 +30,7 @@ public class UniverseUsingSTL extends Universe {
   /**
   *Turn menunjukan sudah urutan ke berapa sejak objek ini dibangun.
   */
-  private int Turn;
+  private int turn;
 
   /**
   *turnInterval adalah durasi detik dimana turn bertambah.
@@ -81,63 +81,63 @@ public class UniverseUsingSTL extends Universe {
   }
   
   /**
-  *(@inheritDoc)
   *<br> Getter dari atribut CreatureList.
+  *@return Vector<Creature> yaitu CreatureList
   */
   public final Vector<Creature> getCreatureList() {
     return CreatureList;
   } 
   
   /**
-  *(@inheritDoc)
   *<br> Getter dari atribut P.
+  *@return Player, objek player
   */
   public final Player getPlayer() {
     return P;
   }
 
   /**
-  *(@inheritDoc)
   *<br> Getter dari atribut CreatureList.
+  *@return boolean, true jika game over, false jika belum
   */
   public final boolean getIsGameOver() {
     return isGameOver;
   }
   
   /**
-  *(@inheritDoc)
   *Method yang digunakan untuk mengincrement Turn.
   */
   public void addTurn() {
-    Turn++;
+    turn++;
   }
   
   /**
-  *(@inheritDoc)
   *<br> Getter dari atribut turnInterval.
+  *@return int, durasi sebelum turn bertambah
   */
   public final int getTurnInterval() {
-  return turnInterval;
+    return turnInterval;
   }
 
   /**
-  *(@inheritDoc)
   *<br> Getter dari atribut Turn.
+  *@return int, menunjukkan sekarang turn ke berapa
   */
   public final int getTurn() {
-    return Turn;
+    return turn;
   }
 
   /**
-  *(@inheritDoc)
   *<br> Mengembalikan jarak beruba integer dari 2 titik tengah Creature.
+  *@param c1, creature pertama
+  *@param c2, creature kedua
+  *@return int, manhattan distance antara kedua creature
   */
-  public int Distance(Creature c1, Creature c2) {
+  public int distance(Creature c1, Creature c2) {
    return (Math.abs(c1.getColumnPosition() - c2.getColumnPosition()) + Math.abs(c1.getRowPosition() - c2.getRowPosition()));
   }
   
   /**
-  *(@inheritDoc)
   *<br> Method pemain menyerang musuh yang berada dalam range pemain.
   *<br> Direalisasikan dengan cara menyelusuri seluruh Creature di dalam list dan apabila masuk ke dalam range player
   *kurangi HP creature tersebut dan apabila sudah HPnya sudah 0 atau kurang maka Creature tersebut akan dihapus.
@@ -161,7 +161,6 @@ public class UniverseUsingSTL extends Universe {
   }
 
   /**
-  *(@inheritDoc)
   *<br> Mengecek apakah pemain dalam range serang c apabila iya kurangi darah pemain/
   *<br> Apabila darah pemain sudah 0 atau kurang maka hentikan permainan.
   *@param c, creature yang dicek.

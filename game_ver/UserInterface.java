@@ -103,6 +103,10 @@ public class UserInterface {
 		gameOverFrame.setLocationRelativeTo(mainFrame);
 	}
 
+	/**
+  	*Mengembalikan mainPanel
+  	*@return GamePanel, panel game yang digunakan user interface
+  	*/
 	public static GamePanel getMainPanel() {
 		return mainPanel;
 	}
