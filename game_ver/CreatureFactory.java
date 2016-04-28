@@ -14,6 +14,7 @@ public class CreatureFactory {
   *@param directionX, arah pergerakan sumbu X dari Creature
   *@param directionY, arah pergerakan sumbu Y dari Creature
   *@param multiplier, damage multiplier dari Creature
+  *@return Sebuah creature baru tergantung String what
   */
   public static Creature createCreature(final String what, final int row, final int column, final int directionX, final int directionY, final int multiplier) {
     if (what.equals("Harpy")) {

@@ -82,7 +82,7 @@ public abstract class Creature {
 
   /**
   *Mengubah ukuran
-  *@param health, menupakan integer yang menandakan ukuran Creature.
+  *@param size, menupakan integer yang menandakan ukuran Creature.
   */
   public void setSize(final int size) {
     this.size = size;

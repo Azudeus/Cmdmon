@@ -77,18 +77,6 @@ public class GamePanel extends JPanel implements ActionListener {
 		mainTimer.start();
 	}
 
-	public Timer getMainTimer() {
-		return mainTimer;
-	}
-
-	public int getVelX() {
-		return velX;
-	}
-
-	public int getVelY() {
-		return velY;
-	}
-
 	public UniverseUsingSTL getWorld() {
 		return world;
 	}
