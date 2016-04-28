@@ -1,3 +1,6 @@
+package universe;
+
+import creature.*;
 import java.io.*;
 import java.util.Random;
 import java.util.Vector;
@@ -11,12 +14,12 @@ public class UniverseUsingSTL extends Universe {
   /**
   *CreatureList merupakan Vector of Creature yang mencatat semua mahluk yang ada pada dunia.
   */
-  public Vector<Creature> CreatureList;
+  private Vector<Creature> CreatureList;
   
   /**
   *P adalah Player yang akan dikendalikan oleh pemain
   */
-  public Player P;
+  private Player P;
   
   /**
   *isGameOVer adalah boolean yang menyatakan apakah game sudah berakhir atau belum.
@@ -43,14 +46,14 @@ public class UniverseUsingSTL extends Universe {
   *@param amountOfRows, integer yang menyatakan jumlah baris dari dunia.
   *@param amountOfColumns, integer yang menyatakan jumlah kolom dari dunia.
   */
-  public UniverseUsingSTL(int amountOfRows, int amountOfColumns) {
+  public UniverseUsingSTL(final int amountOfRows, final int amountOfColumns) {
     this.setAmountOfRows(amountOfRows);
     this.setAmountOfColumns(amountOfColumns);
-	Random generator = new Random();
-	int row = (generator.nextInt(getAmountOfRows()));
+  Random generator = new Random();
+  int row = (generator.nextInt(getAmountOfRows()));
     int column = (generator.nextInt(getAmountOfColumns()));
-	P = new Player(row,column);
-	isGameOver = false;
+  P = new Player(row,column);
+  isGameOver = false;
     CreatureList = new Vector<Creature>();
     turnInterval = 3000;
   }
@@ -72,9 +75,8 @@ public class UniverseUsingSTL extends Universe {
       }
       index++;
     }
-	if(found) {
-		CreatureList.remove(CreatureList.size() - 1);
-    
+  if(found) {
+    CreatureList.remove(CreatureList.size() - 1);
     }
   }
   
@@ -82,24 +84,24 @@ public class UniverseUsingSTL extends Universe {
   *(@inheritDoc)
   *<br> Getter dari atribut CreatureList.
   */
-  public final Vector<Creature> getCreatureList(){
-	return CreatureList;
+  public final Vector<Creature> getCreatureList() {
+    return CreatureList;
   } 
   
   /**
   *(@inheritDoc)
   *<br> Getter dari atribut P.
   */
-  public final Player getPlayer(){
-	  return P;
+  public final Player getPlayer() {
+    return P;
   }
-  
+
   /**
   *(@inheritDoc)
   *<br> Getter dari atribut CreatureList.
   */
-  public final boolean getIsGameOver(){
-	  return isGameOver;
+  public final boolean getIsGameOver() {
+    return isGameOver;
   }
   
   /**
@@ -107,7 +109,7 @@ public class UniverseUsingSTL extends Universe {
   *Method yang digunakan untuk mengincrement Turn.
   */
   public void addTurn() {
-	  Turn++;
+    Turn++;
   }
   
   /**
@@ -115,7 +117,7 @@ public class UniverseUsingSTL extends Universe {
   *<br> Getter dari atribut turnInterval.
   */
   public final int getTurnInterval() {
-	return turnInterval;
+  return turnInterval;
   }
 
   /**
@@ -123,15 +125,15 @@ public class UniverseUsingSTL extends Universe {
   *<br> Getter dari atribut Turn.
   */
   public final int getTurn() {
-	  return Turn;
+    return Turn;
   }
-  
+
   /**
   *(@inheritDoc)
   *<br> Mengembalikan jarak beruba integer dari 2 titik tengah Creature.
   */
-  public int Distance(Creature c1, Creature c2){
-	return (Math.abs(c1.getColumnPosition() - c2.getColumnPosition()) + Math.abs(c1.getRowPosition() - c2.getRowPosition()));
+  public int Distance(Creature c1, Creature c2) {
+   return (Math.abs(c1.getColumnPosition() - c2.getColumnPosition()) + Math.abs(c1.getRowPosition() - c2.getRowPosition()));
   }
   
   /**
@@ -141,40 +143,40 @@ public class UniverseUsingSTL extends Universe {
   *kurangi HP creature tersebut dan apabila sudah HPnya sudah 0 atau kurang maka Creature tersebut akan dihapus.
   */
   public void attackPlayer() {
-	int size = CreatureList.size();
-	int i = 0;
-    while(i < size){
-		if(Distance(P, CreatureList.get(i)) <= (P.getRange() + P.getSize() + CreatureList.get(i).getSize())) {
+  int size = CreatureList.size();
+  int i = 0;
+    while(i < size) {
+    if(Distance(P, CreatureList.get(i)) <= (P.getRange() + P.getSize() + CreatureList.get(i).getSize())) {
       System.out.println("Player attack creature around him by " + P.getStrength() + " damage");
-			CreatureList.get(i).setHealth(CreatureList.get(i).getHealth() - P.getStrength());
-			if(CreatureList.get(i).getHealth() <= 0){
-				killCreature(CreatureList.get(i));
-				P.setHealth(P.getHealth()+20);
-				size--;
-				i--;
-			}	
-		}
-		i++;
-	}
+      CreatureList.get(i).setHealth(CreatureList.get(i).getHealth() - P.getStrength());
+      if (CreatureList.get(i).getHealth() <= 0) {
+        killCreature(CreatureList.get(i));
+        P.setHealth(P.getHealth() + 20);
+        size--;
+        i--;
+      }
+    }
+    i++;
   }
-  
+  }
+
   /**
   *(@inheritDoc)
   *<br> Mengecek apakah pemain dalam range serang c apabila iya kurangi darah pemain/
   *<br> Apabila darah pemain sudah 0 atau kurang maka hentikan permainan.
   *@param c, creature yang dicek.
   */
-  public void attackCreature(Creature c){
+  public void attackCreature(Creature c) {
   //System.out.println(Distance(P,c) + " " + (P.getSize() + c.getRange() + c.getSize()));
-  if(Distance(P,c) <= (c.getRange() + c.getSize() + P.getSize())){
+  if (Distance(P, c) <= (c.getRange() + c.getSize() + P.getSize())) {
     System.out.println("Creature attack Player by " + c.getStrength() + " damage");
-		P.setHealth(P.getHealth() - c.getStrength());
-		if(P.getHealth() <= 0){
-			isGameOver = true;
+    P.setHealth(P.getHealth() - c.getStrength());
+    if (P.getHealth() <= 0) {
+      isGameOver = true;
       System.out.println("Player killed by ranged attack");
     }
-	}
-	  
+  }
+
   }
 
   /**
@@ -204,25 +206,25 @@ public class UniverseUsingSTL extends Universe {
       directionX = directionX - 1;
       int directionY = (generator.nextInt(3));
       directionY = directionY - 1;
-	  int MaxCreature = 30;
-	  int CreatureSize = 20;
+      int maxCreature = 30;
+      int creatureSize = 20;
       boolean found = true;
       int counter = 0;
 
       //cari apakah sudah ada
-      while ((counter < MaxCreature) && (found)) {
+      while ((counter < maxCreature) && (found)) {
         found = false;
         counter = 0;
         int sz = CreatureList.size();
         int index = 0;
 
-    		if((Math.abs(P.getRowPosition() - row) + Math.abs(P.getColumnPosition() - column)) <= (P.getSize() + CreatureSize + 3*P.getRange())) {
-    			found = true;
-    		}
-        while ((index < sz) && (!found) && (counter < MaxCreature)) {
+        if ((Math.abs(P.getRowPosition() - row) + Math.abs(P.getColumnPosition() - column)) <= (P.getSize() + creatureSize + 3 * P.getRange())) {
+          found = true;
+        }
+        while ((index < sz) && (!found) && (counter < maxCreature)) {
           counter++;
-          if ((Math.abs(CreatureList.get(index).getRowPosition() - row) + Math.abs(CreatureList.get(index).getColumnPosition() - column)) 
-			       <= (2*CreatureSize)) {
+          if ((Math.abs(CreatureList.get(index).getRowPosition() - row) + Math.abs(CreatureList.get(index).getColumnPosition() - column))
+             <= (2 * creatureSize)) {
             found = true;
           }
           index++;
@@ -238,26 +240,26 @@ public class UniverseUsingSTL extends Universe {
             row = 0;
           }
         }
-		//System.out.println(counter);
+    //System.out.println(counter);
       }
-	  
+
       if (!found) {
         if (rand == 0) {
           // temp = new Plant(row, column, getTurn()/3);
           // addCreature(temp);
-          addCreature(CreatureFactory.createCreature("Plant",row, column, 0, 0, getTurn()/5));
+          addCreature(CreatureFactory.createCreature("Plant", row, column, 0, 0, getTurn() / 5));
         } else if (rand == 1) {
           // temp = new Lamia(row, column, directionX, directionY, getTurn()/3);
           // addCreature((temp));
-          addCreature(CreatureFactory.createCreature("Lamia",row, column, directionX, directionY, getTurn()/5));
+          addCreature(CreatureFactory.createCreature("Lamia", row, column, directionX, directionY, getTurn() / 5));
         } else if (rand == 2) {
           // temp = new Centaur(row, column, directionX, directionY, getTurn()/3);
           // addCreature((temp));
-          addCreature(CreatureFactory.createCreature("Centaur",row, column, directionX, directionY, getTurn()/5));
+          addCreature(CreatureFactory.createCreature("Centaur", row, column, directionX, directionY, getTurn() / 5));
         } else {
           // temp = new Harpy(row, column, directionX, directionY, getTurn()/3);
           // addCreature((temp));
-          addCreature(CreatureFactory.createCreature("Harpy",row, column, directionX, directionY, getTurn()/5));
+          addCreature(CreatureFactory.createCreature("Harpy", row, column, directionX, directionY, getTurn() / 5));
         }
       }
     }
@@ -291,28 +293,28 @@ public class UniverseUsingSTL extends Universe {
           //sz--;
       }
       index++;
-	  sz = CreatureList.size();
+    sz = CreatureList.size();
     }
-	//is Player Out Of Bounds
+  //is Player Out Of Bounds
 
-  	if((P.getRowPosition() < 0)
-  		|| (P.getColumnPosition() < 0)
-  		|| (P.getRowPosition() >= getAmountOfRows())
-  		|| (P.getColumnPosition() >= getAmountOfColumns())){
-  			isGameOver = true;
-			P.setHealth(0);
-			System.out.println("Player out of bound");
-  	}
-  		
-  	//Kill Player if Collision
-  	index = 0;
-  	while((!isGameOver) && (index < sz)) {
-  		if(Distance(P, CreatureList.get(index)) <= (P.getSize() + CreatureList.get(index).getSize())){
-  	    System.out.println("Player collide with monster");
+    if ((P.getRowPosition() < 0)
+      || (P.getColumnPosition() < 0)
+      || (P.getRowPosition() >= getAmountOfRows())
+      || (P.getColumnPosition() >= getAmountOfColumns())) {
         isGameOver = true;
-  		}
-  		index++;
-  	}  
+      P.setHealth(0);
+      System.out.println("Player out of bound");
+    }
+
+    //Kill Player if Collision
+    index = 0;
+    while ((!isGameOver) && (index < sz)) {
+      if (Distance(P, CreatureList.get(index)) <= (P.getSize() + CreatureList.get(index).getSize())) {
+        System.out.println("Player collide with monster");
+        isGameOver = true;
+      }
+      index++;
+    }
   }
 
   /**
@@ -321,11 +323,11 @@ public class UniverseUsingSTL extends Universe {
   */
   public void moveAllCreaturesOnce() {
     int i = 0;
-    while ((i < CreatureList.size()) && (!isGameOver)){
+    while ((i < CreatureList.size()) && (!isGameOver)) {
       CreatureList.get(i).doAction();
-	  attackCreature(CreatureList.get(i));
+    attackCreature(CreatureList.get(i));
       i++;
     }
     checkForCollisions();
-  };
+  }
 }
