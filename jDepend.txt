@@ -1,40 +1,51 @@
 
 --------------------------------------------------
-- Package: Default
+- Package: creature
 --------------------------------------------------
 
 Stats:
-    Total Classes: 9
+    Total Classes: 8
     Concrete Classes: 6
-    Abstract Classes: 3
+    Abstract Classes: 2
 
-    Ca: 0
+    Ca: 3
     Ce: 3
 
-    A: 0.33
-    I: 1
-    D: 0.33
+    A: 0.25
+    I: 0.5
+    D: 0.25
 
 Abstract Classes:
-    Animal
-    Creature
-    Universe
+    creature.Animal
+    creature.Creature
 
 Concrete Classes:
-    Centaur
-    Harpy
-    Lamia
-    Main
-    Plant
-    UniverseUsingSTL
+    creature.Centaur
+    creature.CreatureFactory
+    creature.Harpy
+    creature.Lamia
+    creature.Plant
+    creature.Player
 
 Depends Upon:
-    java.io
+    java.awt
     java.lang
-    java.util
+    javax.swing
 
 Used By:
-    Not used by any packages.
+    main
+    universe
+    userinterface
+
+--------------------------------------------------
+- Package: java.awt
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.awt.event
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
 
 --------------------------------------------------
 - Package: java.io
@@ -51,6 +62,117 @@ No stats available: package referenced, but not analyzed.
 --------------------------------------------------
 No stats available: package referenced, but not analyzed.
 
+--------------------------------------------------
+- Package: javax.swing
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: main
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 7
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    main.Main
+    main.Main$1
+    main.Main$2
+
+Depends Upon:
+    creature
+    java.io
+    java.lang
+    java.util
+    javax.swing
+    universe
+    userinterface
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: universe
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 1
+    Abstract Classes: 1
+
+    Ca: 2
+    Ce: 4
+
+    A: 0.5
+    I: 0.67
+    D: 0.17
+
+Abstract Classes:
+    universe.Universe
+
+Concrete Classes:
+    universe.UniverseUsingSTL
+
+Depends Upon:
+    creature
+    java.io
+    java.lang
+    java.util
+
+Used By:
+    main
+    userinterface
+
+--------------------------------------------------
+- Package: userinterface
+--------------------------------------------------
+
+Stats:
+    Total Classes: 7
+    Concrete Classes: 7
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 7
+
+    A: 0
+    I: 0.88
+    D: 0.12
+
+Abstract Classes:
+
+Concrete Classes:
+    userinterface.GamePanel
+    userinterface.GamePanel$1
+    userinterface.UserInterface
+    userinterface.UserInterface$1
+    userinterface.UserInterface$2
+    userinterface.UserInterface$HPLabel
+    userinterface.UserInterface$ScoreLabel
+
+Depends Upon:
+    creature
+    java.awt
+    java.awt.event
+    java.lang
+    java.util
+    javax.swing
+    universe
+
+Used By:
+    main
+
 
 --------------------------------------------------
 - Package Dependency Cycles:
@@ -63,7 +185,13 @@ No stats available: package referenced, but not analyzed.
 
 Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
 
-Default,9,3,0,3,0.33,1,0.33,1
-java.io,0,0,1,0,0,0,1,1
-java.lang,0,0,1,0,0,0,1,1
-java.util,0,0,1,0,0,0,1,1
+creature,8,2,3,3,0.25,0.5,0.25,1
+java.awt,0,0,2,0,0,0,1,1
+java.awt.event,0,0,1,0,0,0,1,1
+java.io,0,0,2,0,0,0,1,1
+java.lang,0,0,4,0,0,0,1,1
+java.util,0,0,3,0,0,0,1,1
+javax.swing,0,0,3,0,0,0,1,1
+main,3,0,0,7,0,1,0,1
+universe,2,1,2,4,0.5,0.67,0.17,1
+userinterface,7,0,1,7,0,0.88,0.12,1
