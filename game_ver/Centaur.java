@@ -44,6 +44,9 @@ public class Centaur extends Animal {
     return 'C';
   }
 
+  /**
+  *{@inheritDoc}}
+  */
   public void draw(Graphics2D g2) {
     //return 'P';
   ImageIcon ic = new ImageIcon("Assets/Centaur.png");

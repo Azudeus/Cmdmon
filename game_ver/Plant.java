@@ -39,6 +39,9 @@ public class Plant extends Creature {
     return 'T';
   }
   
+  /**
+  *{@inheritDoc}}
+  */
   public void draw(Graphics2D g2) {
     //return 'P';
 	ImageIcon ic = new ImageIcon("Assets/Plant.png");

@@ -119,7 +119,7 @@ public class UserInterface {
 		/**
 		*Timer yang digunakan untuk menentukan refresh rate.
 		*/
-		Timer refreshHP;
+		private Timer refreshHP;
 		
 		/**
 		*Constructor dari HPLabel yang memanggil constructor dari parent (JLabel).
@@ -155,7 +155,7 @@ public class UserInterface {
 		/**
 		*Timer yang digunakan untuk menentukan refresh rate.
 		*/
-		Timer refreshScore;
+		private Timer refreshScore;
 		
 		/**
 		*Constructor dari ScoreLabel yang memanggil constructor dari parent (JLabel).
