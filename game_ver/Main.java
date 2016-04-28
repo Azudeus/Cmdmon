@@ -25,7 +25,6 @@ public class Main{
   private static boolean stop = false;
   private static final int row = 680;
   private static final int col = 485;
-//  private static UniverseUsingSTL world = new UniverseUsingSTL(row,col);
   private static Vector<Thread> vectorThread = new Vector<Thread>();
   private static UserInterface userInterface;
   private static final int spawnInterval = 10;
@@ -93,7 +92,6 @@ public class Main{
     userInterface = new UserInterface();
     userInterface.show();
     createPlayerThread();
-//    createCreatorThread();
     initializeRandom();
     createAllMonsterThread();
 	while (!userInterface.getMainPanel().getWorld().getIsGameOver()){
