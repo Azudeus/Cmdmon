@@ -1,3 +1,5 @@
+package userinterface;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -100,7 +102,11 @@ public class UserInterface {
 		gameOverFrame.add(gameOverLabel);
 		gameOverFrame.setLocationRelativeTo(mainFrame);
 	}
-	
+
+	public static GamePanel getMainPanel() {
+		return mainPanel;
+	}
+
 	/**
 	*Menampilkan mainFrame ke layar agar terlihat oleh pengguna.
 	*/
@@ -133,10 +139,9 @@ public class UserInterface {
 		*/
 		public void actionPerformed(ActionEvent e) {
 			String tmp = "Hit Points : ";
-			if (mainPanel.world.P.getHealth() > 0){
-				tmp = tmp + mainPanel.world.P.getHealth();
-			}
-			else if (mainPanel.world.getIsGameOver()) {
+			if (mainPanel.getWorld().getPlayer().getHealth() > 0)
+				tmp = tmp + mainPanel.getWorld().getPlayer().getHealth();
+			else if (mainPanel.getWorld().getIsGameOver()) {
 				tmp = "DEAD";
 			}
 			else {
@@ -169,7 +174,7 @@ public class UserInterface {
 		*/
 		public void actionPerformed(ActionEvent e) {
 			String tmp = "Score : ";
-			tmp = tmp + mainPanel.world.getTurn();
+			tmp = tmp + mainPanel.getWorld().getTurn();
 			score.setText(tmp);
 		}
 	};

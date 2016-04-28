@@ -14,12 +14,12 @@ public class UniverseUsingSTL extends Universe {
   /**
   *CreatureList merupakan Vector of Creature yang mencatat semua mahluk yang ada pada dunia.
   */
-  Vector<Creature> CreatureList;
+  private Vector<Creature> CreatureList;
   
   /**
   *P adalah Player yang akan dikendalikan oleh pemain
   */
-  Player P;
+  private Player P;
   
   /**
   *isGameOVer adalah boolean yang menyatakan apakah game sudah berakhir atau belum.

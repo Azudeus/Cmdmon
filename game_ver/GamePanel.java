@@ -1,31 +1,32 @@
-import creature.*;
+package userinterface;
+
 import universe.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class GamePanel extends JPanel implements ActionListener {
+public class GamePanel extends JPanel implements ActionListener {
 	/**
 	*world adalah representasi dunia dalam bentuk UniverseUsingSTL.
 	*/
-	UniverseUsingSTL world;
+	private UniverseUsingSTL world;
 	
 	/**
 	*Timer yang akan menentukan refresh rate.
 	*/
-	Timer mainTimer;
+	private Timer mainTimer;
 	
 	/**
 	*Integer yang akan berubah ketika tombol ditekan.
 	*Berguna untuk mengubah posisi player ketika refresh terjadi.
 	*/
-	int velX = 0;
+	private int velX = 0;
 
 	/**
 	*Integer yang akan berubah ketika tombol ditekan.
 	*Berguna untuk mengubah posisi player ketika refresh terjadi.
 	*/
-	int velY = 0;
+	private int velY = 0;
 	
 	/**
 	*Construction dari GamePanel.
@@ -75,7 +76,23 @@ class GamePanel extends JPanel implements ActionListener {
 		mainTimer = new Timer(10,this);
 		mainTimer.start();
 	}
-	
+
+	public Timer getMainTimer() {
+		return mainTimer;
+	}
+
+	public int getVelX() {
+		return velX;
+	}
+
+	public int getVelY() {
+		return velY;
+	}
+
+	public UniverseUsingSTL getWorld() {
+		return world;
+	}
+
 	/**
 	*Override dari fungsi paint JPanel.
 	*Berfungsi menggambarkan posisi creature dan player pada mainPanel.
@@ -83,12 +100,12 @@ class GamePanel extends JPanel implements ActionListener {
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
-		int size = world.CreatureList.size();
+		int size = world.getCreatureList().size();
 		for (int i = 0 ; i < size ; i++){
-		  world.CreatureList.get(i).draw(g2);
-		  size = world.CreatureList.size();
+		  world.getCreatureList().get(i).draw(g2);
+		  size = world.getCreatureList().size();
 		}
-		world.P.draw(g2);
+		world.getPlayer().draw(g2);
 	}
 	
 	/**
@@ -100,8 +117,8 @@ class GamePanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		repaint();
 		if (!world.getIsGameOver()){
-			world.P.setRowPosition(world.P.getRowPosition() + velX);
-			world.P.setColumnPosition(world.P.getColumnPosition() + velY);
+			world.getPlayer().setRowPosition(world.getPlayer().getRowPosition() + velX);
+			world.getPlayer().setColumnPosition(world.getPlayer().getColumnPosition() + velY);
 		}
 	}
 }

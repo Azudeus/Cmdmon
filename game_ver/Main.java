@@ -1,3 +1,7 @@
+package main;
+
+import userinterface.*;
+import creature.*;
 import java.util.Scanner;
 import java.util.Random;
 import java.io.*;
@@ -35,7 +39,7 @@ public class Main{
     System.out.println("initialized Random Creature");
     Random rand = new Random();
     int randomNum = rand.nextInt(spawnAmount);
-    userInterface.mainPanel.world.addRandomCreature(spawnAmount + randomNum);;
+    userInterface.getMainPanel().getWorld().addRandomCreature(spawnAmount + randomNum);;
     // System.out.println("initialize " + randomNum);
     // System.out.println();
   }
@@ -44,13 +48,13 @@ public class Main{
     new Thread(new Runnable() {
       public void run() {
 		    try{
-            Player p = userInterface.mainPanel.world.getPlayer();
+            Player p = userInterface.getMainPanel().getWorld().getPlayer();
             while(!stop){
             p.doAction();
-            userInterface.mainPanel.world.checkForCollisions();
-            userInterface.mainPanel.world.attackPlayer();
+            userInterface.getMainPanel().getWorld().checkForCollisions();
+            userInterface.getMainPanel().getWorld().attackPlayer();
             Thread.sleep(p.getActionInterval());
-            if(userInterface.mainPanel.world.getIsGameOver()) {
+            if(userInterface.getMainPanel().getWorld().getIsGameOver()) {
               stop = true;
             }
           }
@@ -65,13 +69,13 @@ public class Main{
     new Thread(new Runnable() {
       public void run() {
         try {
-          while((!stop) && (!userInterface.mainPanel.world.getIsGameOver())) {
-            userInterface.mainPanel.world.moveAllCreaturesOnce();
-            userInterface.mainPanel.world.addTurn();
-            if (userInterface.mainPanel.world.getTurn() % spawnInterval == 0) {
+          while((!stop) && (!userInterface.getMainPanel().getWorld().getIsGameOver())) {
+            userInterface.getMainPanel().getWorld().moveAllCreaturesOnce();
+            userInterface.getMainPanel().getWorld().addTurn();
+            if (userInterface.getMainPanel().getWorld().getTurn() % spawnInterval == 0) {
               initializeRandom();
             }
-            Thread.sleep(userInterface.mainPanel.world.getPlayer().getActionInterval());  
+            Thread.sleep(userInterface.getMainPanel().getWorld().getPlayer().getActionInterval());
           }
 
         } catch (InterruptedException e) {
@@ -92,7 +96,7 @@ public class Main{
 //    createCreatorThread();
     initializeRandom();
     createAllMonsterThread();
-	while (!userInterface.mainPanel.world.getIsGameOver()){
+	while (!userInterface.getMainPanel().getWorld().getIsGameOver()){
 		System.out.print("");
 	}
 	userInterface.gameOverFrame.setVisible(true);
