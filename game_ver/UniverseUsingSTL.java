@@ -66,7 +66,6 @@ public class UniverseUsingSTL extends Universe {
   */
   public void killCreature(Creature creature) {
     boolean found = false;
-    int size = creatureList.size();
     int index = 0;
     while ((!found) && (index < creatureList.size())) {
       if (creatureList.get(index) == creature) {
@@ -194,7 +193,6 @@ public class UniverseUsingSTL extends Universe {
   *@param amount, merupakan jumlah Creature yg ingin ditambah
   **/
   public void addRandomCreature(int amount) {
-    Creature temp;
     Random generator = new Random();
     //randomly create creature
     for (int i = 0; i < amount; i++) {

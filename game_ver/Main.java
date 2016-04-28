@@ -21,11 +21,7 @@ public class Main{
   *columnPosition merupakan integer yang menunjukan posisi kolom dari Creature pada dunia.
   *actionInterval merupakan integer yang menunjukan jeda waktu antar aksi dari suatu Creature.
   */
-  private static char CC;
   private static boolean stop = false;
-  private static final int row = 680;
-  private static final int col = 485;
-  private static Vector<Thread> vectorThread = new Vector<Thread>();
   private static UserInterface userInterface;
   private static final int spawnInterval = 10;
   private static final int spawnAmount = 3;
@@ -38,7 +34,7 @@ public class Main{
     System.out.println("initialized Random Creature");
     Random rand = new Random();
     int randomNum = rand.nextInt(spawnAmount);
-    userInterface.getMainPanel().getWorld().addRandomCreature(spawnAmount + randomNum);;
+    userInterface.getMainPanel().getWorld().addRandomCreature(spawnAmount + randomNum);
     // System.out.println("initialize " + randomNum);
     // System.out.println();
   }
