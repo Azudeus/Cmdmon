@@ -37,6 +37,9 @@ public class Player extends Creature {
 	return 'P';
   }
   
+  /**
+  *{@inheritDoc}}
+  */
   public void draw(Graphics2D g2) {
     //return 'P';
 	ImageIcon ic = new ImageIcon("Assets/Player.png");

@@ -42,6 +42,9 @@ public class Lamia extends Animal {
     return 'L';
   }
 
+  /**
+  *{@inheritDoc}}
+  */
   public void draw(Graphics2D g2) {
     //return 'P';
   ImageIcon ic = new ImageIcon("Assets/Lamia.png");

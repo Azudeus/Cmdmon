@@ -11,19 +11,19 @@ class GamePanel extends JPanel implements ActionListener {
 	/**
 	*Timer yang akan menentukan refresh rate.
 	*/
-	Timer mainTimer;
+	private Timer mainTimer;
 	
 	/**
 	*Integer yang akan berubah ketika tombol ditekan.
 	*Berguna untuk mengubah posisi player ketika refresh terjadi.
 	*/
-	int velX = 0;
+	private int velX = 0;
 
 	/**
 	*Integer yang akan berubah ketika tombol ditekan.
 	*Berguna untuk mengubah posisi player ketika refresh terjadi.
 	*/
-	int velY = 0;
+	private int velY = 0;
 	
 	/**
 	*Construction dari GamePanel.

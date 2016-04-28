@@ -28,6 +28,9 @@ public abstract class Animal extends Creature {
   */
   public abstract char draw();
 
+  /**
+  *{@inheritDoc}}
+  */
   public abstract void draw(Graphics2D g);
   
   /**

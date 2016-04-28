@@ -43,6 +43,9 @@ public class Harpy extends Animal {
       return 'H';
   }
 
+  /**
+  *{@inheritDoc}}
+  */
   public void draw(Graphics2D g2) {
     //return 'P';
   ImageIcon ic = new ImageIcon("Assets/Harpy.png");
